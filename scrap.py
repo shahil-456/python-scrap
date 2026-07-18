@@ -84,7 +84,7 @@ def download_video(url):
     if url.endswith(".m3u8"):
         base = url.replace("master.m3u8", "master_1080p_")
 
-        for i in range(1, 3):
+        for i in range(1, 3000):
             ts_url = f"{base}{i:05d}.ts"
 
             print("Downloading:", ts_url)
