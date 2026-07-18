@@ -4,6 +4,7 @@ import os
 import time
 from playwright.sync_api import sync_playwright
 import subprocess
+import sys
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
@@ -83,11 +84,11 @@ def download_video(url):
     if url.endswith(".m3u8"):
         base = url.replace("master.m3u8", "master_1080p_")
 
-        for i in range(1, 6000):
+        for i in range(1, 3):
             ts_url = f"{base}{i:05d}.ts"
 
             print("Downloading:", ts_url)
-            time.sleep(1)
+            time.sleep(0.7)
             response = page.request.get(ts_url)
 
             if response.ok:
@@ -100,6 +101,9 @@ def download_video(url):
                 count += 1
             else:
                 print("Failed:", response.status)
+                if i > 2:
+                    sys.exit()
+
                 break
 
     # elif url.endswith(".ts"):
