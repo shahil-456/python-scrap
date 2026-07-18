@@ -77,64 +77,25 @@ os.makedirs("videos", exist_ok=True)
 
 count = 0
 
-def download_video(url):
-    global count
-
-    if url.endswith(".m3u8"):
-        base = url.replace("master.m3u8", "master_1080p_")
-
-        for i in range(1, 6000):
-            ts_url = f"{base}{i:05d}.ts"
-
-            print("Downloading:", ts_url)
-            time.sleep(1)
-            response = page.request.get(ts_url)
-
-            if response.ok:
-                filename = f"videos/{count:05d}.ts"
-
-                with open(filename, "wb") as f:
-                    f.write(response.body())
-
-                print("Saved:", filename)
-                count += 1
-            else:
-                print("Failed:", response.status)
-                break
-
-    # elif url.endswith(".ts"):
-    #     response = page.request.get(url)
-
-    #     if response.ok:
-    #         filename = f"videos/{count:05d}.ts"
-
-    #         with open(filename, "wb") as f:
-    #             f.write(response.body())
-
-    #         print("Saved:", filename)
-    #         count += 1
-    #     else:
-    #         print("Failed:", response.status)
-
 def handle_request(request):
     global count
 
     if request.url.endswith(".ts") or request.url.endswith(".m3u8"):
         print("REQUEST:", request.url)
-        download_video(request.url)
-        # response = page.request.get('request.url')
 
-        # if response.ok:
-        #     ext = ".m3u8" if request.url.endswith(".m3u8") else ".ts"
-        #     filename = f"videos/{count:05d}{ext}"
+        response = page.request.get(request.url)
 
-        #     with open(filename, "wb") as f:
-        #         f.write(response.body())
+        if response.ok:
+            ext = ".m3u8" if request.url.endswith(".m3u8") else ".ts"
+            filename = f"videos/{count:05d}{ext}"
 
-        #     print("Saved:", filename)
-        #     count += 1
-        # else:
-        #     print("Failed:", response.status)
+            with open(filename, "wb") as f:
+                f.write(response.body())
+
+            print("Saved:", filename)
+            count += 1
+        else:
+            print("Failed:", response.status)
 
 
 
