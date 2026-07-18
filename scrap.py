@@ -5,6 +5,8 @@ import time
 from playwright.sync_api import sync_playwright
 import subprocess
 import sys
+import json
+import random
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:143.0) Gecko/20100101 Firefox/143.0",
@@ -60,39 +62,38 @@ session.cookies.update({
 
 
 downloaded = False
+browser = None
 
-# def download_video(url):
-#     subprocess.run([
-#     "ffmpeg",
-#     "-headers",
-#     f"Cookie: {cookies}\r\n"
-#     "User-Agent: Mozilla/5.0\r\n"
-#     "Referer: https://apps.arrs.org/\r\n",
-#     "-i", url,
-#     "-c", "copy",
-#     "video.mp4"
-# ])
+page = None
+
 ts_urls = []
 
 os.makedirs("videos", exist_ok=True)
 
 count = 0
 
-def download_video(url):
+
+def download_video(url, name):
     global count
+
+    folder = os.path.join("videos", name)
+    os.makedirs(folder, exist_ok=True)
 
     if url.endswith(".m3u8"):
         base = url.replace("master.m3u8", "master_1080p_")
 
-        for i in range(1, 3000):
+        for i in range(1, 1700):
             ts_url = f"{base}{i:05d}.ts"
 
+            # if i > 2:
+            #     browser.close()
+
             print("Downloading:", ts_url)
-            time.sleep(0.7)
+            time.sleep(0.8)
             response = page.request.get(ts_url)
 
             if response.ok:
-                filename = f"videos/{count:05d}.ts"
+                filename = os.path.join(folder, f"{count:05d}.ts")
 
                 with open(filename, "wb") as f:
                     f.write(response.body())
@@ -101,31 +102,24 @@ def download_video(url):
                 count += 1
             else:
                 print("Failed:", response.status)
-                if i > 2:
-                    sys.exit()
+                if i > 25:
+                    browser.close()
+                    return
 
                 break
 
-    # elif url.endswith(".ts"):
-    #     response = page.request.get(url)
 
-    #     if response.ok:
-    #         filename = f"videos/{count:05d}.ts"
 
-    #         with open(filename, "wb") as f:
-    #             f.write(response.body())
-
-    #         print("Saved:", filename)
-    #         count += 1
-    #     else:
-    #         print("Failed:", response.status)
-
-def handle_request(request):
+def handle_request(request,name):
+    print(request.url)
+    # print(name)
+    # return
     global count
-
+    if "0001" in request.url:
+        return
     if request.url.endswith(".ts") or request.url.endswith(".m3u8"):
         print("REQUEST:", request.url)
-        download_video(request.url)
+        download_video(request.url,name)
         # response = page.request.get('request.url')
 
         # if response.ok:
@@ -139,8 +133,6 @@ def handle_request(request):
         #     count += 1
         # else:
         #     print("Failed:", response.status)
-
-
 
 
 def handle_response(response):
@@ -181,44 +173,100 @@ def download_and_merge(ts_urls, output="video.mp4"):
     print("Saved:", output)
 
 
+def start_browser(name1,video_url):
+    global browser, page
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=False)
 
-    context = browser.new_context(
-        extra_http_headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-            "Referer": "https://apps.arrs.org/",
-            "Accept": "*/*",
-        }
-    )
-    
-    cookie_list = []
+            context = browser.new_context(
+                extra_http_headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+                    "Referer": "https://apps.arrs.org/",
+                    "Accept": "*/*",
+                }
+            )
 
-    for name, value in cookies.items():
-        cookie_list.append({
-            "name": str(name),
-            "value": str(value),
-            "domain": "apps.arrs.org",
-            "path": "/"
-        })
+            cookie_list = []
 
-    context.add_cookies(cookie_list)
+            for name, value in cookies.items():
+                cookie_list.append({
+                    "name": str(name),
+                    "value": str(value),
+                    "domain": "apps.arrs.org",
+                    "path": "/"
+                })
 
-    page = context.new_page()
-    
-    page.on("request", handle_request)
-    page.on("response", handle_response)
+            context.add_cookies(cookie_list)
 
-    page.goto(
-        "https://apps.arrs.org/vam26/ondemand/demand?functioncode=OCMBM",
-        wait_until="domcontentloaded"
-    )
+            page = context.new_page()
 
-    page.wait_for_timeout(3000000)  # 30 seconds (adjust as needed)
+            page.on("request", lambda request: handle_request(request, name1))
+            # page.on("response", handle_response)
 
-    # page.goto("https://apps.arrs.org/vam26/ondemand/demand?functioncode=OCMBM")
+            page.goto(
+                video_url,
+                wait_until="commit",
+                timeout=120000
+            )
 
-    # page.pause()
-    download_and_merge(ts_urls, "output.mp4")
-    # browser.close()
+            page.wait_for_timeout(50000)  
+
+            print("Reached here")
+
+            page.wait_for_selector("#videowatch")
+
+            frame = next(f for f in page.frames if "video.arrs.org" in f.url)
+
+            if frame.locator("video").count() > 0:
+                frame.locator("video").click(force=True)
+            else:
+                print("Video not found")
+
+            for f in page.frames:
+                print(f.url)
+
+
+            # frame = page.frame_locator("#videowatch")
+
+            # frame.locator("video").click()
+
+            page.wait_for_timeout(30000000)
+
+            # download_and_merge(ts_urls, "output.mp4")
+
+
+    except Exception as e:
+        print(e)
+
+
+
+
+with open("urls.json", "r", encoding="utf-8") as f:
+    urls = json.load(f)
+
+
+urls = [item for item in urls if not item["saved"]]
+
+random.shuffle(urls)
+
+for item in urls:
+    name = item["name"]
+    url = item["url"]
+
+    try:
+        print("Starting:", name)
+        start_browser(name, url)
+        item["saved"] = True
+        with open("urls.json", "w", encoding="utf-8") as f:
+            json.dump(urls, f, indent=4, ensure_ascii=False)
+
+
+    except Exception as e:
+        print("Error:", name, e)
+
+    time.sleep(4.5)
+
+
+# start_browser('name2',"https://apps.arrs.org/vam26/ondemand/demand?functioncode=OCMBM")
