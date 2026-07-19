@@ -201,7 +201,7 @@ def start_browser(main_url):
         page.goto(
             main_url,
             wait_until="domcontentloaded",
-            timeout=6000000
+            timeout=60000000
         )
 
         page.wait_for_load_state("load")
@@ -225,10 +225,10 @@ def start_browser(main_url):
                 tab.goto(
                     url,
                     wait_until="domcontentloaded",
-                    timeout=6000000
+                    timeout=60000000
                 )
 
-                tab.wait_for_load_state("load", timeout=6000000)
+                tab.wait_for_load_state("load", timeout=60000000)
                 # tab.wait_for_timeout(6000000)
 
                 title = links.nth(i).inner_text().strip()
@@ -242,6 +242,7 @@ def start_browser(main_url):
                     print_background=True,
                     prefer_css_page_size=True
                 )
+                time.sleep(3)
 
                 print("Saved:", fid)
 
