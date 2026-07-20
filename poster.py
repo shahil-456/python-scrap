@@ -5,6 +5,7 @@ from html import unescape
 import re
 import json
 import time
+import random
 
 url = "https://cdn2.ispringcloud.com/out/1622-rQbR3-XfLea-eAevy/result/index.mp4"
 
@@ -50,7 +51,6 @@ def get_video_url(short_url):
 
 
 
-
 def download_video(url, filename, headers):
     os.makedirs("posters", exist_ok=True)
     filepath = os.path.join("posters", filename)
@@ -74,6 +74,21 @@ def download_video(url, filename, headers):
 with open("poster.json", "r", encoding="utf-8") as f:
     posters = json.load(f)
 
+
+allowed_ids = {
+    "ED1670", "ED1693", "ED1698", "ED1705", "ED1706",
+    "ED1717", "ED1719", "ED1721", "ED1776", "ED1823",
+    "ED1845", "SC1029", "SC1541", "SC1571", "SC1619"
+}
+
+posters = [
+    item for item in posters
+    if not item["saved"] and item["id"] in allowed_ids
+]
+
+random.shuffle(posters)
+
+
 for poster in posters:
     if poster["saved"]:
         continue
@@ -86,7 +101,10 @@ for poster in posters:
         print(video_url)
         download_video(video_url, f'{poster["title"]}.mp4', headers)
         poster["saved"] = True
-        time.sleep(5)
+        with open("poster.json", "w", encoding="utf-8") as f:
+            json.dump(posters, f, indent=4, ensure_ascii=False)
+
+        time.sleep(3)
     else:
         print("Video URL not found.")
 
