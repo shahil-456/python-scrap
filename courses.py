@@ -549,6 +549,7 @@ def click_all_in_new_tabs(context, page):
             # -----------------------
             # theater_down(working_page)
             download_samples(context, working_page)
+            time.sleep(3)
             # -----------------------
             # Mark completed
             # -----------------------
@@ -639,26 +640,56 @@ def download_samples(context, page):
 
     count = download_links.count()
 
-    print("Downloads:", count)
-
     for i in range(count):
-        try:
+        with page.expect_download() as d:
             download_links.nth(i).click(timeout=300000)
-            time.sleep(2)   # give download time to start
-        except Exception as e:
-            print(e)
+
+        download = d.value
+
+        download.save_as(
+            rf"C:\Downloads\{download.suggested_filename}"
+        )
+
+    # for i in range(count):
+    #     try:
+    #         download_links.nth(i).click(timeout=300000)
+    #         time.sleep(3)   # give download time to start
+    #     except Exception as e:
+    #         print(e)
 
 
 
+try:
+    with sync_playwright() as p:
+        context = p.chromium.launch_persistent_context(
+            user_data_dir="chrome-profile",
+            headless=False,
+            accept_downloads=True
+        )
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+        page = context.new_page()
 
-    context = browser.new_context(storage_state="state.json")
-    context.set_default_timeout(300000)
-    context.set_default_navigation_timeout(300000)
+        client = context.new_cdp_session(page)
 
-    login(context)
-    process_links(context)
+        client.send(
+            "Browser.setDownloadBehavior",
+            {
+                "behavior": "allow",
+                "downloadPath": r"C:\Downloads"
+            }
+        )
+
+        context.storage_state(path="state.json")
+
+        context.set_default_timeout(300000)
+        context.set_default_navigation_timeout(300000)
+
+        login(context)
+        process_links(context)
+
+        context.close()
+
+except Exception as e:
+    print(e)
 
     # browser.close()
