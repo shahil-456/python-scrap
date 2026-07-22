@@ -251,49 +251,6 @@ def start_browser(name1,video_url):
 # random.shuffle(urls)
 
 # for item in urls:
-#     name = item["name"]
-#     url = item["url"]
-
-#     try:
-#         print("Starting:", name)
-#         start_browser(name, url)
-#         item["saved"] = True
-#         with open("urls.json", "w", encoding="utf-8") as f:
-#             json.dump(urls, f, indent=4, ensure_ascii=False)
-
-
-#     except Exception as e:
-#         print("Error:", name, e)
-
-#     time.sleep(4.5)
-
-
-# start_browser('name2',"https://apps.arrs.org/vam26/ondemand/demand?functioncode=OCMBM")
-
-
-# browser = p.chromium.launch(headless=False)
-# context = browser.new_context()
-# page = context.new_page()
-
-# page.goto("https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=SpterbgCuP199gmCawKBqA%3d%3d")
-
-# # Log in manually...
-
-# context.storage_state(path="state.json")
-
-# with sync_playwright() as p:
-#     browser = p.chromium.launch(headless=False)
-#     context = browser.new_context()
-
-#     page = context.new_page()
-#     page.goto("https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=SpterbgCuP199gmCawKBqA%3d%3d")
-
-#     input("Log in manually, then press Enter...")
-
-#     context.storage_state(path="state.json")
-#     print("Saved login state to state.json")
-
-#     browser.close()
 
 
 # with sync_playwright() as p:
@@ -304,29 +261,160 @@ def start_browser(name1,video_url):
 #     )
 
 #     page = context.new_page()
-#     page.goto("https://learning.aad.org/Users/Home.aspx")
+#     page.goto("https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=qMOha6AJQxDZq9uPUx0xUQ%3d%3d&OriginatedFromUserLearningActivityID=ckFyCLAsgnfVymqDAzEatA%3d%3d")
 
 #     input("Press Enter to close...")
 #     browser.close()
 
-START_URL = "https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=SpterbgCuP199gmCawKBqA%3d%3d"
+# START_URL = "https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=SpterbgCuP199gmCawKBqA%3d%3d"
+
+
+# with sync_playwright() as p:
+#     browser = p.chromium.launch(headless=False)
+
+#     context = browser.new_context(storage_state="state.json")
+#     context.set_default_timeout(300000)              # 5 minutes
+#     context.set_default_navigation_timeout(300000)   # 5 minutes
+
+#     page = context.new_page()
+
+#     page.goto(
+#         START_URL,
+#         wait_until="domcontentloaded",
+#         timeout=300000
+#     )
+
+#     access_links = page.locator(
+#         "div.factor360MultiLevelChildLearningActivityLayout_childAccessButton a"
+#     )
+
+#     count = access_links.count()
+
+#     for i in range(count):
+#         href = access_links.nth(i).get_attribute("href")
+#         if not href:
+#             continue
+
+#         time.sleep(2)  # 2-second delay before opening next tab
+
+#         tab = context.new_page()
+
+#         try:
+#             tab.goto(
+#                 href,
+#                 wait_until="domcontentloaded",
+#                 timeout=300000
+#             )
+
+#             title = tab.locator(
+#                 "div.factor360GenericLearningActivityLayout_Title a"
+#             ).first
+
+#             title.wait_for(timeout=300000)
+
+#             title.click(timeout=300000)
+
+#             tab.wait_for_load_state(
+#                 "domcontentloaded",
+#                 timeout=300000
+#             )
+
+#             asset_links = tab.locator(
+#                 "a.learningActivityContentActionButtonWidth"
+#             )
+
+#             asset_count = asset_links.count()
+
+#             for j in range(asset_count):
+#                 asset_href = asset_links.nth(j).get_attribute("href")
+#                 if not asset_href:
+#                     continue
+
+#                 asset_tab = context.new_page()
+
+#                 try:
+#                     if asset_href.startswith("http"):
+#                         url = asset_href
+#                     else:
+#                         url = "https://learning.aad.org/Users/" + asset_href.lstrip("./")
+
+#                     asset_tab.goto(
+#                         url,
+#                         wait_until="domcontentloaded",
+#                         timeout=300000
+#                     )
+
+#                     download_links = asset_tab.locator(
+#                         "div[id$='_pnlLearningActivityAssetDownload'] a"
+#                     )
+
+#                     download_count = download_links.count()
+
+#                     for k in range(download_count):
+#                         download_links.nth(k).click(timeout=300000)
+#                         time.sleep(2)
+
+#                     time.sleep(3)
+
+#                 finally:
+#                     # asset_tab.close()
+#                     pass
+
+#             time.sleep(3)
+
+#         finally:
+#             time.sleep(0.3)
+#             # tab.close()
+
+#     # browser.close()`
 
 
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
 
-    context = browser.new_context(storage_state="state.json")
-    context.set_default_timeout(300000)              # 5 minutes
-    context.set_default_navigation_timeout(300000)   # 5 minutes
 
+
+
+
+
+
+
+FIRST_URL = "https://learning.aad.org/Users/Home.aspx"
+
+
+def login(context):
     page = context.new_page()
 
     page.goto(
-        START_URL,
+        FIRST_URL,
         wait_until="domcontentloaded",
         timeout=300000
     )
+
+    button = page.locator("#MainContent_btnloginViaSSO")
+
+    if button.count() and button.is_visible():
+        button.click(timeout=300000)
+
+        input("Complete login, then press ENTER to continue...")
+
+        context.storage_state(path="state.json")
+
+    page.close()
+
+
+
+
+def process_links(context):
+    page = context.new_page()
+
+    page.goto(
+        FIRST_URL,
+        wait_until="domcontentloaded",
+        timeout=300000
+    )
+
+    page.locator("a.learningActivityTitleLinkButton").first.click()
+    page.wait_for_load_state("domcontentloaded")
 
     access_links = page.locator(
         "div.factor360MultiLevelChildLearningActivityLayout_childAccessButton a"
@@ -339,8 +427,6 @@ with sync_playwright() as p:
         if not href:
             continue
 
-        time.sleep(2)  # 2-second delay before opening next tab
-
         tab = context.new_page()
 
         try:
@@ -349,65 +435,230 @@ with sync_playwright() as p:
                 wait_until="domcontentloaded",
                 timeout=300000
             )
+            click_all_in_new_tabs(context, tab)
+            # continue your remaining code...
 
-            title = tab.locator(
-                "div.factor360GenericLearningActivityLayout_Title a"
-            ).first
+        finally:
+            pass
 
-            title.wait_for(timeout=300000)
 
-            title.click(timeout=300000)
 
-            tab.wait_for_load_state(
+
+
+def click_all_in_new_tabs(context, page):
+    TRACK_FILE = "clicked.json"
+
+    page.wait_for_selector(
+        "a[id*='lnkBtnLearningActivityTitle']",
+        timeout=300000
+    )
+
+    current_url = page.url
+
+    # -----------------------
+    # Load JSON
+    # -----------------------
+    db = {}
+
+    if os.path.exists(TRACK_FILE):
+        try:
+            with open(TRACK_FILE, "r", encoding="utf-8") as f:
+                db = json.load(f)
+
+            if not isinstance(db, dict):
+                db = {}
+        except:
+            db = {}
+
+    # -----------------------
+    # First time save titles
+    # -----------------------
+    if current_url not in db:
+
+        links = page.locator(
+            "a[id*='lnkBtnLearningActivityTitle']"
+        )
+
+        db[current_url] = []
+
+        for i in range(links.count()):
+
+            title = links.nth(i).inner_text().strip()
+
+            db[current_url].append({
+                "title": title,
+                "saved": False
+            })
+
+        with open(TRACK_FILE, "w", encoding="utf-8") as f:
+            json.dump(db, f, indent=2)
+
+    # -----------------------
+    # Loop all unclicked items
+    # -----------------------
+    working_page = page
+
+    while True:
+
+        # Reload JSON
+        with open(TRACK_FILE, "r", encoding="utf-8") as f:
+            db = json.load(f)
+
+        items = db.get(current_url, [])
+
+        item = next(
+            (x for x in items if not x["saved"]),
+            None
+        )
+
+        if item is None:
+            print("All completed.")
+            break
+
+        title = item["title"]
+
+        print("Opening:", title)
+
+        try:
+
+            # Make sure list page loaded
+            working_page.wait_for_selector(
+                "a[id*='lnkBtnLearningActivityTitle']",
+                timeout=300000
+            )
+
+            # Click title
+            working_page.get_by_role(
+                "link",
+                name=title,
+                exact=True
+            ).click(timeout=300000)
+
+            # Wait next page
+            working_page.wait_for_load_state(
                 "domcontentloaded",
                 timeout=300000
             )
 
-            asset_links = tab.locator(
-                "a.learningActivityContentActionButtonWidth"
+            time.sleep(5)
+
+            print("Detail URL:", working_page.url)
+
+            # -----------------------
+            # YOUR CODE
+            # -----------------------
+            # theater_down(working_page)
+            download_samples(context, working_page)
+            # -----------------------
+            # Mark completed
+            # -----------------------
+            item["saved"] = True
+            db[current_url] = items
+
+            with open(TRACK_FILE, "w", encoding="utf-8") as f:
+                json.dump(db, f, indent=2)
+
+            # -----------------------
+            # Open fresh list tab
+            # -----------------------
+            new_tab = context.new_page()
+
+            new_tab.goto(
+                current_url,
+                wait_until="domcontentloaded",
+                timeout=300000
             )
 
-            asset_count = asset_links.count()
+            new_tab.wait_for_selector(
+                "a[id*='lnkBtnLearningActivityTitle']",
+                timeout=300000
+            )
 
-            for j in range(asset_count):
-                asset_href = asset_links.nth(j).get_attribute("href")
-                if not asset_href:
-                    continue
+            # Close old detail tab
+            working_page.close()
 
-                asset_tab = context.new_page()
+            # Continue with fresh tab
+            working_page = new_tab
 
-                try:
-                    if asset_href.startswith("http"):
-                        url = asset_href
-                    else:
-                        url = "https://learning.aad.org/Users/" + asset_href.lstrip("./")
+        except Exception as e:
+            print("Error:", e)
 
-                    asset_tab.goto(
-                        url,
-                        wait_until="domcontentloaded",
-                        timeout=300000
-                    )
+            # reopen list page
+            new_tab = context.new_page()
 
-                    download_links = asset_tab.locator(
-                        "div[id$='_pnlLearningActivityAssetDownload'] a"
-                    )
+            new_tab.goto(
+                current_url,
+                wait_until="domcontentloaded",
+                timeout=300000
+            )
 
-                    download_count = download_links.count()
+            new_tab.wait_for_selector(
+                "a[id*='lnkBtnLearningActivityTitle']",
+                timeout=300000
+            )
 
-                    for k in range(download_count):
-                        download_links.nth(k).click(timeout=300000)
-                        time.sleep(2)
+            try:
+                working_page.close()
+            except:
+                pass
 
-                    time.sleep(3)
+            working_page = new_tab
 
-                finally:
-                    # asset_tab.close()
-                    pass
+    try:
+        working_page.close()
+    except:
+        pass
 
-            time.sleep(3)
 
-        finally:
-            time.sleep(0.3)
-            # tab.close()
+
+def download_samples(context, page):
+    page.wait_for_load_state(
+        "domcontentloaded",
+        timeout=300000
+    )
+
+    # First Access button
+    access = page.locator(
+        "a.learningActivityContentActionButtonWidth"
+    ).first
+
+    if access.count() == 0:
+        return
+
+    access.click(timeout=300000)
+
+    page.wait_for_load_state(
+        "domcontentloaded",
+        timeout=300000
+    )
+
+    # All download buttons
+    download_links = page.locator(
+        "div[id$='_pnlLearningActivityAssetDownload'] a"
+    )
+
+    count = download_links.count()
+
+    print("Downloads:", count)
+
+    for i in range(count):
+        try:
+            download_links.nth(i).click(timeout=300000)
+            time.sleep(2)   # give download time to start
+        except Exception as e:
+            print(e)
+
+
+
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)
+
+    context = browser.new_context(storage_state="state.json")
+    context.set_default_timeout(300000)
+    context.set_default_navigation_timeout(300000)
+
+    login(context)
+    process_links(context)
 
     # browser.close()
