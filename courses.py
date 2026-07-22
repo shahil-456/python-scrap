@@ -442,8 +442,7 @@ def process_links(context):
             pass
 
 
-
-
+# page.on("request", capture)
 
 def click_all_in_new_tabs(context, page):
     TRACK_FILE = "clicked.json"
@@ -527,6 +526,12 @@ def click_all_in_new_tabs(context, page):
                 timeout=300000
             )
 
+            item["saved"] = True
+            db[current_url] = items
+
+            with open(TRACK_FILE, "w", encoding="utf-8") as f:
+                json.dump(db, f, indent=2)   
+
             # Click title
             working_page.get_by_role(
                 "link",
@@ -553,11 +558,11 @@ def click_all_in_new_tabs(context, page):
             # -----------------------
             # Mark completed
             # -----------------------
-            item["saved"] = True
-            db[current_url] = items
+            # item["saved"] = True
+            # db[current_url] = items
 
-            with open(TRACK_FILE, "w", encoding="utf-8") as f:
-                json.dump(db, f, indent=2)
+            # with open(TRACK_FILE, "w", encoding="utf-8") as f:
+            #     json.dump(db, f, indent=2)
 
             # -----------------------
             # Open fresh list tab
@@ -612,6 +617,23 @@ def click_all_in_new_tabs(context, page):
 
 
 
+mp4_url = None
+
+def capture(request, breadcrumb):
+    try:
+        if "filename" in request.url:
+            print(request.url)
+            save_download_link(request.url, breadcrumb)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+
+    # global mp4_url
+
+    # if ".mp4" in request.url.lower():
+    #     mp4_url = request.url
+
+
 def download_samples(context, page):
     page.wait_for_load_state(
         "domcontentloaded",
@@ -640,23 +662,57 @@ def download_samples(context, page):
 
     count = download_links.count()
 
+    items = page.locator("ol.breadcrumb li")
+    breadcrumb = [
+        items.nth(i).inner_text().strip()
+        for i in range(items.count())
+    ]
+
+    page.on(
+        "request",
+        lambda request: capture(request, breadcrumb)
+    )
+
     for i in range(count):
-        with page.expect_download() as d:
+        mp4_url = None
+
+        with page.expect_download():
             download_links.nth(i).click(timeout=300000)
 
-        download = d.value
+        page.wait_for_timeout(1000)
 
-        download.save_as(
-            rf"C:\Downloads\{download.suggested_filename}"
-        )
+        if mp4_url:
+            save_download_link(page, mp4_url)
 
-    # for i in range(count):
-    #     try:
-    #         download_links.nth(i).click(timeout=300000)
-    #         time.sleep(3)   # give download time to start
-    #     except Exception as e:
-    #         print(e)
+    page.remove_listener("request", capture)
 
+    time.sleep(10)
+    page.close()
+
+
+
+def save_download_link(url, breadcrumb):
+    FILE = "links.json"
+
+    data = []
+
+    if os.path.exists(FILE):
+        try:
+            with open(FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            if not isinstance(data, list):
+                data = []
+        except:
+            data = []
+
+    data.append({
+        "breadcrumb": breadcrumb,
+        "url": url
+    })
+
+    with open(FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
 
 
 try:
