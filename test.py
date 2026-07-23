@@ -122,22 +122,58 @@ def click_all_in_new_tabs(context, page):
             tab.close()
 
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
+# with sync_playwright() as p:
+#     browser = p.chromium.launch(headless=False)
 
-    context = browser.new_context(storage_state="state.json")
-    context.set_default_timeout(300000)
-    context.set_default_navigation_timeout(300000)
+#     context = browser.new_context(storage_state="state.json")
+#     context.set_default_timeout(300000)
+#     context.set_default_navigation_timeout(300000)
+
+#     page = context.new_page()
+
+#     page.goto(
+#         "https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=qMOha6AJQxDZq9uPUx0xUQ%3d%3d&OriginatedFromUserLearningActivityID=ckFyCLAsgnfVymqDAzEatA%3d%3d",
+#         wait_until="domcontentloaded",
+#         timeout=300000
+#     )
+
+#     click_all_in_new_tabs(context, page)
+
+#     input("Press Enter to close...")
+#     browser.close()
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(
+        headless=False
+    )
+
+    context = browser.new_context(
+        storage_state="state.json",
+        accept_downloads=True
+    )
 
     page = context.new_page()
 
-    page.goto(
-        "https://learning.aad.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=qMOha6AJQxDZq9uPUx0xUQ%3d%3d&OriginatedFromUserLearningActivityID=ckFyCLAsgnfVymqDAzEatA%3d%3d",
-        wait_until="domcontentloaded",
-        timeout=300000
+    client = context.new_cdp_session(page)
+
+    client.send(
+        "Browser.setDownloadBehavior",
+        {
+            "behavior": "allow",
+            "downloadPath": r"C:\Downloads"
+        }
     )
 
-    click_all_in_new_tabs(context, page)
+    download_path = r"C:\Downloads"
+    os.makedirs(download_path, exist_ok=True)
 
-    input("Press Enter to close...")
+    print("Download folder:", download_path)
+
+    page.goto(
+        "https://example.com",
+        wait_until="domcontentloaded"
+    )
+
+    input("Press ENTER to exit...")
+
     browser.close()

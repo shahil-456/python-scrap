@@ -708,7 +708,8 @@ def save_download_link(url, breadcrumb):
 
     data.append({
         "breadcrumb": breadcrumb,
-        "url": url
+        "url": url,
+        "saved":False
     })
 
     with open(FILE, "w", encoding="utf-8") as f:
