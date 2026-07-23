@@ -11,7 +11,7 @@ def clean_name(name):
 
 
 def download_video(url, folder):
-    r = requests.get(url, stream=True, timeout=1000)
+    r = requests.get(url, stream=True, timeout=5000)
     r.raise_for_status()
 
     filename = url.split("filename=")[1].split("&")[0].replace("+", " ")
@@ -54,7 +54,7 @@ for item in links:
         with open("links.json", "w", encoding="utf-8") as f:
             json.dump(links, f, indent=2)
 
-        time.sleep(10)
+        time.sleep(3)
 
     except Exception as e:
         print("Error:", e)
