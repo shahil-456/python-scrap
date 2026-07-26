@@ -412,6 +412,7 @@ def process_links(context):
         wait_until="domcontentloaded",
         timeout=300000
     )
+    rows = page.locator(".factor360MultiLevelChildLearningActivityLayout")
 
     page.locator("a.learningActivityTitleLinkButton").first.click()
     page.wait_for_load_state("domcontentloaded")
@@ -420,10 +421,25 @@ def process_links(context):
         "div.factor360MultiLevelChildLearningActivityLayout_childAccessButton a"
     )
 
-    count = access_links.count()
+    # count = access_links.count()
+
+    rows = page.locator(".factor360MultiLevelChildLearningActivityLayout")
+
+    count = rows.count()
 
     for i in range(count):
-        href = access_links.nth(i).get_attribute("href")
+
+        title = rows.nth(i).locator(
+            "a.learningActivityTitleForMultiLevelDisplay"
+        ).inner_text().strip()
+
+        if title != "Focus Session":
+            continue
+
+        href = rows.nth(i).locator(
+            "div.factor360MultiLevelChildLearningActivityLayout_childAccessButton a"
+        ).get_attribute("href")
+
         if not href:
             continue
 
@@ -435,14 +451,16 @@ def process_links(context):
                 wait_until="domcontentloaded",
                 timeout=300000
             )
+
             click_all_in_new_tabs(context, tab)
-            # continue your remaining code...
 
         finally:
             pass
 
 
 # page.on("request", capture)
+
+
 
 def click_all_in_new_tabs(context, page):
     TRACK_FILE = "clicked.json"
@@ -529,8 +547,8 @@ def click_all_in_new_tabs(context, page):
             item["saved"] = True
             db[current_url] = items
 
-            with open(TRACK_FILE, "w", encoding="utf-8") as f:
-                json.dump(db, f, indent=2)   
+            # with open(TRACK_FILE, "w", encoding="utf-8") as f:
+            #     json.dump(db, f, indent=2)   
 
             # Click title
             working_page.get_by_role(
@@ -553,8 +571,12 @@ def click_all_in_new_tabs(context, page):
             # YOUR CODE
             # -----------------------
             # theater_down(working_page)
+            with open(TRACK_FILE, "w", encoding="utf-8") as f:
+                json.dump(db, f, indent=2)
+
             download_samples(context, working_page)
             time.sleep(3)
+
             # -----------------------
             # Mark completed
             # -----------------------
@@ -614,6 +636,22 @@ def click_all_in_new_tabs(context, page):
         working_page.close()
     except:
         pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -742,7 +780,8 @@ try:
         context.set_default_navigation_timeout(300000)
 
         login(context)
-        process_links(context)
+        time.sleep(15)
+        # process_links(context)
 
         context.close()
 
