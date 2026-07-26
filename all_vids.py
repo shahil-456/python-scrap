@@ -34,27 +34,48 @@ def download_video(url, folder):
 with open("links.json", "r", encoding="utf-8") as f:
     links = json.load(f)
 
-for item in links:
+total = len(links)
+downloaded = 0
+errors = 0
 
-    if item.get("saved", False):
-        continue
+with open("errors.txt", "a", encoding="utf-8") as err_file:
 
-    try:
-        folder = os.path.join(
-            *[clean_name(x) for x in item["breadcrumb"]]
-        )
+    for index, item in enumerate(links, start=1):
 
-        download_video(
-            item["url"],
-            folder
-        )
+        if item.get("saved", False):
+            continue
 
-        item["saved"] = True
+        print(f"[{index}/{total}] Downloading...")
 
-        with open("links.json", "w", encoding="utf-8") as f:
-            json.dump(links, f, indent=2)
+        try:
+            folder = os.path.join(
+                *[clean_name(x) for x in item["breadcrumb"]]
+            )
 
-        time.sleep(2)
+            download_video(
+                item["url"],
+                folder
+            )
 
-    except Exception as e:
-        print("Error:", e)
+            item["saved"] = True
+            downloaded += 1
+
+            with open("links.json", "w", encoding="utf-8") as f:
+                json.dump(links, f, indent=2)
+
+            print(f"Downloaded: {downloaded}")
+
+            time.sleep(2)
+
+        except Exception as e:
+            errors += 1
+
+            print(f"Error: {e}")
+
+            err_file.write(
+                f"{item['url']}\n{e}\n\n"
+            )
+
+print(f"\nCompleted")
+print(f"Downloaded: {downloaded}")
+print(f"Errors: {errors}")
