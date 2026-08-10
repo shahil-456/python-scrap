@@ -58,27 +58,27 @@ def handle_request(request):
 
         print(current_name)
 
-        with open(save_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
+        # with open(save_file, "r", encoding="utf-8") as f:
+        #     data = json.load(f)
 
-            site = next(
-                s for s in data["sites"]
-                if s["key_name"] == key_name
-            )
+        #     site = next(
+        #         s for s in data["sites"]
+        #         if s["key_name"] == key_name
+        #     )
 
-            video = next(
-                (v for v in site["videos"] if v["name"] == current_name),
-                None
-            )
+        #     video = next(
+        #         (v for v in site["videos"] if v["name"] == current_name),
+        #         None
+        #     )
 
-            if video:
-                video["link"] = mp4_url
-                # video["saved"] = True
+        #     if video:
+        #         video["link"] = mp4_url
+        #         # video["saved"] = True
 
-            with open(save_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4, ensure_ascii=False)
+        #     with open(save_file, "w", encoding="utf-8") as f:
+        #         json.dump(data, f, indent=4, ensure_ascii=False)
 
-            print("Saved:", video["name"])
+        #     print("Saved:", video["name"])
 
     if ".pdf" in request.url:
         # print("MP4 REQUEST:", request.url)
@@ -203,16 +203,20 @@ def process_videos(page):
         print('for')
 
         try:
+            print(f"[{i}] thumbnail locator")
+
             thumbnail = page.locator(
-            "a.customActivityAssetLinkButton"
+                "a.customActivityAssetLinkButton"
             ).nth(i)
 
-            time.sleep(1)
+            print(f"[{i}] thumbnail OK")
 
+            time.sleep(1)
             name = page.locator(
                 "span[id*='lblAssetWithFileActivityName']"
             ).nth(i).inner_text().strip()
 
+            
             if name in name_array:
                 continue
 
@@ -220,26 +224,43 @@ def process_videos(page):
 
             print(current_name)
 
-            # if()
+
+
+            print(f"[{i}] name locator")
+
+
+
+            print(f"[{i}] name OK: {name}")
+
+            current_name = name
+            print(f"[{i}] clicking thumbnail")
 
             thumbnail.click()
 
-            page.wait_for_timeout(4000)
-            time.sleep(3)
+            print(f"[{i}] thumbnail clicked")
 
+            page.wait_for_timeout(3000)
+            time.sleep(2)
 
-            # Close video
+            print(f"[{i}] close button locator")
+
             close_button = page.locator(
                 "a.fancybox-close[title='Close']"
             )
 
+            print(f"[{i}] checking close button")
+
             if close_button.is_visible():
+                print(f"[{i}] close button visible, clicking")
                 close_button.click()
-        
-            print("Saved:", name)
+                print(f"[{i}] close button clicked")
+            else:
+                print(f"[{i}] close button not visible")
+
+            print(f"[{i}] Saved: {name}")
 
         except Exception as e:
-            print(f"Skipped PDF {i}: {e}")
+            print(f"[{i}] ERROR: {type(e).__name__}: {e}")
             continue
 
 
