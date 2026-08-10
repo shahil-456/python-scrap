@@ -11,13 +11,6 @@ def clean_name(name):
 
 
 
-
-
-
-
-
-
-
 def download_file(url, folder, filename, extension):
     r = requests.get(url, stream=True, timeout=3000)
     r.raise_for_status()
@@ -78,9 +71,9 @@ with open("errors.txt", "a", encoding="utf-8") as err_file:
                 errors += 1
                 print("Error:", e)
 
-                err_file.write(
-                    f"{video['link']}\n{e}\n\n"
-                )
+                # err_file.write(
+                #     f"{video['link']}\n{e}\n\n"
+                # )
 
         for pdf in site.get("pdfs", []):
 
@@ -112,9 +105,9 @@ with open("errors.txt", "a", encoding="utf-8") as err_file:
                 errors += 1
                 print("Error:", e)
 
-                err_file.write(
-                    f"{pdf['link']}\n{e}\n\n"
-                )
+                # err_file.write(
+                #     f"{pdf['link']}\n{e}\n\n"
+                # )
 
 print(f"\nCompleted")
 print(f"Downloaded: {downloaded}")
