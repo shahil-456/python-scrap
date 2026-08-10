@@ -5,26 +5,56 @@ import os
 
 mp4_url = None
 
-save_file = "saves.json"
+save_file = "full.json"
 
 main_url = "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=4f%2fOexzNsorKAF1lCFotvA%3d%3d"
 
 
 url = None
 
+key_name = None
+
 pdf_url = None
 current_name=None
+
+
+def save_video_if_not_found(key_name, name):
+    with open("full.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    for site in data["sites"]:
+        if site["key_name"] == key_name:
+            for video in site.get("videos", []):
+                if video["name"] == name:
+                    return
+
+            site["videos"].append({
+                "name": name,
+                "saved": False
+            })
+
+            with open("full.json", "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+            return
+
+
+
+
+
 
 
 def handle_request(request):
     global mp4_url
     global pdf_url
 
+    print('three')
+
     if ".mp4" in request.url:
         # print("MP4 REQUEST:", request.url)
         mp4_url = request.url
 
-        print('2')
+        print('22222222')
 
         print(current_name)
 
@@ -33,7 +63,7 @@ def handle_request(request):
 
             site = next(
                 s for s in data["sites"]
-                if s["url"] == url
+                if s["key_name"] == key_name
             )
 
             video = next(
@@ -63,7 +93,7 @@ def handle_request(request):
 
             site = next(
                 s for s in data["sites"]
-                if s["url"] == url
+                if s["key_name"] == key_name
             )
 
             pdf = next(
@@ -81,65 +111,96 @@ def handle_request(request):
             print("Saved:", pdf["name"])
 
 
+
 def process_videos(page):
     global current_name
-    time.sleep(2)
+    global key_name
+
+    time.sleep(1)
 
     # with sync_playwright() as p:
-        
+    with open("full.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    count_saved_vids = 0
+    name_array=[]
+
+    for site in data["sites"]:
+        if site["key_name"] == key_name:
+            count_saved_vids = len(site.get("videos", []))
+            name_array = [video["name"] for video in site.get("videos", [])]
+            break
+
+
+    print(count_saved_vids)
+
         # Get all video names
     names = page.locator(
         "span[id*='lblAssetWithFileActivityName']"
     ).all_inner_texts()
 
+    count_vids = len(names)
+
+    print('key')
+    print(key_name)
+
+    if count_saved_vids >= count_vids:
+        return
+
+    #------------------------
+
+    for name1 in names:
+        save_video_if_not_found(key_name, name1)
+
     # Load saves.json
-    if os.path.exists(save_file):
-        with open(save_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    else:
-        data = {"sites": []}
+    # if os.path.exists(save_file):
+    #     with open(save_file, "r", encoding="utf-8") as f:
+    #         data = json.load(f)
+    # else:
+    #     data = {"sites": []}
 
-    # Find current URL
-    site = next(
-        (s for s in data["sites"] if s["url"] == url),
-        None
-    )
+    # # Find current URL
+    # site = next(
+    #     (s for s in data["sites"] if s["url"] == url),
+    #     None
+    # )
 
-    # Add URL if it doesn't exist
-    if site is None:
-        site = {
-            "url": url,
-            "videos": []
-        }
-        data["sites"].append(site)
+    # # Add URL if it doesn't exist
+    # if site is None:
+    #     site = {
+    #         "url": url,
+    #         "videos": []
+    #     }
+    #     data["sites"].append(site)
 
-    # Add missing video names
-    existing_names = {v["name"] for v in site["videos"]}
+    # # Add missing video names
+    # existing_names = {v["name"] for v in site["videos"]}
 
-    for name in names:
-        name = name.strip()
+    # for name in names:
+    #     name = name.strip()
 
-        if name not in existing_names:
-            site["videos"].append({
-                "name": name,
-                "saved": False
-            })
+    #     if name not in existing_names:
+    #         site["videos"].append({
+    #             "name": name,
+    #             "saved": False
+    #         })
 
-    # Save immediately
-    with open(save_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    # # Save immediately
+    # with open(save_file, "w", encoding="utf-8") as f:
+    #     json.dump(data, f, indent=4, ensure_ascii=False)
 
     # Get count
     count = page.locator(
         "a.customActivityAssetLinkButton"
     ).count()
 
-    # print(count)
+    print('two')
 
     time.sleep(1)
     page.on("request", handle_request)
 
     for i in range(count):
+        print('for')
 
         try:
             thumbnail = page.locator(
@@ -152,18 +213,20 @@ def process_videos(page):
                 "span[id*='lblAssetWithFileActivityName']"
             ).nth(i).inner_text().strip()
 
+            if name in name_array:
+                continue
+
             current_name=name
 
             print(current_name)
 
+            # if()
+
             thumbnail.click()
 
-            page.wait_for_timeout(3000)
-            time.sleep(1)
+            page.wait_for_timeout(4000)
+            time.sleep(3)
 
-            
-            # Wait 2 seconds
-            page.wait_for_timeout(3000)
 
             # Close video
             close_button = page.locator(
@@ -172,17 +235,12 @@ def process_videos(page):
 
             if close_button.is_visible():
                 close_button.click()
-
         
             print("Saved:", name)
-
 
         except Exception as e:
             print(f"Skipped PDF {i}: {e}")
             continue
-
-        
-    # browser.close()
 
 
 
@@ -210,7 +268,7 @@ def process_pdfs(page):
     # Add URL if it doesn't exist
     if site is None:
         site = {
-            "url": url,
+            "key_name": key_name,
             "pdfs": []
         }
         data["sites"].append(site)
@@ -330,12 +388,18 @@ with sync_playwright() as p:
 
         url=new_page.url
 
+        key_name = new_page.locator(
+            "#MainContent_MainContent_MainContent_ucUserLearningActivityDashboardForLearner_lblLearningActivityDisplayName"
+        ).inner_text()
+
+        print(key_name)
+
         process_videos(new_page)
 
         time.sleep(3)
 
-        process_pdfs(new_page)
+        # process_pdfs(new_page)
 
-        new_page.close()
+        # new_page.close()
 
         print(new_page.url)
