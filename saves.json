@@ -1,0 +1,144 @@
+{
+    "sites": [
+        {
+            "url": "23.com",
+            "videos": []
+        },
+        {
+            "url": "25.com",
+            "videos": []
+        },
+        {
+            "url": "https://learningcenter.hfsa.org/Users/UserOnlineCourse.aspx?LearningActivityID=CLKJHoFCQkyulSSh%2bmd58A%3d%3d&ParentBundleID=4f%2fOexzNsorKAF1lCFotvA%3d%3d",
+            "pdfs": [
+                {
+                    "name": "Hemodynamics in HF Live - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/5e321ea1-bd08-40ce-8dd3-f7234dc0f8a7.pdf"
+                },
+                {
+                    "name": "Optimal Medical Therapy for HFrEF - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/6786fb1f-676c-4c62-8490-049fb71fecf8.pdf"
+                },
+                {
+                    "name": "Cardio Renal Failure Interactions in Heart Failure - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/2249c374-7c35-45ff-9f40-ce096f975bde.pdf"
+                },
+                {
+                    "name": "Assessment of Functional Capacity Including CPET in HF - Slide Deck",
+                    "saved": false
+                },
+                {
+                    "name": "HFpEF: Epidemiology, Risk Factors, Diagnosis, Management (For the Boards) - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/333851a5-69a4-4566-a40e-d274b13ff146.pdf"
+                },
+                {
+                    "name": "Management of Comorbidities in Heart Failure: Iron Deficiency/Anemia - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/1d4c157f-2bd7-4f8a-b267-57d77da10a51.pdf"
+                },
+                {
+                    "name": "Specific Etiologies of HF 1: HCM",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/57413ebd-8078-460f-9109-c29a04a0f099.pdf"
+                },
+                {
+                    "name": "Specific Etiologies of HF 2: Other Inherited HF Syndromes - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/7ae405be-14c8-424e-abb9-ab003aa5e2f1.pdf"
+                },
+                {
+                    "name": "Specific Etiologies of HF 3: Infiltrative Disorders and Restrictive CMP - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/81e14bec-8153-499a-ac6e-ed044bfede53.pdf"
+                },
+                {
+                    "name": "Specific Etiologies of HF 4: Myocarditis and Inflammatory Cardiomyopathies - Slide Deck",
+                    "saved": false
+                },
+                {
+                    "name": "Management of Hospitalized HF - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/54be15e1-573b-4517-b449-18a5c3519eda.pdf"
+                },
+                {
+                    "name": "Management of Left Sided Valvular Heart Disease in Heart Failure - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/5ec892f4-8834-4741-947c-e3aa2a62a64e.pdf"
+                },
+                {
+                    "name": "Management of Common Arrhythmias 1&2 - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/c99a4b90-b4a6-45c1-aa57-80d8e38c131f.pdf"
+                },
+                {
+                    "name": "Adult Congenital Heart Disease for the HF Specialist - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/38686fed-6839-4850-945c-9a105f4ec964.pdf"
+                },
+                {
+                    "name": "Heart Failure in Pregnancy - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/49ea87fc-7901-40cf-b467-d596b4d2a0fe.pdf"
+                },
+                {
+                    "name": "Immunology: The Basics, PRA, Sensitization, Crossmatch - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/f2ed2b09-1052-4b09-958d-00de125d1dcf.pdf"
+                },
+                {
+                    "name": "Rejection: Cellular and Antibody Mediated - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/cf520080-ba5d-42bb-801a-66d6385cad7a.pdf"
+                },
+                {
+                    "name": "Heart Transplant, Clinical Outcomes and Complications - Slide Deck",
+                    "saved": false
+                },
+                {
+                    "name": "Managing Immunosuppression and Drugs - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/c14733d5-90e9-4877-89c1-29a198d2ec84.pdf"
+                },
+                {
+                    "name": "Advanced Therapies - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/e308e3ad-0d06-4b10-a5c8-e49be5ae4704.pdf"
+                },
+                {
+                    "name": "Cardiogenic Shock Management - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/0a1f4a4e-4f25-4abd-9855-c1bcce08c0cc.pdf"
+                },
+                {
+                    "name": "Device Therapy in Heart Failure I - Sudden Death Prevention - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/942b1a72-5963-462a-90bc-8d24eb533424.pdf"
+                },
+                {
+                    "name": "Device Therapy in Heart Failure II - CRT - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/e42ac40f-0d5e-4d0f-b651-c017b7c0a488.pdf"
+                },
+                {
+                    "name": "SAT-024 - MCS 1: Durable MCS Devices and Outcomes - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/ee02f57e-6223-427b-ab61-debb42abefff.pdf"
+                },
+                {
+                    "name": "MCS 2: Temporary Support Devices and ECMO for the Boards - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/750ac992-ea9c-483c-8837-b7375b369221.pdf"
+                },
+                {
+                    "name": "MCS 3: Management of Complications of MCS - Slide Deck",
+                    "saved": true,
+                    "pdf": "https://dkxi8lp3rdmhs.cloudfront.net/HFSA/pdf/dae2544f-39aa-4ca6-bdd3-8f77084153e0.pdf"
+                }
+            ]
+        }
+    ]
+}
