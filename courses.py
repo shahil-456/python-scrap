@@ -60,19 +60,19 @@ with open("errors.txt", "a", encoding="utf-8") as err_file:
                     clean_name(video["name"])
                 )
 
-                # download_file(
-                #     video["link"],
-                #     folder,
-                #     video["name"],
-                #     ".mp4"
-                # )
+                download_file(
+                    video["link"],
+                    folder,
+                    video["name"],
+                    ".mp4"
+                )
 
                 video["saved"] = True
 
                 with open("full.json", "w", encoding="utf-8") as f:
                     json.dump(data, f, indent=2, ensure_ascii=False)
 
-                time.sleep(5)
+                time.sleep(2)
 
             except Exception as e:
                 errors += 1
