@@ -431,7 +431,7 @@ with sync_playwright() as p:
 
         print(key_name)
 
-        # process_videos(new_page)
+        process_videos(new_page)
 
         time.sleep(2.5)
 
