@@ -38,7 +38,25 @@ def save_video_if_not_found(key_name, name):
 
             return
 
+def save_pdf_if_not_found(key_name, name):
+    with open("full.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
 
+    for site in data["sites"]:
+        if site["key_name"] == key_name:
+            for pdf in site.get("pdfs", []):
+                if pdf["name"] == name:
+                    return
+
+            site["pdfs"].append({
+                "name": name,
+                "saved": False
+            })
+
+            with open("full.json", "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+            return
 
 
 
@@ -48,53 +66,52 @@ def handle_request(request):
     global mp4_url
     global pdf_url
 
-    print('three')
+    # print('three')
 
     if ".mp4" in request.url:
         # print("MP4 REQUEST:", request.url)
         mp4_url = request.url
 
-        print('22222222')
+        with open(save_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-        print(current_name)
+            site = next(
+                (s for s in data["sites"] if s["key_name"] == key_name),
+                None
+            )
 
-        # with open(save_file, "r", encoding="utf-8") as f:
-        #     data = json.load(f)
+            if site is None:
+                return
 
-        #     site = next(
-        #         s for s in data["sites"]
-        #         if s["key_name"] == key_name
-        #     )
+            video = next(
+                (v for v in site["videos"] if v["name"] == current_name),
+                None
+            )
 
-        #     video = next(
-        #         (v for v in site["videos"] if v["name"] == current_name),
-        #         None
-        #     )
+            if video:
+                video["link"] = mp4_url
+                # video["saved"] = True
 
-        #     if video:
-        #         video["link"] = mp4_url
-        #         # video["saved"] = True
+            with open(save_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
 
-        #     with open(save_file, "w", encoding="utf-8") as f:
-        #         json.dump(data, f, indent=4, ensure_ascii=False)
-
-        #     print("Saved:", video["name"])
+            if video:
+                print("Saved:", video["name"])
 
     if ".pdf" in request.url:
-        # print("MP4 REQUEST:", request.url)
+        
         pdf_url = request.url
-
-        print('2')
-
-        print(current_name)
 
         with open(save_file, "r", encoding="utf-8") as f:
             data = json.load(f)
 
             site = next(
-                s for s in data["sites"]
-                if s["key_name"] == key_name
+                (s for s in data["sites"] if s["key_name"] == key_name),
+                None
             )
+
+            if site is None:
+                return
 
             pdf = next(
                 (v for v in site["pdfs"] if v["name"] == current_name),
@@ -108,8 +125,8 @@ def handle_request(request):
             with open(save_file, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
 
-            print("Saved:", pdf["name"])
-
+            if pdf:
+                print("Saved:", pdf["name"])
 
 
 def process_videos(page):
@@ -127,8 +144,14 @@ def process_videos(page):
 
     for site in data["sites"]:
         if site["key_name"] == key_name:
-            count_saved_vids = len(site.get("videos", []))
-            name_array = [video["name"] for video in site.get("videos", [])]
+            videos = [
+                video for video in site.get("videos", [])
+                if video.get("link")
+            ]
+
+            count_saved_vids = len(videos)
+            name_array = [video["name"] for video in videos]
+
             break
 
 
@@ -141,10 +164,13 @@ def process_videos(page):
 
     count_vids = len(names)
 
-    print('key')
-    print(key_name)
+    # print('key')
+    # print(key_name)
+
+    print(count_vids)
 
     if count_saved_vids >= count_vids:
+        print('skipedd')
         return
 
     #------------------------
@@ -152,108 +178,70 @@ def process_videos(page):
     for name1 in names:
         save_video_if_not_found(key_name, name1)
 
-    # Load saves.json
-    # if os.path.exists(save_file):
-    #     with open(save_file, "r", encoding="utf-8") as f:
-    #         data = json.load(f)
-    # else:
-    #     data = {"sites": []}
-
-    # # Find current URL
-    # site = next(
-    #     (s for s in data["sites"] if s["url"] == url),
-    #     None
-    # )
-
-    # # Add URL if it doesn't exist
-    # if site is None:
-    #     site = {
-    #         "url": url,
-    #         "videos": []
-    #     }
-    #     data["sites"].append(site)
-
-    # # Add missing video names
-    # existing_names = {v["name"] for v in site["videos"]}
-
-    # for name in names:
-    #     name = name.strip()
-
-    #     if name not in existing_names:
-    #         site["videos"].append({
-    #             "name": name,
-    #             "saved": False
-    #         })
-
-    # # Save immediately
-    # with open(save_file, "w", encoding="utf-8") as f:
-    #     json.dump(data, f, indent=4, ensure_ascii=False)
-
+   
     # Get count
     count = page.locator(
         "a.customActivityAssetLinkButton"
     ).count()
 
-    print('two')
+    # print('two')
 
     time.sleep(1)
     page.on("request", handle_request)
 
+    print(name_array)
+
     for i in range(count):
-        print('for')
+        # print('for')
 
         try:
-            print(f"[{i}] thumbnail locator")
-
+            # print(f"[{i}] thumbnail locator")
+            print('in')
             thumbnail = page.locator(
                 "a.customActivityAssetLinkButton"
             ).nth(i)
 
-            print(f"[{i}] thumbnail OK")
+            # print(f"[{i}] thumbnail OK")
 
             time.sleep(1)
             name = page.locator(
                 "span[id*='lblAssetWithFileActivityName']"
             ).nth(i).inner_text().strip()
 
-            
+
             if name in name_array:
+                print('skip-------')
                 continue
 
             current_name=name
 
             print(current_name)
 
-
-
-            print(f"[{i}] name locator")
-
-
-
-            print(f"[{i}] name OK: {name}")
+            # print(f"[{i}] name locator")
+            # print(f"[{i}] name OK: {name}")
 
             current_name = name
-            print(f"[{i}] clicking thumbnail")
+            # print(f"[{i}] clicking thumbnail")
 
             thumbnail.click()
 
-            print(f"[{i}] thumbnail clicked")
+            # print(f"[{i}] thumbnail clicked")
 
             page.wait_for_timeout(3000)
             time.sleep(2)
 
-            print(f"[{i}] close button locator")
+            # print(f"[{i}] close button locator")
 
             close_button = page.locator(
                 "a.fancybox-close[title='Close']"
             )
 
-            print(f"[{i}] checking close button")
+            # print(f"[{i}] checking close button")
 
             if close_button.is_visible():
-                print(f"[{i}] close button visible, clicking")
+                # print(f"[{i}] close button visible, clicking")
                 close_button.click()
-                print(f"[{i}] close button clicked")
+                # print(f"[{i}] close button clicked")
             else:
                 print(f"[{i}] close button not visible")
 
@@ -267,100 +255,125 @@ def process_videos(page):
 
 def process_pdfs(page):
     global current_name
-    time.sleep(2)
+    global key_name
 
+    time.sleep(1)
+
+    # with sync_playwright() as p:
+    with open("full.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    count_saved_pdfs = 0
+    name_array=[]
+
+    for site in data["sites"]:
+        if site["key_name"] == key_name:
+            pdfs = [
+                pdf for pdf in site.get("pdfs", [])
+                if pdf.get("link")
+            ]
+
+            count_saved_pdf = len(pdfs)
+            name_array = [pdf["name"] for pdf in pdfs]
+
+            break
+
+
+    print(count_saved_pdfs)
+
+        # Get all video names
     names = page.locator(
-        "span[id*='spanSingleLearningActivityAsset']"
+        "span[id*='lblAssetWithFileActivityName']"
     ).all_inner_texts()
 
-    # Load saves.json
-    if os.path.exists(save_file):
-        with open(save_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    else:
-        data = {"sites": []}
+    count_pdfs = len(names)
 
-    # Find current URL
-    site = next(
-        (s for s in data["sites"] if s["url"] == url),
-        None
-    )
+    # print('key')
+    # print(key_name)
 
-    # Add URL if it doesn't exist
-    if site is None:
-        site = {
-            "key_name": key_name,
-            "pdfs": []
-        }
-        data["sites"].append(site)
+    print(count_pdfs)
 
-    # Add missing pdf names
-    existing_names = {v["name"] for v in site["pdfs"]}
+    if count_saved_pdfs >= count_pdfs:
+        print('skipedd')
+        return
 
-    for name in names:
-        name = name.strip()
+    #------------------------
 
-        if name not in existing_names:
-            site["pdfs"].append({
-                "name": name,
-                "saved": False
-            })
+    for name1 in names:
+        save_pdf_if_not_found(key_name, name1)
 
-    # Save immediately
-    with open(save_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
-
+   
     # Get count
     count = page.locator(
-        "a.factor360NoDecorationHyperlink"
+        "a.customActivityAssetLinkButton"
     ).count()
 
-    # print(count)
+    # print('two')
 
     time.sleep(1)
     page.on("request", handle_request)
 
+    print(name_array)
 
     for i in range(count):
+        # print('for')
 
         try:
-            
+            # print(f"[{i}] thumbnail locator")
+            print('in')
             thumbnail = page.locator(
-                "a.factor360NoDecorationHyperlink"
+                "a.customActivityAssetLinkButton"
             ).nth(i)
 
-            time.sleep(1)
+            # print(f"[{i}] thumbnail OK")
 
+            time.sleep(1)
             name = page.locator(
-                "span[id*='spanSingleLearningActivityAsset']"
+                "span[id*='lblAssetWithFileActivityName']"
             ).nth(i).inner_text().strip()
+
+
+            if name in name_array:
+                print('skip-------')
+                continue
 
             current_name=name
 
             print(current_name)
 
+            # print(f"[{i}] name locator")
+            # print(f"[{i}] name OK: {name}")
+
+            current_name = name
+            # print(f"[{i}] clicking thumbnail")
+
             thumbnail.click()
 
-            page.wait_for_timeout(3000)
-            time.sleep(1)
+            # print(f"[{i}] thumbnail clicked")
 
-            # Wait 2 seconds
             page.wait_for_timeout(3000)
+            time.sleep(2)
 
-            # Close pdf
+            # print(f"[{i}] close button locator")
+
             close_button = page.locator(
                 "a.fancybox-close[title='Close']"
             )
 
-            if close_button.is_visible():
-                close_button.click()
+            # print(f"[{i}] checking close button")
 
-        
-            print("Saved:", name)
+            if close_button.is_visible():
+                # print(f"[{i}] close button visible, clicking")
+                close_button.click()
+                # print(f"[{i}] close button clicked")
+            else:
+                print(f"[{i}] close button not visible")
+
+            print(f"[{i}] Saved: {name}")
 
         except Exception as e:
-            print(f"Skipped PDF {i}: {e}")
-            continue            
+            print(f"[{i}] ERROR: {type(e).__name__}: {e}")
+            continue
 
 
 
