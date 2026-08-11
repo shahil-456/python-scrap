@@ -265,7 +265,8 @@ def process_pdfs(page):
 
     count_saved_pdfs = 0
     name_array=[]
-
+    print('-----')
+    print(key_name)
     for site in data["sites"]:
         if site["key_name"] == key_name:
             pdfs = [
@@ -273,7 +274,7 @@ def process_pdfs(page):
                 if pdf.get("link")
             ]
 
-            count_saved_pdf = len(pdfs)
+            count_saved_pdfs = len(pdfs)
             name_array = [pdf["name"] for pdf in pdfs]
 
             break
@@ -281,9 +282,11 @@ def process_pdfs(page):
 
     print(count_saved_pdfs)
 
+    # time.sleep(22)   
+
         # Get all video names
     names = page.locator(
-        "span[id*='lblAssetWithFileActivityName']"
+        "span[id*='spanSingleLearningActivityAsset']"
     ).all_inner_texts()
 
     count_pdfs = len(names)
@@ -305,7 +308,7 @@ def process_pdfs(page):
    
     # Get count
     count = page.locator(
-        "a.customActivityAssetLinkButton"
+        "a.factor360NoDecorationHyperlink"
     ).count()
 
     # print('two')
@@ -322,14 +325,14 @@ def process_pdfs(page):
             # print(f"[{i}] thumbnail locator")
             print('in')
             thumbnail = page.locator(
-                "a.customActivityAssetLinkButton"
+                "a.factor360NoDecorationHyperlink"
             ).nth(i)
 
             # print(f"[{i}] thumbnail OK")
 
             time.sleep(1)
             name = page.locator(
-                "span[id*='lblAssetWithFileActivityName']"
+                "span[id*='spanSingleLearningActivityAsset']"
             ).nth(i).inner_text().strip()
 
 
@@ -428,11 +431,11 @@ with sync_playwright() as p:
 
         print(key_name)
 
-        process_videos(new_page)
+        # process_videos(new_page)
 
-        time.sleep(3)
+        time.sleep(2.5)
 
-        # process_pdfs(new_page)
+        process_pdfs(new_page)
 
         # new_page.close()
 
