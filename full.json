@@ -8,6 +8,8 @@
         {
             "url": "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=hWBfF0h8FfilW%2fkGSfJqIw%3d%3d",
             "location":"2026-AHFTC-Board-Review-OnDemand-Presentations",
+            "key_name": "2026 AHFTC Board Review OnDemand Presentations",
+
             "videos": [
                 {
                     "name": "Cardio-Oncology for the HF Boards",
@@ -168,7 +170,8 @@
 
           {
             "url": "https://learningcenter.hfsa.org/Users/UserOnlineCourse.aspx?LearningActivityID=CLKJHoFCQkyulSSh%2bmd58A%3d%3d&ParentBundleID=4f%2fOexzNsorKAF1lCFotvA%3d%3d",
-                        "location":"2026-AHFTCBoard-Certification-Live-Presentations",
+            "location":"2026-AHFTCBoard-Certification-Live-Presentations",
+            "key_name": "2026 AHFTC Board Certification Live Presentations",
 
             "videos": [
                 {

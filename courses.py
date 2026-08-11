@@ -10,7 +10,6 @@ def clean_name(name):
     return name.strip(" .")
 
 
-
 def download_file(url, folder, filename, extension):
     r = requests.get(url, stream=True, timeout=3000)
     r.raise_for_status()
