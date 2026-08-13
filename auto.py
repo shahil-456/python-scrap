@@ -29,7 +29,7 @@ def save_video_if_not_found(key_name, name):
                     return
 
             site["videos"].append({
-                "name": name,
+                "name": name.strip(),
                 "saved": False
             })
 
@@ -49,7 +49,7 @@ def save_pdf_if_not_found(key_name, name):
                     return
 
             site["pdfs"].append({
-                "name": name,
+                "name": name.strip(),
                 "saved": False
             })
 
@@ -322,13 +322,10 @@ def process_pdfs(page):
         # print('for')
 
         try:
-            # print(f"[{i}] thumbnail locator")
             print('in')
             thumbnail = page.locator(
                 "a.factor360NoDecorationHyperlink"
             ).nth(i)
-
-            # print(f"[{i}] thumbnail OK")
 
             time.sleep(1)
             name = page.locator(
@@ -344,15 +341,9 @@ def process_pdfs(page):
 
             print(current_name)
 
-            # print(f"[{i}] name locator")
-            # print(f"[{i}] name OK: {name}")
-
             current_name = name
-            # print(f"[{i}] clicking thumbnail")
 
             thumbnail.click()
-
-            # print(f"[{i}] thumbnail clicked")
 
             page.wait_for_timeout(3000)
             time.sleep(2)
@@ -362,8 +353,6 @@ def process_pdfs(page):
             close_button = page.locator(
                 "a.fancybox-close[title='Close']"
             )
-
-            # print(f"[{i}] checking close button")
 
             if close_button.is_visible():
                 # print(f"[{i}] close button visible, clicking")
@@ -431,7 +420,7 @@ with sync_playwright() as p:
 
         print(key_name)
 
-        process_videos(new_page)
+        # process_videos(new_page)
 
         time.sleep(2.5)
 
