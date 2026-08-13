@@ -478,6 +478,8 @@ def clean_name(name):
     name = re.sub(r'[<>:"/\\|?*]', "", name)
     return name.strip(" .")
 
+def clean_location(location):
+    return location.split("-", 1)[0].strip()
 
 def download_file(url, folder, filename, extension):
     r = requests.get(url, stream=True, timeout=3000)
@@ -540,9 +542,10 @@ def download_all(data):
                     continue
 
                 try:
+
                     folder = os.path.join(
                         "my courses",
-                        location,
+                        clean_location(location),
                         clean_name(pdf["name"])
                     )
 
