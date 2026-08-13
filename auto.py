@@ -2,6 +2,10 @@ from playwright.sync_api import sync_playwright
 import time
 import json
 import os
+import requests
+import re
+import time
+
 
 mp4_url = None
 
@@ -25,7 +29,7 @@ def save_video_if_not_found(key_name, name):
     for site in data["sites"]:
         if site["key_name"] == key_name:
             for video in site.get("videos", []):
-                if video["name"] == name:
+                if video["name"].strip() == name.strip():
                     return
 
             site["videos"].append({
@@ -45,7 +49,7 @@ def save_pdf_if_not_found(key_name, name):
     for site in data["sites"]:
         if site["key_name"] == key_name:
             for pdf in site.get("pdfs", []):
-                if pdf["name"] == name:
+                if pdf["name"].strip() == name.strip():
                     return
 
             site["pdfs"].append({
@@ -155,7 +159,6 @@ def process_videos(page):
             break
 
 
-    print(count_saved_vids)
 
         # Get all video names
     names = page.locator(
@@ -166,6 +169,7 @@ def process_videos(page):
 
     # print('key')
     # print(key_name)
+    print(count_saved_vids)
 
     print(count_vids)
 
@@ -196,7 +200,7 @@ def process_videos(page):
 
         try:
             # print(f"[{i}] thumbnail locator")
-            print('in')
+            # print('in')
             thumbnail = page.locator(
                 "a.customActivityAssetLinkButton"
             ).nth(i)
@@ -280,7 +284,6 @@ def process_pdfs(page):
             break
 
 
-    print(count_saved_pdfs)
 
     # time.sleep(22)   
 
@@ -292,7 +295,8 @@ def process_pdfs(page):
     count_pdfs = len(names)
 
     # print('key')
-    # print(key_name)
+    print(key_name)
+    print(count_saved_pdfs)
 
     print(count_pdfs)
 
@@ -319,6 +323,7 @@ def process_pdfs(page):
     print(name_array)
 
     for i in range(count):
+        # return
         # print('for')
 
         try:
@@ -366,7 +371,6 @@ def process_pdfs(page):
         except Exception as e:
             print(f"[{i}] ERROR: {type(e).__name__}: {e}")
             continue
-
 
 
 
@@ -420,7 +424,7 @@ with sync_playwright() as p:
 
         print(key_name)
 
-        # process_videos(new_page)
+        process_videos(new_page)
 
         time.sleep(2.5)
 
@@ -429,3 +433,156 @@ with sync_playwright() as p:
         # new_page.close()
 
         print(new_page.url)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def clean_name(name):
+    name = re.sub(r'[<>:"/\\|?*]', "", name)
+    return name.strip(" .")
+
+
+def download_file(url, folder, filename, extension):
+    r = requests.get(url, stream=True, timeout=3000)
+    r.raise_for_status()
+
+    os.makedirs(folder, exist_ok=True)
+
+    filepath = os.path.join(
+        folder,
+        clean_name(filename) + extension
+    )
+
+    with open(filepath, "wb") as f:
+        for chunk in r.iter_content(1024 * 1024):
+            if chunk:
+                f.write(chunk)
+
+    print("Saved:", filepath)
+
+def download_all(data):
+    errors = 0
+
+    with open("errors.txt", "a", encoding="utf-8") as err_file:
+
+        for site in data["sites"]:
+
+            location = clean_name(site["location"])
+
+            for video in site.get("videos", []):
+                if video.get("saved", False):
+                    continue
+
+                try:
+                    folder = os.path.join(
+                        "my courses",
+                        location,
+                        clean_name(video["name"])
+                    )
+
+                    download_file(
+                        video["link"],
+                        folder,
+                        video["name"],
+                        ".mp4"
+                    )
+
+                    video["saved"] = True
+
+                    with open("full.json", "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=2, ensure_ascii=False)
+
+                    time.sleep(2)
+
+                except Exception as e:
+                    errors += 1
+                    print("Error:", e)
+
+            for pdf in site.get("pdfs", []):
+                if pdf.get("saved", False):
+                    continue
+
+                try:
+                    folder = os.path.join(
+                        "my courses",
+                        location,
+                        clean_name(pdf["name"])
+                    )
+
+                    download_file(
+                        pdf["link"],
+                        folder,
+                        pdf["name"],
+                        ".pdf"
+                    )
+
+                    pdf["saved"] = True
+
+                    with open("full.json", "w", encoding="utf-8") as f:
+                        json.dump(data, f, indent=2, ensure_ascii=False)
+
+                    time.sleep(2.3)
+
+                except Exception as e:
+                    errors += 1
+                    print("Error:", e)
+
+    print("Total errors:", errors)
+
+
+def main():
+    with open("full.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    download_all(data)
+
+
+# if __name__ == "__main__":
+#     main()
+
+print(f"\nCompleted")
+print(f"Downloaded: {downloaded}")
+print(f"Errors: {errors}")
+
+
+
+
+
+
