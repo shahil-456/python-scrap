@@ -201,13 +201,10 @@ def process_videos(page):
         try:
             # print(f"[{i}] thumbnail locator")
             # print('in')
-            thumbnail = page.locator(
-                "a.customActivityAssetLinkButton"
-            ).nth(i)
+
 
             # print(f"[{i}] thumbnail OK")
 
-            time.sleep(1)
             name = page.locator(
                 "span[id*='lblAssetWithFileActivityName']"
             ).nth(i).inner_text().strip()
@@ -216,6 +213,12 @@ def process_videos(page):
             if name in name_array:
                 print('skip-------')
                 continue
+
+            thumbnail = page.locator(
+                "a.customActivityAssetLinkButton"
+            ).nth(i)     
+
+            time.sleep(1)
 
             current_name=name
 
@@ -332,7 +335,6 @@ def process_pdfs(page):
                 "a.factor360NoDecorationHyperlink"
             ).nth(i)
 
-            time.sleep(1)
             name = page.locator(
                 "span[id*='spanSingleLearningActivityAsset']"
             ).nth(i).inner_text().strip()
@@ -341,6 +343,8 @@ def process_pdfs(page):
             if name in name_array:
                 print('skip-------')
                 continue
+            
+            time.sleep(1)
 
             current_name=name
 
