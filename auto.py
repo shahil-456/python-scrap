@@ -5,6 +5,7 @@ import os
 import requests
 import re
 import time
+import difflib
 
 
 mp4_url = None
@@ -133,6 +134,7 @@ def handle_request(request):
                 print("Saved:", pdf["name"])
 
 
+
 def process_videos(page):
     global current_name
     global key_name
@@ -167,11 +169,10 @@ def process_videos(page):
 
     count_vids = len(names)
 
-    # print('key')
-    # print(key_name)
-    print(count_saved_vids)
+    print('checking for new videos, wait...............')
+    # print(count_saved_vids)
 
-    print(count_vids)
+    # print(count_vids)
 
     if count_saved_vids >= count_vids:
         print('skipedd')
@@ -211,7 +212,7 @@ def process_videos(page):
 
 
             if name in name_array:
-                print('skip-------')
+                print('alread downloaded')
                 continue
 
             thumbnail = page.locator(
@@ -222,7 +223,7 @@ def process_videos(page):
 
             current_name=name
 
-            print(current_name)
+            # print(current_name)
 
             # print(f"[{i}] name locator")
             # print(f"[{i}] name OK: {name}")
@@ -272,21 +273,22 @@ def process_pdfs(page):
 
     count_saved_pdfs = 0
     name_array=[]
-    print('-----')
-    print(key_name)
+    # print('-----')
+    # print(key_name)
     for site in data["sites"]:
         if site["key_name"] == key_name:
-            pdfs = [
-                pdf for pdf in site.get("pdfs", [])
-                if pdf.get("link")
-            ]
+
+            pdfs = site.get("pdfs", [])
+
+            # pdfs = [
+            #     pdf for pdf in site.get("pdfs", [])
+            #     if pdf.get("link")
+            # ]
 
             count_saved_pdfs = len(pdfs)
             name_array = [pdf["name"] for pdf in pdfs]
 
             break
-
-
 
     # time.sleep(22)   
 
@@ -297,11 +299,10 @@ def process_pdfs(page):
 
     count_pdfs = len(names)
 
-    # print('key')
-    print(key_name)
-    print(count_saved_pdfs)
+    # print(count_saved_pdfs)
+    print('checking for new Pdfs, wait...............')
 
-    print(count_pdfs)
+    # print(count_pdfs)
 
     if count_saved_pdfs >= count_pdfs:
         print('skipedd')
@@ -330,20 +331,26 @@ def process_pdfs(page):
         # print('for')
 
         try:
-            print('in')
+            # print('in')
             thumbnail = page.locator(
                 "a.factor360NoDecorationHyperlink"
             ).nth(i)
 
-            name = page.locator(
-                "span[id*='spanSingleLearningActivityAsset']"
-            ).nth(i).inner_text().strip()
+            # name = page.locator(
+            #     "span[id*='spanSingleLearningActivityAsset']"
+            # ).nth(i).inner_text().strip()
 
+            locator = page.locator("span[id*='spanSingleLearningActivityAsset']")
+
+            if i >= locator.count():
+                return
+
+            name = locator.nth(i).inner_text().strip()
 
             if name in name_array:
                 print('skip-------')
                 continue
-            
+
             time.sleep(1)
 
             current_name=name
@@ -375,7 +382,6 @@ def process_pdfs(page):
         except Exception as e:
             print(f"[{i}] ERROR: {type(e).__name__}: {e}")
             continue
-
 
 
 
@@ -470,20 +476,17 @@ with sync_playwright() as p:
 
 
 
-
-
-
-
-
-
-
-
 def clean_name(name):
     name = re.sub(r'[<>:"/\\|?*]', "", name)
     return name.strip(" .")
 
 def clean_location(location):
     return location.split("-", 1)[0].strip()
+
+def clean_locationPdf(location):
+    location = re.sub(r"\s*\(\s*(pdf|ppt)\s*\)$", "", location, flags=re.IGNORECASE)
+    location = re.sub(r"\s*-\s*slides?.*$", "", location, flags=re.IGNORECASE)
+    return location.strip()
 
 def download_file(url, folder, filename, extension):
     r = requests.get(url, stream=True, timeout=3000)
@@ -547,14 +550,31 @@ def download_all(data):
 
                 try:
 
-                    folder = os.path.join(
-                        "my courses",
-                        clean_location(location),
-                        clean_name(pdf["name"])
-                    )
+                    # folder = os.path.join(
+                    #     "my courses",
+                    #     location,
+                    #     clean_locationPdf(pdf["name"])
+                    # )
+
+                    name = clean_locationPdf(pdf["name"])
+
+                    location_path = os.path.join("my courses", location)
+
+                    folders = os.listdir(location_path)
+
+                    name = clean_locationPdf(pdf["name"])
+
+                    folder_name = difflib.get_close_matches(
+                        name,
+                        folders,
+                        n=1,
+                        cutoff=0
+                    )[0]
+
+                    folder = os.path.join(location_path, folder_name)
 
                     download_file(
-                        pdf["link"],
+                         pdf["link"],
                         folder,
                         pdf["name"],
                         ".pdf"
@@ -581,12 +601,12 @@ def main():
     download_all(data)
 
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
 print(f"\nCompleted")
-print(f"Downloaded: {downloaded}")
-print(f"Errors: {errors}")
+print(f"Downloaded: ")
+print(f"Errors: ")
 
 
 
