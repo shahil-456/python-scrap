@@ -1,6 +1,6 @@
 import os
 from playwright.sync_api import sync_playwright
-
+import time
 
 STATE_FILE = "state.json"
 LOGIN_URL = "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=hWBfF0h8FfilW%2fkGSfJqIw%3d%3d"
@@ -11,12 +11,8 @@ def open_browser(p):
     state_file = "state.json"
     login_url = "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=hWBfF0h8FfilW%2fkGSfJqIw%3d%3d"
 
-    browser = p.chromium.launch(
-        headless=False,
-        args=[
-            "--disable-blink-features=AutomationControlled",
-            "--start-maximized",
-        ]
+    browser = p.firefox.launch(
+        headless=False
     )
 
     if os.path.exists(state_file):
@@ -67,20 +63,59 @@ def open_browser(p):
     return browser, context
 
 
+def handle_response(response):
+# print(response.url)
+    if "PdfPages/SecurePdfHandler" in response.url:
+        print("PDF response:", response.url)
+
+        try:
+            body = response.body()
+
+            with open("save.pdf", "wb") as f:
+                f.write(body)
+
+            print("PDF saved")
+
+        except Exception as e:
+            print("PDF error:", e)
+
+def handle_request(request):
+    # print(request.url)
+    if "PdfPages/SecurePdfHandler" in request.url:
+        print("PDF request:", request.url)
+
+        try:
+            body = request.body()
+
+            with open("save.pdf", "wb") as f:
+                f.write(body)
+
+            print("PDF saved")
+
+        except Exception as e:
+            print("PDF error:", e)
+            
+    page.on("request", handle_request)
+
 with sync_playwright() as p:
 
     browser, context = open_browser(p)
 
     page = context.new_page()
 
+
+    page.on("response", handle_response)
+    page.on("response", handle_response)
+
+
     page.goto(
         "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=4f%2FOexzNsorKAF1lCFotvA%3D%3D",
         wait_until="domcontentloaded"
     )
 
-    input("Press ENTER to exit...")
-
-    browser.close()
+    # input("Press ENTER to exit...")
+    time.sleep(1000)
+    # browser.close()
 
 # from playwright.sync_api import sync_playwright
 

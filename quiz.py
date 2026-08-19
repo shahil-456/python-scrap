@@ -32,6 +32,8 @@ def open_main_page(context):
 
 
 def open_exam_page(page):
+    page.wait_for_load_state("networkidle")
+
     link = page.locator(
         "a#MainContent_MainContent_MainContent_ucUserLearningActivityDashboardForLearner_ucUserLearningActivity_MyCourseDetail_hlPostExamAction"
     )
@@ -45,6 +47,9 @@ def open_exam_page(page):
         page.goto(url, wait_until="domcontentloaded")
 
     return page
+
+
+
 
 def click_first_question(page):
     page.locator(
@@ -61,9 +66,6 @@ def click_next_question(page):
         "a#MainContent_MainContent_MainContent_ucQuestionNavigation_lnkBtnNextQuestion"
     ).click()
 
-    # page.wait_for_load_state("networkidle")
-    time.sleep(3)
-    save_quiz_page(page)#this will save new page right?
 
 def save_quiz_page(page):
     folder = "offline_quiz"
@@ -73,35 +75,15 @@ def save_quiz_page(page):
 
     html = page.content()
 
-    assets = re.findall(
-        r'(?:src|href)=["\']([^"\']+)["\']',
-        html
-    )
+   
 
-    for asset in assets:
-        if asset.startswith(("data:", "#", "javascript:")):
-            continue
+    with open(os.path.join(folder, f"quiz{i}.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+    # time.sleep(2)
+    i += 1
 
-        asset_url = urljoin(page.url, asset)
-        name = os.path.basename(urlparse(asset_url).path)
-
-        if name:
-            html = html.replace(asset, name)
-
-
-        with open(os.path.join(folder, f"quiz{i}.html"), "w", encoding="utf-8") as f:
-            f.write(html)
-
-        i += 1
-
-        click_next_question(page)
-        print("Done")
-
-
-
-
-
-
+    # click_next_question(page)
+    print("Done")
 
 
 
@@ -113,17 +95,33 @@ with sync_playwright() as p:
 
     page = open_exam_page(page)
 
-    click_first_question(page)
+    # click_first_question(page)
 
     page.wait_for_load_state("networkidle")
 
     time.sleep(3)
 
+    # page = open_exam_page(page)
+
+    click_first_question(page)
+
+    time.sleep(3)
+
     save_quiz_page(page)
 
-    print(page.url)
+    for i in range(1, 40):
+        try:
+            click_next_question(page)
+            time.sleep(3)
+            save_quiz_page(page)
+            print(page.url)
 
-    input("Press ENTER to exit...")
+        except Exception as e:
+            print(f"[{i}] ERROR: {type(e).__name__}: {e}")
+            time.sleep(3)
+            continue
+
+        # input("Press ENTER to exit...")
 
 
 
