@@ -1,13 +1,61 @@
 {
+
     "main_url": "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D",
     "items": [
         {
             "name": "Welcome and Introduction",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=IHo63u89cf6jQySpw7hNDg%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
+            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=IHo63u89cf6jQySpw7hNDg%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+
+
+            "page": {
+                "name": "new Page",
+                "items": [
+                    {
+                        "name": "Video 1",
+                        "video": "",
+                        "pdf": "",
+                        "saved": false
+                    }
+                ]
+            }
+
+
+
         },
+
+
         {
             "name": "2026 Nuclear Cardiology Board Prep Session I: Physics, Instrumentation, Radionuclides, Radiation Safety",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=U8AL7Ts2815kVMW3jmKZbA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
+            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=U8AL7Ts2815kVMW3jmKZbA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+            "page": {
+                "name": "2026 Board Prep Session I: Pre-recorded Lectures",
+                "datas": [
+                    {
+                        "name": "Physics for the Boards James Case, PhD, MASNC",
+                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1412ff6e-3a9c-4c02-a15e-ee226527ebee.mp4",
+                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/67fb3939-5b68-46b5-aab0-bc18e82aa381.pdf",
+                        "saved": false
+                    },
+                    {
+                        "name": "Production and Management of Radionuclides and Radiopharmaceuticals Marianna Dakanali, PhD",
+                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1b1e9bc9-ac1d-4100-8506-2cb8f08f5ae4.mp4",
+                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/efa08d42-0e24-4a53-bea6-935dc52db07d.pdf",
+                        "saved": false
+                    },
+                    {
+                        "name": "The Basics of Radiation Safety Benjamin Auer, PhD",
+                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/05353cd8-bdea-42d1-aae1-69bb16d8180d.mp4",
+                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/f116a084-99ff-47e4-a865-e4d6178c30b8.pdf",
+                        "saved": false
+                    },
+                    {
+                        "name": "Instrumentation (SPECT and PET) R. Glenn Wells, PhD",
+                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/49007420-d6fc-4df7-b3f7-b98959f41882.mp4",
+                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/1ea8ed5c-51de-44a1-abc2-2540cdd474bb.pdf",
+                        "saved": false
+                    }
+                ]
+            }
         },
         {
             "name": "2026 Nuclear Cardiology Board Exam Prep Session II: Acquisition and Quality Control, Gated SPECT, Artifact Recognition, and Appropriate Use",
