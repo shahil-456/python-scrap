@@ -15,16 +15,37 @@ import time
 #     print("state.json saved")
 #     browser.close()
 
+data = {
+    "datas": []
+}
+
+mp4_url = None
+
+url = None
+
+key_name = None
+file_name = None
+
+pdf_url = None
+current_name=None
+
+
+
 def handle_request(request):
     global mp4_url
     global pdf_url
+    global data
 
     # print('three')
 
-    if ".mp4" in request.url:
-        # print("MP4 REQUEST:", request.url)
+    if ".mp4" in request.url or ".mov" in request.url:
+        for item in data["datas"]:
+            if not item["video"]:
+                item["video"] = request.url
+                break
+        
         mp4_url = request.url
-
+        
         print(mp4_url)
 
         # with open(save_file, "r", encoding="utf-8") as f:
@@ -54,9 +75,15 @@ def handle_request(request):
         #         print("Saved:", video["name"])
 
     if ".pdf" in request.url:
-        
-        pdf_url = request.url
-        print(pdf_url)
+        if any(item["pdf"] == request.url for item in data["datas"]):
+            return
+
+        for item in data["datas"]:
+            if not item["pdf"]:
+                item["pdf"] = request.url
+                break
+
+        print(request.url)
 
         # with open(save_file, "r", encoding="utf-8") as f:
         #     data = json.load(f)
@@ -87,12 +114,15 @@ def handle_request(request):
 
 def process_pdfs(page):
     pdfs = page.locator("a:has(i.file.pdf.icon)")
+    global file_name
+
 
     for i in range(pdfs.count()):
         pdfs = page.locator("a:has(i.file.pdf.icon)")
         pdfs.nth(i).click()
+        # file_name=name
 
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(3000)
 
         frame = page.locator("iframe.fancybox-iframe").content_frame
 
@@ -100,7 +130,7 @@ def process_pdfs(page):
             'input#ctl00_BodyContent_rlvLearningActivityAssetList_ctrl0_btnViewLearningActivityAsset'
         )
 
-        display_btn.wait_for(state="visible", timeout=5000)
+        display_btn.wait_for(state="visible", timeout=4000)
         display_btn.click()
 
         time.sleep(1)
@@ -111,7 +141,7 @@ def process_pdfs(page):
             'a.fancybox-item.fancybox-close[title="Close"]'
         ).click()
 
-        page.wait_for_timeout(500)
+        page.wait_for_timeout(700)
 
 STATE_FILE = "state.json"
 LOGIN_URL = "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D"
@@ -134,10 +164,12 @@ def process_videos(page):
     videos = page.locator(
         "span.activityAssetCustomClassForReadMore"
     )
+    global data
+    global file_name
 
     count = videos.count()
     print("Videos:", count)
-
+    # data["datas"] = []
     # for i in range(count):
     #     videos = page.locator(
     #         "span.activityAssetCustomClassForReadMore"
@@ -146,23 +178,29 @@ def process_videos(page):
     #     name = videos.nth(i).inner_text().strip()
     #     print(name)
 
-
     # videos = page.locator("div.learningActivityAssetTitleContainerParent")
 
     count = videos.count()
 
     for i in range(count):
-        name = videos.nth(i).locator(
-            "div[id*='pnlActivityAssetTitle'] span"
-        ).inner_text().strip()
+        # name = videos.nth(i).locator(
+        #     "div[id*='pnlActivityAssetTitle'] span"
+        # ).inner_text().strip()
+        name = videos.nth(i).locator("xpath=..").inner_text().strip()
 
-        print(name)    
-
+        data["datas"].append({
+            "name": name,
+            "video": "",
+            "pdf": "",
+            "saved": False
+        })
+        file_name=name
+        print(file_name)
         # Click thumbnail
         videos.nth(i).click()
-
+        time.sleep(1)
         # Wait for page/modal
-        page.wait_for_timeout(4000)
+        page.wait_for_timeout(5000)
 
         # Close
         close_btn = page.locator(
@@ -181,9 +219,9 @@ def main():
     main_url = "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D"
 
 
-    url="https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=bmCtOOt5fQz5%2bmG4SQ3u%2bA%3d%3d&OriginatedFromUserLearningActivityID=4ntI%2bo6h%2byooptsrngM0Kg%3d%3d"
+    url="https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=I8ii40xpRMlVXQxiIIOQLQ%3d%3d"
 
-    page="2026 Board Prep Session I: Pre-recorded Lectures"
+    page="2026 Board Prep Session III: Pre-recorded Lectures"
 
     p, browser, page = open_browser()
     page.on("request", handle_request)
@@ -191,9 +229,9 @@ def main():
     try:
         get_page(page, url)
 
-        # process_videos(page)
-        # process_pdfs(page)
-
+        process_videos(page)
+        process_pdfs(page)
+        print(data)
 
         time.sleep(1000)
 
