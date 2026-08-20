@@ -114,7 +114,12 @@
         },
         {
             "name": "2026 Nuclear Cardiology Board Exam Prep Session IV: Cardiac PET, Multimodality Imaging, Cardiac Amyloidosis, Cases with the Experts: SPECT and PET",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=gPtBUn6hRB0%2fn7I%2bmf36fA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
+            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=gPtBUn6hRB0%2fn7I%2bmf36fA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+            
+            "page": {
+                "name": "2026 Board Prep Session IV: Pre-recorded Lectures",
+                "datas": [{"name": "Cardiac PET: Basics of Perfusion, Viability, and Sarcoidosis", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/d09f4548-b51a-4aa7-b9d1-d0f677a250a5.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/aa34e26e-085d-4a20-96b3-b78e9128a3c1.pdf", "saved": false}, {"name": "Focused Topic: Nuclear Integration in Multimodality Imaging", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/51694d4e-9f27-473b-8c37-96fd5d178618.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/271dc6cf-967a-441b-bede-3ac021a96b86.pdf", "saved": false}, {"name": "Focused Topic: Bone-avid Radiotracer Cardiac SPECT for Transthyretin Cardiac Amyloidosis", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/21845a76-f9f4-4eba-a7de-f3456f591202.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/b25526c6-1df7-4786-bba0-b00d30f3f7d7.pdf", "saved": false}, {"name": "Cases with the Expert, SPECT", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/0c8aa3f5-210c-4ad3-9986-3bf79d6a82c2.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/d68f25f2-58f7-4ebf-98f7-82eacf9fbc5b.pdf", "saved": false}, {"name": "Cases with the Expert, PET", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/27a2daec-0ed5-4c5a-aed3-752211eb7a4a.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/92c2fb0f-56ea-4f53-8cf2-b2e26883ec32.pdf", "saved": false}]}
+            
         },
         {
             "name": "2026 Nuclear Cardiology Board Exam Prep Course - Live, Virtual (Town Hall) Meeting Recordings (to be released Oct. 1, 2026)",
