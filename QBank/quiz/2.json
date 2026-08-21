@@ -1,0 +1,503 @@
+[
+    {
+        "question": "What is the primary purpose of daily intrinsic or extrinsic uniformity testing?",
+        "asset": null,
+        "options": [
+            "Assess spatial resolution",
+            "Detect PMT drift or crystal defects",
+            "Verify CT attenuation correction",
+            "Evaluate system linearity"
+        ]
+    },
+    {
+        "question": "A 4-quadrant bar phantom shows smallest resolvable bars of 3.5 mm. What is the approximate full width at half maximum (FWHM)?",
+        "asset": null,
+        "options": [
+            "3.5 mm",
+            "4.25 mm",
+            "5.95 mm",
+            "7.0 mm"
+        ]
+    },
+    {
+        "question": "What is the best solution to manage image noise?",
+        "asset": null,
+        "options": [
+            "Decrease the scan time",
+            "Decrease the injected dose",
+            "Use a smaller pixel size",
+            "Increase the number of detected photons"
+        ]
+    },
+    {
+        "question": "A 53-year-old woman with a history of morbid obesity (BMI 41 Kg/m 2 ), type II diabetes mellitus, hypertension, and sleep apnea is undergoing an evaluation for bariatric surgery. She has no chest pain, but she is limited by dyspnea and fatigue with less than 1 block of walking. Her ECG is normal, except for low-voltage QRS. You decided to perform Tc-99m SPECT myocardial perfusion imaging for evaluation for ischemic heart disease. Which study protocol will you recommend for this patient?",
+        "asset": null,
+        "options": [
+            "Stress-only (25 mCi)",
+            "One-day rest (10 mCi)/stress (30 mCi)",
+            "One-day stress (10 mCi) /rest (30 mCi), (stress-first)",
+            "Two-day stress (25 mCi) /rest (25 mCi)"
+        ]
+    },
+    {
+        "question": "A 43-year-old female with a history of treated hypertension presented with non-exertional, left-sided, sharp, fleeting chest pain, lasting 1 to 2 seconds. The ECG is normal. Her exercise tolerance is not restricted. According to the 2023 Multimodality Appropriate Use Criteria for the detection and risk assessment of chronic coronary disease, which of the following studies represents an appropriate next step?",
+        "asset": null,
+        "options": [
+            "Exercise stress myocardial perfusion imaging",
+            "No testing",
+            "Exercise stress test without imaging",
+            "Coronary CT angiography"
+        ]
+    },
+    {
+        "question": "Failure to apply an adequate overall flood-field uniformity correction is seen most strikingly as ______ on transverse images of the uniform section of a SPECT Performance Phantom.",
+        "asset": null,
+        "options": [
+            "Tuning fork artifacts",
+            "Focal cold spot artifacts",
+            "Truncation artifacts",
+            "Concentric ring artifacts"
+        ]
+    },
+    {
+        "question": "Which of the following left ventricular volumes curves (A–D) would be encountered in a patient with a restrictive hypertensive cardiomyopathy?",
+        "asset": null,
+        "options": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "question": "Although differentiation of ischemic versus non-ischemic cardiomyopathy with gated myocardial perfusion SPECT may be challenging, a clue to the presence of an ischemic cardiomyopathy is which of the following?",
+        "asset": null,
+        "options": [
+            "A regional wall motion abnormality",
+            "Increased radiotracer uptake in the lungs",
+            "Less marked LV dilatation",
+            "RV dilatation and hypokinesis"
+        ]
+    },
+    {
+        "question": "In gated myocardial perfusion SPECT images performed on a hypertensive elderly female, 5' 6”, 130 lbs, status post (S/P) left mastectomy, an extensive mildly/moderately fixed lateral perfusion defect is observed with associated normal regional wall motion and systolic wall thickening. LVEF = 68%. The most likely explanation for the lateral perfusion defect is which of the following?",
+        "asset": null,
+        "options": [
+            "Artifact associated with left mastectomy",
+            "Artifact associated with patient motion",
+            "Image normalization to a “hot” septum",
+            "Incorrect camera center of rotation"
+        ]
+    },
+    {
+        "question": "Which of the following will MOST improve myocardial perfusion SPECT specificity in detecting coronary artery disease?",
+        "asset": null,
+        "options": [
+            "Imaging with a high-resolution parallel hole collimator",
+            "Weight-based radiopharmaceutical dosing",
+            "Substitution of Tl-201 for Tc-99m radiopharmaceuticals",
+            "Low-dose X-ray attenuation correction"
+        ]
+    },
+    {
+        "question": "Left ventricular filling due to the left atrial kick is best evaluated by which of the following radionuclide techniques?",
+        "asset": null,
+        "options": [
+            "Gated blood pool planar imaging",
+            "Gated blood pool SPECT",
+            "Gated myocardial perfusion SPECT",
+            "Planar gated myocardial perfusion imaging in the 60° left anterior oblique (LAO) projection"
+        ]
+    },
+    {
+        "question": "Attenuation correction of myocardial perfusion SPECT can be performed with which of the following external radionuclide sources?",
+        "asset": null,
+        "options": [
+            "Technetium-99 (Tc-99m)",
+            "Thallium-201 (Tl-201)",
+            "Gadolinium-153 (Gd-153)",
+            "Cadmium-108 (Cd-108) zinc telluride"
+        ]
+    },
+    {
+        "question": "The Ramp filter, employed with filtered backprojection, is most likely to result in a myocardial perfusion artifact under which of the following circumstances?",
+        "asset": null,
+        "options": [
+            "A large, dense left breast positioned over the entire left ventricle",
+            "Patient motion in the vertical (y-axis) direction",
+            "Patient motion in the horizontal (z-axis) direction",
+            "Left hemidiaphragmatic elevation and activity in the fundus of the stomach"
+        ]
+    },
+    {
+        "question": "Respiratory gating of myocardial perfusion SPECT acquisitions has been investigated and has been demonstrated to be useful to which of the following:",
+        "asset": null,
+        "options": [
+            "Increase diagnostic specificity by correcting for patient motion",
+            "Increase diagnostic specificity by correcting for cardiac motion",
+            "Increase diagnostic specificity by correcting for Compton scatter",
+            "Shorten SPECT acquisition time and improve patient comfort"
+        ]
+    },
+    {
+        "question": "Which of the following agents should not be used for pharmacologic stress in a patient with left bundle branch block (LBBB)?",
+        "asset": null,
+        "options": [
+            "Dipyridamole",
+            "Adenosine",
+            "Regadenoson",
+            "Dobutamine"
+        ]
+    },
+    {
+        "question": "The Society of Motion Picture and Television Engineers (SMPTE) pattern testing evaluates which of the following?",
+        "asset": null,
+        "options": [
+            "Detector efficiency",
+            "Monitor display quality",
+            "Collimator integrity",
+            "Energy resolution"
+        ]
+    },
+    {
+        "question": "Gut activity can affect the quality of the images making them difficult to interpret. Several methods have been used to improve the quality of the images. Which of the following is the best method to alleviate gut interference/artifact?",
+        "asset": null,
+        "options": [
+            "The patient should drink a glass of milk after the stress test",
+            "The time between the radiotracer injection and imaging should be increased",
+            "The time between the radiotracer injection and imaging should be decreased",
+            "The patient should drink water and eat a fatty meal and then repeat the images"
+        ]
+    },
+    {
+        "question": "In reconstructed SPECT myocardial perfusion images, the left ventricular cavity appears “oblong” rather than round, and there appear to be opposed inferoseptal and anterolateral perfusion defects. To investigate potential artifact as a cause of this finding in three consecutive patients, which of the following should you do?",
+        "asset": null,
+        "options": [
+            "Check the flood-field uniformity",
+            "Check the camera center of rotation",
+            "Question the patient about congenital heart disease and/or prior cardiac surgery",
+            "Inspect the planar projection images in endless loop cinematic format"
+        ]
+    },
+    {
+        "question": "Compared to gated blood pool SPECT, planar equilibrium radionuclide ventriculography provides which of the following advantages?",
+        "asset": null,
+        "options": [
+            "Improved contrast resolution",
+            "More precise quantification of LVEF",
+            "Quantitation of LV volume",
+            "Quantitation of RV volume"
+        ]
+    },
+    {
+        "question": "The left ventricular endocardial border of a myocardial perfusion SPECT scan will be less well resolved using which of the following acquisition/processing modifications?",
+        "asset": null,
+        "options": [
+            "Substitution of Tc-99m sestamibi for TI-201",
+            "Substitution of a LEAP collimator for a LEHR collimator",
+            "Substitution of a higher critical frequency in applying the Butterworth filter",
+            "Decreasing the detector-to-heart radius of rotation"
+        ]
+    },
+    {
+        "question": "Which of the following left ventricular volumes curves (A-D) would be encountered in a patient with atrial fibrillation and a heart rate of approximately 75 bpm?",
+        "asset": null,
+        "options": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "question": "Which of the following myocardial perfusion SPECT processing methods will most likely underestimate perfusion defect extent and severity?",
+        "asset": null,
+        "options": [
+            "Butterworth filter: critical frequency 0.65, order 0.30",
+            "Butterworth filter: critical frequency 0.55, order 0.45",
+            "Butterworth filter: critical frequency 0.30, order 0.60",
+            "Iterative reconstruction"
+        ]
+    },
+    {
+        "question": "Which of the following is TRUE regarding stress-only SPECT myocardial perfusion imaging?",
+        "asset": null,
+        "options": [
+            "Transient ischemic dilation provides incremental diagnostic value",
+            "The prognostic value is similar to the conventional rest/stress protocol",
+            "Left ventricular ejection fraction reserve improves prognostic value",
+            "The diagnostic performance is superior to the conventional rest/stress protocol"
+        ]
+    },
+    {
+        "question": "A 74-year-old man with past medical history of hypertension, type 2 diabetes mellitus, dyslipidemia, obesity (BMI = 33 Kg/m 2 ), old myocardial infarction, and status post CABG 7 years ago. He presented with new-onset dyspnea on exertion for the past 3 months. ECG shows normal sinus rhythm with inferior Q-waves. You decided to refer the patient for exercise stress Tc-99m SPECT myocardial perfusion imaging. You have a conventional A-SPECT camera with CT attenuation correction capability. Which study protocol will you recommend for this patient?",
+        "asset": null,
+        "options": [
+            "Stress-only (25 mCi)",
+            "One-day rest (10 mCi)/stress (30 mCi)",
+            "One-day stress (10 mCi) /rest (30 mCi), (stress-first)",
+            "Two-day stress (25 mCi) /rest (25 mCi)"
+        ]
+    },
+    {
+        "question": "What is a typical range of X-ray tube current and tube potential settings for attenuation correction on a hybrid SPECT/CT system?",
+        "asset": null,
+        "options": [
+            "5–10 mA, 60–80 kVp",
+            "10–20 mA, 80–140 kVp",
+            "80–120 mA, 100–140 kVp",
+            "100–200 mA, 120–140 kVp"
+        ]
+    },
+    {
+        "question": "Which of the following is considered “Alert Limits” during daily quality-control testing and patient infusions?",
+        "asset": null,
+        "options": [
+            "14 L for CardioGen-82® and 20 L for Ruby-Fill® generator's cumulative eluate volume",
+            "42 days for CardioGen-82® and 60 days for Ruby-Fill® post generator calibration date",
+            "An eluate Sr-85 level of 0.1 µCi/mCi Rb-82",
+            "An eluate Sr-82 level of 0.01 µCi/mCi Rb-82"
+        ]
+    },
+    {
+        "question": "A 48-year-old man with a history of controlled hypertension and type 2 diabetes mellitus is referred for evaluation of new-onset epigastric pain. His exercise tolerance is unrestricted, his BMI is 31 Kg/m2, and his ECG is normal. You decided to refer the patient for Tc-99m SPECT myocardial perfusion imaging. You have a conventional A-SPECT camera with CT attenuation correction. Which study protocol will you recommend for this patient?",
+        "asset": null,
+        "options": [
+            "Stress-only (25 mCi)",
+            "One-day rest (10 mCi)/stress (30 mCi)",
+            "One-day stress (10 mCi) /rest (30 mCi), (stress-first)",
+            "Two-day stress (25 mCi) /rest (25 mCi)"
+        ]
+    },
+    {
+        "question": "Which one of the following QC procedures for a SPECT system is considered optional?",
+        "asset": null,
+        "options": [
+            "Acceptance testing per NEMA",
+            "Energy calibration check",
+            "Sensitivity test",
+            "Uniformity test"
+        ]
+    },
+    {
+        "question": "The following rest/stress MPI protocol is used routinely in a laboratory: 10 mCi/30 mCi Tc-99m tetrofosmin 45-min post-injection rest-and-stress supine SPECT 180° 45° RAO to 45° LPO acquisitions 15-min rest/12-min post-stress acquisition times For obese patients the same protocol is used, but the rest/stress activities are increased to 12 mCi and 36 mCi, respectively, in order to increase myocardial count density. To achieve a similar increase in myocardial count density, what other protocol modification could be made?",
+        "asset": null,
+        "options": [
+            "Substitute Tc-99m sestamibi for Tc-99m tetrofosmin",
+            "Increase the rest and post-stress SPECT acquisition times to 18 min and 14.5 min, respectively",
+            "Perform the SPECT acquisitions at 30 minutes rather than at 45 minutes",
+            "Perform 360° SPECT rather than 180° SPECT using the same acquisition times"
+        ]
+    },
+    {
+        "question": "Which of the following artifactual myocardial perfusion patterns is most frequently associated with horizontal (x-direction) patient motion during SPECT acquisition? The blackened regions represent perfusion defects.",
+        "asset": "assets/2_30.png",
+        "options": [
+            "Pattern A",
+            "Pattern B",
+            "Pattern C",
+            "Pattern D",
+            "Pattern E"
+        ]
+    },
+    {
+        "question": "A 55-year-old male presents with chest pain and exertional dyspnea. Based upon the findings in the rest/stress myocardial perfusion scan below, which of the following would be an appropriate next step in patient management?",
+        "asset": "assets/2_31.png",
+        "options": [
+            "Conservative medical management",
+            "Chest CT",
+            "CT coronary angiography",
+            "Diagnostic cardiac catheterization"
+        ]
+    },
+    {
+        "question": "Which of the following scenarios constitutes an appropriate use of stress myocardial perfusion imaging in a symptomatic patient following a coronary CT angiography (CCTA)?",
+        "asset": null,
+        "options": [
+            "Severe (≥70%) stenosis in the mid-right coronary artery",
+            "Mild (≤49%) stenosis in the proximal left anterior descending coronary artery",
+            "Mild (≤49%) three-vessel disease with a coronary calcium score of 320 Agatston Units",
+            "Inconclusive lesion in the mid-right coronary artery due to possible motion artifact"
+        ]
+    },
+    {
+        "question": "A patient with hyperkalemia undergoes gated myocardial perfusion SPECT. Of the accepted cardiac cycles, 70% are correctly gated on the electrocardiographic R-wave, and 30% are incorrectly gated on a tall T-wave. What will be the most likely effect on the calculated left ventricular ejection fraction (LVEF)?",
+        "asset": null,
+        "options": [
+            "Decreased LVEF",
+            "Increased LVEF",
+            "No change in the LVEF",
+            "The study will be technically unacceptable due to rejected beats"
+        ]
+    },
+    {
+        "question": "What is the recommended activity of a point source for Center of Rotation (COR) acquisition?",
+        "asset": null,
+        "options": [
+            "50 – 100 µCi",
+            "0.5 – 1 mCi",
+            "5 – 10 mCi",
+            "50 – 100 mCi"
+        ]
+    },
+    {
+        "question": "In a rest/stress Tc-9m sestamibi SPECT scan a small, fixed focus of moderately/markedly decreased radiotracer concentration is noted in the very apex of the left ventricle. Normal apical regional wall motion and systolic wall thickening are present. This finding is most likely due to which of the following:",
+        "asset": null,
+        "options": [
+            "A small infarct in the distal LAD territory",
+            "Chagas disease",
+            "Physiological apical thinning",
+            "Motion artifact"
+        ]
+    },
+    {
+        "question": "A gated MPI study shows EF = 25%, but raw cine demonstrates flashing with irregular R-R intervals. What is the most likely cause?",
+        "asset": null,
+        "options": [
+            "True LV dysfunction",
+            "Attenuation artifact",
+            "Gating error from arrhythmia",
+            "Improper reconstruction filter selection"
+        ]
+    },
+    {
+        "question": "Which of the following scenarios constitutes a “rarely appropriate” use of stress myocardial perfusion imaging in a patient with chest pain?",
+        "asset": null,
+        "options": [
+            "52-year-old male with normal exercise stress test without imaging",
+            "49-year-old female with likely angina and no cardiovascular risk factors",
+            "62-year-old male with inferior Q-waves on ECG, not known to be old",
+            "46-year-old female with borderline positive exercise stress test without imaging"
+        ]
+    },
+    {
+        "question": "Acquiring the prone position on a SPECT MPI is helpful to alleviate the following image artifacts, except which of the following?",
+        "asset": null,
+        "options": [
+            "Diaphragm attenuation artifact",
+            "Multi-detector misregistration artifact",
+            "Breast attenuation artifact",
+            "ECG gating artifact created from supine imaging position"
+        ]
+    },
+    {
+        "question": "According to the 2023 Multimodality Appropriate Use Criteria for the detection and risk assessment of chronic coronary disease, which of the following scenarios represents an “Appropriate” use of stress SPECT myocardial perfusion imaging among asymptomatic patients with known coronary disease and prior revascularization?",
+        "asset": null,
+        "options": [
+            "Routinely, 5 years after coronary artery bypass grafting (CABG)",
+            "Routinely, 2 years after percutaneous coronary intervention (PCI)",
+            "Assessment of myocardial viability",
+            "Assess for success of revascularization 6 months after PCI"
+        ]
+    },
+    {
+        "question": "Which of the following photon energy windows will yield the lowest count density technetium-99m (Tc-99m) tetrofosmin myocardial perfusion SPECT scan?",
+        "asset": null,
+        "options": [
+            "75-95 keV",
+            "105-115 keV",
+            "135-145 keV",
+            "175-185 keV"
+        ]
+    },
+    {
+        "question": "How frequently should Geometry testing be performed for Dose Calibrator quality control?",
+        "asset": null,
+        "options": [
+            "Daily",
+            "Monthly",
+            "Annually",
+            "At installation and recalibration"
+        ]
+    },
+    {
+        "question": "What is the main advantage of iterative reconstruction compared to filtered backprojection?",
+        "asset": null,
+        "options": [
+            "Faster processing",
+            "No need for filtering",
+            "Incorporation of attenuation and scatter correction",
+            "Elimination of motion artifacts"
+        ]
+    },
+    {
+        "question": "In the planar projection images of a Tc-99m sestamibi myocardial perfusion SPECT scan a moderately intense focus of radiotracer concentration is noted in the patient's left axilla in both the rest and post-stress acquisitions. This most likely represents which of the following:",
+        "asset": null,
+        "options": [
+            "Metastatic carcinoma",
+            "Inflammatory lymphadenopathy",
+            "Infiltration of the resting radiopharmaceutical dose",
+            "Contamination of the patient's shirt with spilled radioactivity"
+        ]
+    },
+    {
+        "question": "In iterative reconstruction algorithms, ordered subsets expectation maximization (OSEM) differs from maximum likelihood expectation maximization (MLEM) due to which of the following?",
+        "asset": null,
+        "options": [
+            "Is less accurate for routine clinical use",
+            "Uses subsets for faster reconstruction",
+            "Does not use multiple iterations",
+            "Cannot correct attenuation or scatter"
+        ]
+    },
+    {
+        "question": "Which of the following represents an “Appropriate” use of stress myocardial perfusion imaging in patients with no ischemic equivalent symptoms?",
+        "asset": null,
+        "options": [
+            "New onset atrial fibrillation",
+            "Frequent premature ventricular complexes",
+            "New onset atrial flutter",
+            "Paroxysmal supraventricular tachycardia"
+        ]
+    },
+    {
+        "question": "Flood-field uniformity should be checked daily for which of the following:",
+        "asset": null,
+        "options": [
+            "Tc-99m NaI SPECT",
+            "Tc-99m CZI SPECT",
+            "Tc-99m CdI SPECT",
+            "Flurpiridaz F-18 PET"
+        ]
+    },
+    {
+        "question": "How often must a survey meter be calibrated?",
+        "asset": null,
+        "options": [
+            "Daily",
+            "Weekly",
+            "Quarterly",
+            "Annually"
+        ]
+    },
+    {
+        "question": "Which of the following electrocardiographic findings is most likely to adversely affect ECG gating during myocardial perfusion imaging?",
+        "asset": null,
+        "options": [
+            "LVH, NSR, HR 120",
+            "RVH, NSR, occasional PVCs, HR 60",
+            "Bigeminy, mean HR 80",
+            "Atrial fibrillation, mean HR 60"
+        ]
+    },
+    {
+        "question": "Which of the following is considered the Expiration Limits during daily quality-control testing and patient infusions?",
+        "asset": null,
+        "options": [
+            "An eluate Sr-82 level of 0.1 µCi/mCi Rb-82 or Sr-85 level of 0.01 µCi/mCi Rb-82",
+            "An eluate Sr-82 level of 0.01 µCi/mCi Rb-82 or Sr-85 level of 0.1 µCi/mCi Rb-82",
+            "14 L for CardioGen-82® and 20 L for Ruby-Fill® generator's cumulative eluate volume",
+            "60 days for CardioGen-82® and 42 days for Ruby-Fill® post generator calibration date"
+        ]
+    },
+    {
+        "question": "How do the reconstructed images differ between 180° vs 360° acquisition in SPECT MPI?",
+        "asset": null,
+        "options": [
+            "The reconstructed images from 360° acquisition would be better in count density",
+            "The reconstructed images from 360° acquisition would be better in resolution",
+            "There are nearly no differences between 180° vs 360° acquisition",
+            "There are significant differences due to the distance and attenuation effects"
+        ]
+    }
+]

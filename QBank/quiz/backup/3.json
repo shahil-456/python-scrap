@@ -1,0 +1,402 @@
+[
+    {
+        "question": "A 48-year-old female with hypertension develops chest pain with exertion or with sitting for a prolonged period of time. She undergoes exercise stress electrocardiography, which is equivocal. She is referred for exercise stress SPECT myocardial perfusion imaging. On arrival to the lab, she has a baseline blood pressure of 128/74mmHg, heart rate of 84, and LBBB on her presenting ECG (new since prior). She exercises for 11 minutes with reproduction of her chest pain and has an appropriate hemodynamic response. Her perfusion images are shown below. Gated images show normal function. What is the most likely interpretation of this study?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/0293d3a1-0bb8-4615-9a3b-8232e7fb22ed.png",
+        "options": [
+            "Left anterior descending territory reversible perfusion defect",
+            "First diagonal territory fixed perfusion defect",
+            "LBBB artifact",
+            "Balanced ischemia"
+        ]
+    },
+    {
+        "question": "You are evaluating the statistical characteristics of a cardiovascular test. Of 50 patients with the disease, 40 test positive and 10 test negative. Of 50 patients without the disease, 45 test negative and 5 test positive. What is the sensitivity of the test, and is it affected by the prevalence of the disease?",
+        "asset": null,
+        "options": [
+            "Sensitivity is 80%; this is affected by the prevalence of the disease",
+            "Sensitivity is 80%; this is not affected by the prevalence of the disease",
+            "Sensitivity is 90%; this is affected by the prevalence of the disease",
+            "Sensitivity is 90%; this is not affected by the prevalence of the disease"
+        ]
+    },
+    {
+        "question": "Which of the following parameters are most affected early in the course of amyloid cardiomyopathy compared to normal subjects?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/f4ec9afa-d91a-42ed-a3a1-1302a14d46df.png",
+        "options": [
+            "PER and SCR",
+            "TES and TPER",
+            "SCR and PFR",
+            "TPFR, PFR, and aortic stenosis (AS)"
+        ]
+    },
+    {
+        "question": "Select the best answer for the intervention(s) shown to improve PFR and TPFR:",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/1ad3e6e8-53eb-4231-b3d1-5b4e80a7eb1b.png",
+        "options": [
+            "Coronary angioplasty in obstructive coronary disease",
+            "Verapamil in hypertrophic cardiomyopathy",
+            "Both A and B",
+            "None of the above"
+        ]
+    },
+    {
+        "question": "Which patient has an “appropriate” indication for exercise SPECT myocardial perfusion imaging (MPI)?",
+        "asset": null,
+        "options": [
+            "A 55-year-old man undergoing evaluation of newly diagnosed HF with reduced ejection fraction",
+            "A 40-year-old asymptomatic diabetic female after a syncopal event while giving blood",
+            "A 61-year-old man with chronic coronary disease with unchanged symptoms and a small amount of ischemia on a stress test one year prior",
+            "An asymptomatic 59-year-old female with intermediate ASCVD risk between 7.5% and 20%"
+        ]
+    },
+    {
+        "question": "A 64-year-old patient with angina presents to clinic for further evaluation. The patient has a history of CAD with PCI to the LAD approximately 1 year ago, in the setting of NSTEMI. No other coronary stenoses of concern were seen. Hypertension is controlled on candesartan and amlodipine. Impaired glucose is managed with metformin. Technetium-99m SPECT is performed with images as shown below. LVEF is 51% on stress images and 62% on rest images. Amlodipine is increased for angina. Which of the following statements is correct?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/8003bd37-e656-48d8-ba89-df7338b59c4f.png",
+        "options": [
+            "No additional treatment at this time, as risk of events is low",
+            "Patient should be referred for invasive coronary angiography",
+            "Patient risk of death is not low (>1% in the next year)",
+            "Beta blocker therapy should be initiated to reduce CV risk"
+        ]
+    },
+    {
+        "question": "A 65-year-old male with known CAD and LVEF of 30% is referred for SPECT viability testing prior to planned revascularization. He has a 70% mid to distal left anterior descending (LAD) stenosis, chronic total obstruction (CTO) of the proximal right coronary artery (RCA), and non-obstructive disease in the left circumflex artery (LCX). There are collaterals from the LCX and LAD to the RCA. Rest, 4-hour redistribution, and 24-hour redistribution Tl-201 SPECT images are shown. Which of the following is the best course of action based on these findings?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/58aa6cc6-f4e2-4c2d-a918-83100d3f1b23.png",
+        "options": [
+            "CABG with grafts to the LAD and RCA",
+            "PCI of the LAD",
+            "PCI of the RCA",
+            "Medical therapy"
+        ]
+    },
+    {
+        "question": "A 62-year-old female presents for stress SPECT myocardial perfusion imaging. She is in the emergency department with exertional chest pain with recent concerning CT coronary angiography that 2 weeks earlier revealed a 50% to 69% mid-LAD lesion with CT-FFR not performed. She has a history of sick sinus syndrome s/p pacemaker programmed in DDD mode, hypertrophic cardiomyopathy, aortic stenosis, and coronary artery disease. She had a recent echocardiogram that revealed intact left ventricular function, basal septal hypertrophy with a 34 mmHg resting gradient, and moderate aortic stenosis. Her ED workup included no concerning ECG changes and 2 negative troponins. Her resting ECG on arrival to the stress lab revealed atrial pacing with a narrow QRS. Which of the following is a contraindication for exercise stress and indication for vasodilator stress?",
+        "asset": null,
+        "options": [
+            "Atrial pacing",
+            "Hypertrophic cardiomyopathy with resting gradient",
+            "Moderate aortic stenosis",
+            "Abnormal coronary CTA"
+        ]
+    },
+    {
+        "question": "Which of the following is NOT assessed by the uptake of SPECT myocardial viability tracers (ie, Tl-201)?",
+        "asset": null,
+        "options": [
+            "Intact cell membrane gradients",
+            "The ability to generate ATP",
+            "Adequate myocardial blood flow",
+            "Glucose metabolism"
+        ]
+    },
+    {
+        "question": "Which of the following is an absolute criterion for early cessation of an exercise stress test?",
+        "asset": null,
+        "options": [
+            "ST-elevation ≥1 mm in a lead without a diagnostic Q-wave",
+            ">10 mmHg drop in blood pressure",
+            "Severe hypertensive response to exercise (>250/115 mmHg)",
+            "ECG changes indistinguishable from ventricular tachycardia"
+        ]
+    },
+    {
+        "question": "While processing a planar MUGA (ERNA) study, a cardiology trainee selects a single end-diastolic region of interest (ROI) for calculation of LVEF. If the ROI for background subtraction is placed over an enlarged, hot spleen rather than the normal paraventricular region, how will the LVEF calculation be affected?",
+        "asset": null,
+        "options": [
+            "Artifactually low LVEF",
+            "Artifactually high LVEF",
+            "No effect on LVEF",
+            "Variable effect on LVEF depending on heart rhythm"
+        ]
+    },
+    {
+        "question": "A 74-year-old male is referred for pharmacologic stress MPI for exertional shortness of breath and in preparation for an upcoming Whipple procedure. These perfusion images and associated polar plots were generated. Semi-quantitative analysis of the images was performed to help inform decision-making, including generation of the summed stress score (SSS), summed rest score (SRS), and percentage LV ischemia (%LVIsch). What is the calculated summed stress score and %LV Ischemia?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/05e0a1f1-e546-4c7b-8840-db6e44913e7b.png",
+        "options": [
+            "SSS 8, %LV ischemia 13%",
+            "SSS 19, %LV ischemia 15%",
+            "SSS 10, %LV ischemia 28%",
+            "SSS 28, %LV ischemia 47%"
+        ]
+    },
+    {
+        "question": "When reporting on extra-cardiac findings on a stress PET/CT study, a pulmonary nodule is found. Which one of the following is not considered a risk factor for malignancy when utilizing the Fleischner Society Guidelines?",
+        "asset": null,
+        "options": [
+            "Heavy smoking",
+            "Family history of lung cancer",
+            "Caucasian race",
+            "Spiculatednodule"
+        ]
+    },
+    {
+        "question": "A 42-year-old female is undergoing a SPECT/CT myocardial perfusion imaging for pre-op testing prior to renal transplant for autosomal dominant polycystic renal disease. The following is seen on the attenuation CT review. Which of the following are your next best steps?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/e037e84c-b3d6-4f99-8ba5-2b971ad39ef0.png",
+        "options": [
+            "Check blood cultures",
+            "Order hepatobiliary iminodiacetic acid scan (HIDA) scan",
+            "CTA of the brain",
+            "Order hepatitis panel"
+        ]
+    },
+    {
+        "question": "A 58-year-old woman with diabetes mellitus and obesity is evaluated for chest pain. She undergoes pharmacologic stress myocardial perfusion imaging with rubidium-82 PET. The perfusion images demonstrate normal myocardial perfusion without evidence of ischemia or scar. Quantitative analysis reveals a global myocardial blood flow reserve (MBFR) of 1.4 (normal >2.0). Which of the following is the most appropriate interpretation of these findings?",
+        "asset": null,
+        "options": [
+            "The normal perfusion results indicate a low-risk study and no increased risk of future cardiac events",
+            "The reduced myocardial flow reserve reflects possible diffuse coronary artery disease or microvascular dysfunction and is associated with increased risk of adverse cardiac events",
+            "The low myocardial flow reserve is likely an artifact and has no prognostic significance when perfusion is normal",
+            "Reduced myocardial flow reserve is only clinically relevant in the presence of perfusion defects"
+        ]
+    },
+    {
+        "question": "A patient is administered IV regadenoson prior to stress SPECT myocardial perfusion imaging. While being placed on the camera the patient develops an acute tonic-clonic seizure and receives appropriate positioning and pharmacologic management. As part of the acute treatment the patient receives a vasodilator reversal agent. Which of the following is the best choice of reversal agent and dose for this patient?",
+        "asset": null,
+        "options": [
+            "Aminophylline 50mg IV push",
+            "Aminophylline 250mg IV push",
+            "Caffeine 60mg in D5W IV push",
+            "Caffeine 100mg PO in coffee or soda"
+        ]
+    },
+    {
+        "question": "A solid lung nodule is found when reviewing the lung fields of a vasodilator stress PET/CT. Which of the following findings requires follow-up within 3 months?",
+        "asset": null,
+        "options": [
+            "Single 9-mm nodule in the right lower lobe in a 60-year-old male with no smoking history",
+            "Single 6-mm nodule in a 64-year-old female with a history of smoking",
+            "Multiple 3-mm nodules in a 70-year-old male current smoker",
+            "Multiple 2-mm nodules in a 69-year-old female with a family history of lung cancer in an uncle"
+        ]
+    },
+    {
+        "question": "Based on study of day-to-day variation of calculated left ventricular ejection fraction (LVEF) by equilibrium radionuclide angiocardiography (ERNA), which of the following is correct to be attributed to nonrandom physiologic alterations?",
+        "asset": null,
+        "options": [
+            "The absolute change in LVEF should be 10 EF units or more in the normal LVEF range (>50%), and 5 EF units or more in abnormal LVEF range (<50%)",
+            "The absolute change in LVEF should be 5 EF units or more in the normal LVEF range (>50%), and 10 EF units or more in abnormal LVEF range (<50%)",
+            "The absolute change in LVEF should be 10 EF units across all LVEF ranges",
+            "The absolute change in LVEF should be 5 EF units across all LVEF ranges"
+        ]
+    },
+    {
+        "question": "A 61-year-old male with a history of hypertension, hyperlipidemia on lisinopril and pravastatin, and a 40-pack-per-year history of smoking presented with chest pressure and arm pain while working on a construction job site. His clinical exam was normal, including cardiopulmonary exam. His ECG shows sinus rhythm with non-specific ST-T wave abnormality, and he was referred for exercise myocardial perfusion imaging (MPI). He exercised 6 minutes on Bruce protocol without limitations, achieved 75% PMHR, and developed mild chest pain with normal hemodynamic response. His peak stress ECG and SPECT images are shown. What is the most appropriate next step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/a656d747-aead-4845-bb44-42240e07bf5c.png",
+        "options": [
+            "Repeat scan with regadenoson",
+            "Continue medical therapy",
+            "Proceed with coronary calcium scan",
+            "Perform coronary angiography"
+        ]
+    },
+    {
+        "question": "Which of the following statements is the most correct regarding display of SPECT perfusion images for interpretation?",
+        "asset": null,
+        "options": [
+            "Use of a non-linear color scale decreases specificity",
+            "Logarithmic scales can be useful to evaluate perfusion in a hypertrophied left ventricle",
+            "Weighted scales are commonly used as an aid in SPECT quantitation",
+            "Sigmoidal scales decrease image contrast by emphasizing the edges of the count region"
+        ]
+    },
+    {
+        "question": "A 65-year-old female patient is referred for exercise SPECT myocardial perfusion imaging for the evaluation of chest pain with typical and atypical features and is safe to walk on the treadmill with no contraindications. She has exercised for 4 minutes on the Bruce protocol and has achieved a peak heart rate of 127 beats per minute. During the last minute she has developed the same symptoms for which she was referred and had a new horizontal ST-segment deviation of 1mm. Which of the following is the next best step?",
+        "asset": null,
+        "options": [
+            "Stop the treadmill, allow the patient to recover lying down, and proceed with vasodilator pharmacologic stress",
+            "Slow the treadmill to a slow walk and proceed with vasodilator pharmacologic stress",
+            "Inject the patient with a vasodilator for pharmacologic stress at peak exercise",
+            "Inject the radiotracer without further stress"
+        ]
+    },
+    {
+        "question": "Which acquisition modality of radionuclide blood pool ventriculography permits correlation of LVEF at different heart rates in patients with arrhythmia?",
+        "asset": null,
+        "options": [
+            "First pass without ECG gating",
+            "First pass with ECG gating",
+            "Frame-mode acquisition equilibrium radionuclide angiogram (ERNA) with SPECT",
+            "List-mode acquisition ERNA"
+        ]
+    },
+    {
+        "question": "How might hyperkalemia induced T-wave peaking, conduction abnormalities, and pacemakers affect LVEF calculation with ECG-gated radionuclide angiography?",
+        "asset": null,
+        "options": [
+            "No effect at normal heart rates",
+            "Increased LVEF at higher heart rates",
+            "Decreased LVEF at higher heart rates",
+            "Underestimation of LVEF associated with erroneous tracking of both QRS and T waves"
+        ]
+    },
+    {
+        "question": "A patient with end-stage renal disease is referred for preoperative risk assessment. The patient has no symptoms to suggest CAD; however, the transplant team insists that myocardial perfusion imaging be performed. The patient does not feel capable of using a treadmill, so regadenoson SPECT is performed with normal perfusion and normal LVEF. The patient asks about risk of future CV events. Which response is the most accurate statement?",
+        "asset": null,
+        "options": [
+            "The risk of CV events in the next year is <1%",
+            "The risk of CV events in the next year is 5%",
+            "The risk of CV events in the next year is >20%",
+            "The test results do not provide sufficient information to estimate risk"
+        ]
+    },
+    {
+        "question": "Which of the following is the best method for detecting the most hibernating myocardium?",
+        "asset": null,
+        "options": [
+            "Rest and 4-hour redistribution with reinjection Tl-201 MPI",
+            "Rest and 4-hour redistribution Tc-99m sestamibi MPI",
+            "Rest-stress Tc-99m tetrofosmin MPI",
+            "Stress-rest Tl-201 MPI"
+        ]
+    },
+    {
+        "question": "Which of the following radiopharmaceuticals is created using a generator?",
+        "asset": null,
+        "options": [
+            "Thallium",
+            "Technetium",
+            "Ammonia",
+            "Flurpiridaz"
+        ]
+    },
+    {
+        "question": "Which of the following findings on a myocardial perfusion imaging test is the strongest predictor of risk for future cardiac events and death?",
+        "asset": null,
+        "options": [
+            "Heart rate reserve of >20%",
+            "Inability to exercise",
+            "Myocardial flow reserve (MFR) of 1.3 with SSS = 0",
+            "Transient ischemic dilation (TID) of 1.6 with SSS = 0"
+        ]
+    },
+    {
+        "question": "A 54-year-old male with a history of tobacco abuse and no other cardiovascular risk factors, except a vague family history of heart disease, undergoes vasodilator stress SPECT myocardial perfusion imaging for exertional chest pain. His perfusion images are shown below. A recent prior unrelated chest CT was performed and showed 3-vessel diffuse calcifications. His gated images and a recent echo both showed a low-normal LVEF of 50%. He developed chest tightness during vasodilator administration and had 1mm ST-depressions in the lateral precordial leads on his stress ECG. Which of the following is the best next step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/2547da37-b538-48f2-b967-4b2d5b08a3c3.png",
+        "options": [
+            "No further evaluation or treatment necessary",
+            "Additional testing for obstructive CAD with PET, or invasive angiography, risk reduction with ASA and high-intensity statin",
+            "No further evaluation, risk reduction with ASA and high-intensity statin",
+            "Microvascular disease evaluation, risk reduction with ASA and high-intensity statin"
+        ]
+    },
+    {
+        "question": "Which of the following tests is currently considered a “gold standard” for the assessment of myocardial viability by assessing for the presence of myocardial metabolic activity and preserved cell membrane function?",
+        "asset": null,
+        "options": [
+            "Rest-redistribution Tl-201 SPECT MPI",
+            "Rest-stress Tc-99m SPECT MPI",
+            "F-18 FDG PET",
+            "Cardiac MRI"
+        ]
+    },
+    {
+        "question": "A 47-year-old female with end-stage renal disease related to lupus nephritis on hemodialysis is referred for Rb-82 stress PET for progressive chest tightness and shortness of breath of 3-week duration. The image of the CT for attenuation correction is shown. What is the best next step in her evaluation?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/ccdae272-79ef-491b-9577-0319ee7541a3.png",
+        "options": [
+            "Liver ultrasound",
+            "Follow-up chest CT in 6 months",
+            "Transthoracic echocardiography",
+            "Cardiac MRI"
+        ]
+    },
+    {
+        "question": "A patient is referred for an exercise stress SPECT myocardial perfusion imaging study to assess for shortness of breath. He has a history of diabetes, hypertension, and dyslipidemia. He does not have any history of chronic kidney disease, known CAD, prior myocardial infarction, or peripheral vascular disease. He had a negative stress SPECT myocardial perfusion imaging study 3 years prior. You are considering whether to pursue a “classic” same-day low-dose rest, higher-dose stress protocol or use a low-dose stress with higher-dose rest as needed. Which of the following factors best predicts whether a low-dose stress study can be performed without the need for the resting portion?",
+        "asset": null,
+        "options": [
+            "Presence/absence of diabetes mellitus",
+            "Presence/absence of chronic kidney disease",
+            "Presence/absence of known CAD",
+            "Age greater than 65 years"
+        ]
+    },
+    {
+        "question": "A 64-year-old female presents to the emergency department with several hours of uncontrolled chest discomfort. She has ST-depressions noted in the inferior leads and her troponin peaks at 4. She is treated for ACS but prefers a conservative approach and proceeds with regadenoson stress myocardial perfusion imaging (MPI). She is not interested in invasive coronary angiography unless her defect location is thought to be high risk. The following perfusion images are obtained, and a polar plot is constructed. The final read highlighted the perfusion defect as shown, preserved perfusion of the apical septum, and true apex and no evidence of TID. Which of the following is the most likely location of this perfusion defect?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/be553fe8-ffe5-4a21-b185-2b547dd1725b.png",
+        "options": [
+            "Left anterior descending (LAD)",
+            "Diagonal",
+            "Obtuse marginal (OM)",
+            "Left circumflex artery (LCX)"
+        ]
+    },
+    {
+        "question": "A 72-year-old patient with chronic coronary disease is seen in clinic for angina. The patient describes chest discomfort while playing pickleball and resolves with a few minutes of rest. Rubidium-82 PET is performed with a moderate reversible defect representing 11% of the myocardium. Ranolazine is added for the treatment of angina. Which of the following statements is true?",
+        "asset": null,
+        "options": [
+            "CV risk may be reduced, if a post-PCI PET study shows a reduction in ischemic burden",
+            "Performing PCI will result in a substantial reduction in risk of mortality",
+            "PCI would reduce risk, but only if the defect was severe",
+            "The addition of high-dose metoprolol succinate will reduce risk of death"
+        ]
+    },
+    {
+        "question": "A 62-year-old patient with hypertension and hyperlipidemia undergoes exercise myocardial perfusion imaging (MPI) for evaluation of exertional dyspnea. He exercises on a treadmill but is only able to complete 4 minutes of a standard Bruce protocol, achieving 4.5 METs due to fatigue. His peak heart rate reaches 88% of the age-predicted maximum. The perfusion images demonstrate normal myocardial perfusion without evidence of ischemia or infarction, and left ventricular function is preserved. Which of the following is the most accurate interpretation of these findings?",
+        "asset": null,
+        "options": [
+            "The normal perfusion study indicates a low risk of cardiac events regardless of exercise performance",
+            "Limited exercise capacity is associated with increased risk of cardiac events and mortality despite normal perfusion findings",
+            "The study should be considered nondiagnostic because the patient did not achieve 100% of the predicted maximum heart rate",
+            "The absence of ischemia indicates that the patient's symptoms are noncardiac and no further evaluation is needed"
+        ]
+    },
+    {
+        "question": "A 46-year-old male has new exertional angina concerning for ischemia and he is referred for stress SPECT myocardial perfusion imaging on a standard Anger camera. He has a history of known coronary disease with prior non-ST-elevation myocardial infarction (NSTEMI) and drug-eluting stent to the LAD. He has diabetes mellitus, hypertension, and obesity with BMI of 38. He has significant orthopedic limitations and is unable to exercise on the treadmill. Recent echocardiography shows a LVEF of 45% with anteroseptal wall-motion abnormality and normal wall thickness. Which of the following would be part of an optimal stress nuclear protocol for this patient?",
+        "asset": null,
+        "options": [
+            "Imaging 15 minutes after resting Tc-99m sestamibi injection",
+            "Rest injection of 15 mCi of Tc-99m sestamibi followed by 45 mCi of Tc-99m sestamibi post-stress on the same day",
+            "Stress injection of 30 mCi of Tc-99m sestamibi on day one and rest injection of 30 mCi of Tc-99m sestamibi on day 2",
+            "Stress injection of 15 mCi of Tc-99m sestamibi followed by 45 mCi of Tc-99m sestamibi at rest on the same day if rest imaging is needed"
+        ]
+    },
+    {
+        "question": "Which of the following is a standard view for an equilibrium radionuclide angiogram (ERNA)?",
+        "asset": null,
+        "options": [
+            "Anterior",
+            "20° Left Anterior Oblique (LAO)",
+            "20° Right Anterior Oblique (RAO)",
+            "70° Left Anterior Oblique (LAO)"
+        ]
+    },
+    {
+        "question": "Which statement is correct regarding blood pool labeling methods for RNA?",
+        "asset": null,
+        "options": [
+            "In vivo labelling is rapid but requires handling of blood and is useful for LV and RV volume determinations due to low background counts",
+            "In vitro labelling has the lowest labelling efficiency and involves handling of blood and is more time consuming",
+            "Modified in vivo/in vitro is less cumbersome than in vitro labelling, is less efficient than in vitro labelling without the washing step and involves some handling of blood",
+            "Commercial kit: single, rapid single injection without handling of blood and is the best choice for volume determination"
+        ]
+    },
+    {
+        "question": "A 74-year-old male with a history of coronary artery disease, insulin-dependent diabetes mellitus, and hypertension presents to clinic with progressive exertional chest tightness that resolves with rest. He is referred for exercise stress SPECT myocardial perfusion imaging. He exercised for 3 minutes on the Bruce protocol and had his typical anginal pain at peak stress. The following peak ECG and perfusion images were obtained. Which of the following factors is the most predictive of mortality in this patient?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/aaa86609-70e4-479e-9f33-09327ee54678.png",
+        "options": [
+            "3-min exercise workload",
+            "3 mm ST-depression at peak stress",
+            "Typical angina at peak stress",
+            "Perfusion abnormalities"
+        ]
+    },
+    {
+        "question": "Which of the following is an advantage of selective-stress first imaging?",
+        "asset": null,
+        "options": [
+            "Reduced patient ionizing radiation exposure in all cases",
+            "Increased sensitivity for detecting balanced ischemia",
+            "Decreased shine-through artifact",
+            "Increased cardiovascular event rates when normal compared to patients who undergo one day rest/stress studies"
+        ]
+    },
+    {
+        "question": "A patient presents to the emergency department with a 30-minute bout of atrial fibrillation with rapid ventricular response with associated chest pain and then converted to normal sinus rhythm with resolution of his symptoms. He is currently asymptomatic. On physical examination he has some new leg edema and jugular venous pressure (JVP) elevation not seen on a recent visit. His first high-sensitivity cardiac troponin (hsTn) was mildly elevated and increased on the second where it then peaked. He has some T-wave inversions unchanged from a recent ECG. He is being considered for a stress radionuclide myocardial perfusion imaging study. Which of the following clinical circumstances would be a contraindication to pharmacologic stress testing?",
+        "asset": null,
+        "options": [
+            "ECG changes",
+            "Leg edema and JVP elevation",
+            "Afib associated chest pain",
+            "Elevated troponin"
+        ]
+    }
+]

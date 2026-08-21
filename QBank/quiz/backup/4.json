@@ -1,0 +1,352 @@
+[
+    {
+        "question": "A 65-year-old female presents for evaluation of intermittent shortness of breath with a stress SPECT MPI. She has a history of hypertension, dyslipidemia, and smoking. Recent pulmonary function tests showed an FEV1 82% of age predicted and a bronchodilator response of 5%. She is active and exercises on the treadmill daily. Her ECG performed on arrival in the laboratory is shown. Which of the following is the best form of stress for this patient's SPECT MPI?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/6b98a249-15ec-404f-aa88-5f4ebf98ad4e.png",
+        "options": [
+            "Dobutamine",
+            "Exercise",
+            "Regadenoson",
+            "“Walking” regadenoson"
+        ]
+    },
+    {
+        "question": "A 49-year-old man with heart failure underwent an echocardiogram that showed features suggestive of cardiac amyloidosis. His Tc-99m-PYP SPECT/CT is shown below (grade 1 myocardial uptake). What is the next step in the evaluation of this patient.",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/e5e8fba9-fdb6-4b45-865e-3d44a3873460.png",
+        "options": [
+            "Initiate TTR stabilizing therapy",
+            "Refer to endomyocardial biopsy",
+            "Refer to cardiac MRI",
+            "Evaluate for TTR gene testing"
+        ]
+    },
+    {
+        "question": "A 62-year-old man undergoes pharmacologic stress Tc-99m SPECT/CT myocardial perfusion imaging for evaluation of exertional chest discomfort. Selected reconstructed attenuation-corrected perfusion images are shown in grey- and color-scale, along with the software-generated polar maps and summed scores. What is the next best step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/f47d51ae-12f8-4e54-9b29-bcec7314fcfb.png",
+        "options": [
+            "Refer for invasive coronary angiography",
+            "Review the images for breast attenuation",
+            "Review the fused SPECT/CT images",
+            "Report the study as normal"
+        ]
+    },
+    {
+        "question": "A 46-year-old woman with biopsy proven pulmonary sarcoidosis presents for evaluation. Echocardiogram shows normal left ventricular ejection fraction of 55% without regional wall motion abnormalities. Cardiac MRI demonstrates patchy mid-myocardial late gadolinium enhancement in the basal septum. Which of the following is the best next step in management?",
+        "asset": null,
+        "options": [
+            "Begin immunosuppressive therapy",
+            "Referral for endomyocardial biopsy",
+            "FDG PET/CT",
+            "ICD implantation"
+        ]
+    },
+    {
+        "question": "In patients with suspected cardiac sarcoidosis, which of the following is correct?",
+        "asset": null,
+        "options": [
+            "Normal cardiac MRI excludes cardiac sarcoidosis",
+            "Findings on FDG PET/CT do not confer prognostic value",
+            "Perfusion-metabolism PET/CT does not differentiate between active inflammation and scar",
+            "RV FDG uptake confers poor prognostic value"
+        ]
+    },
+    {
+        "question": "A 62-year-old man with hypertension and hyperlipidemia is referred for an exercise SPECT/CT MPI to evaluate his chest pain. Results include no ischemic ECG changes after 9 minutes of exercise and normal perfusion without ischemia or infarction. A concomitant attenuation correction CT revealed three vessel coronary artery calcifications. Which of the following best describes the appropriate interpretation of the findings?",
+        "asset": null,
+        "options": [
+            "The normal MPI excludes significant coronary atherosclerosis",
+            "Balanced ischemia is suspected necessitating coronary angiography",
+            "False-positive CT findings because attenuation correction CT is used rather than a dedicated CAC scan",
+            "Elevated future cardiovascular risk despite normal MPI findings"
+        ]
+    },
+    {
+        "question": "A 68-year-old man with prior anterior myocardial infarction and ischemic cardiomyopathy has a left ventricular ejection fraction of 25%. Coronary angiography demonstrates a chronic total occlusion of the left anterior descending (LAD) coronary artery. He undergoes resting perfusion and F-18-FDG PET imaging to assess myocardial viability. Results are shown below. Which of the following best describes these findings?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/20561463-738f-46a0-bcdf-1ea2cf2d92f2.png",
+        "options": [
+            "Transmural myocardial scar in the LAD territory",
+            "Viable, hibernating, myocardium in the LAD territory",
+            "Normal myocardial perfusion and metabolism",
+            "Perfusion-metabolism reverse mismatch in the LAD territory"
+        ]
+    },
+    {
+        "question": "What is the principal mechanism by which IV insulin administration helps optimize glucose uptake in normal myocardium prior to myocardial viability imaging with F-18 FDG PET?",
+        "asset": null,
+        "options": [
+            "Increase amino acid levels",
+            "Increase in myocardial perfusion via coronary vasodilation",
+            "Shifting metabolism toward fatty acids",
+            "Mobilization of glucose transporters"
+        ]
+    },
+    {
+        "question": "Which PET crystal has poor energy resolution?",
+        "asset": null,
+        "options": [
+            "Bismuth germanate (BGO)",
+            "Gadolinium oxyorthosilicate (GSO)",
+            "Lutetium oxyorthosilicate (LSO)",
+            "Lutetium-yttrium oxyorthosilicate (LYSO)"
+        ]
+    },
+    {
+        "question": "A 65-year-old woman with hypertension, obesity, left ventricular hypertrophy (LVH) via echocardiography, and non-obstructive coronary artery disease (CAD) via coronary CT angiography (CTA) was referred for vasodilator stress flurpiridaz F-18 cardiac PET/CT due to dyspnea on exertion. The perfusion images are most consistent with which of the following findings?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/24fdcbb8-71a2-4c8d-8bcc-c0bcbc8dc9fe.png",
+        "options": [
+            "Ischemia in the typical distribution of the PDA",
+            "Ischemia in the typical distribution of a diagonal artery",
+            "Multivessel epicardial CAD",
+            "Motion artifact"
+        ]
+    },
+    {
+        "question": "A 55-year-old male with total occlusion of the LCx is referred for assessment of myocardial viability in the territory of the occlusion. An adenosine thallium-201 is performed and images are shown below. 3 mCi of thallium-201 was injected with stress. What is the next best step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/f91cf67f-b197-47d4-beb7-1509bc64521d.png",
+        "options": [
+            "Call the referring physician and indicate that for the assessment of myocardial viability, the study should have been performed as a rest-only thallium without stress",
+            "Inject Tc-99m sestamibi now and compare stress thallium-201 images to resting Tc-99m sestamibi images",
+            "Obtain additional delayed thallium-201 views at 24 hours",
+            "Report a medium-sized to large apical, inferior, and lateral defect with partial redistribution only at apex and mid-LV without viability in the basal inferior and inferolateral segments"
+        ]
+    },
+    {
+        "question": "The following images are from a Tc-99m pyrophosphate scan performed on a 60-year-old male with echocardiographic features suggestive of cardiac amyloidosis. What is the next best additional testing for a diagnosis?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/81d1d103-77d0-4727-a4b2-5c81a0311ff1.png",
+        "options": [
+            "No further testing is necessary",
+            "Serum-free light chain assay and immunofixation electrophoresis",
+            "Serum-free light chain assay and immunofixation electrophoresis and gene testing",
+            "Myocardial biopsy"
+        ]
+    },
+    {
+        "question": "Which of the following factors is responsible for the decreased spatial resolution with rubidium-82 as compared to N-13 ammonia and flurpiridaz F-18 myocardial perfusion imaging?",
+        "asset": null,
+        "options": [
+            "Increased myocardial extraction at high flow rates",
+            "Shorter physical half-life",
+            "Lower injected dose",
+            "Increased positron range"
+        ]
+    },
+    {
+        "question": "When quantifying coronary artery calcium score (CACS) on hybrid perfusion/CT imaging, one should consider which of the following?",
+        "asset": null,
+        "options": [
+            "Higher tube voltage for CT performed for attenuation correction than for CACS",
+            "Agatston score from CACS scan to be the same as a score obtained from CT attenuation correction scan",
+            "Difference in reconstruction of CT slices for attenuation correction and those for Agatston score",
+            "No prognostic value of visual or qualitative assessment of coronary calcium"
+        ]
+    },
+    {
+        "question": "A 76-year-old man with severe aortic stenosis and recent biceps tendon rupture is undergoing evaluation for transcatheter aortic valve implantation. ECG shows low voltage. His echocardiogram revealed severe aortic stenosis, bi-atrial enlargement, and grade III diastolic dysfunction. A cardiac MRI demonstrated diffuse subendocardial late gadolinium enhancement. Urine and blood screen for AL amyloidosis was negative, and a PYP SPECT showed no evidence of myocardial uptake. Which of the following is the best next step in management?",
+        "asset": null,
+        "options": [
+            "Begin therapy with a transthyretin stabilizer",
+            "Refer for endomyocardial biopsy",
+            "Proceed with TAVI as cardiac amyloidosis has been excluded",
+            "Repeat SPECT with I-124 evuzamitide"
+        ]
+    },
+    {
+        "question": "Which statement most accurately reflects the value of peak stress myocardial blood flow (MBF) and myocardial flow reserve (MFR) as quantified by PET?",
+        "asset": null,
+        "options": [
+            "MFR is influenced by age, sex, and cardiac comorbidities, while stress MBF is not",
+            "Stress MBF >1.8 mL/min/g and MFR >2 reliably excludes high-risk CAD",
+            "MFR can be high when stress MBF is normal due to tachycardia or hypertension",
+            "An MFR of >1.5 reliably excludes high-risk CAD"
+        ]
+    },
+    {
+        "question": "An 84-year-old man with carotid artery disease, hypertension, and dyslipidemia was referred for a vasodilator stress Rb-82 cardiac PET/CT due to chest pain. Based on the data below, what do you expect the most likely finding to be on invasive coronary angiography?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/8c289930-4c65-410c-be6f-c576fd851f20.png",
+        "options": [
+            "Single-vessel flow-limiting epicardial CAD",
+            "Three-vessel, flow-limiting epicardial CAD",
+            "Diffuse, non-obstructive CAD",
+            "No CAD"
+        ]
+    },
+    {
+        "question": "Which of the following rest/stress Rb-82 perfusion PET findings in a patient with no known prior CAD would be associated with the LEAST benefit of an early revascularization strategy versus a medical therapy-first strategy?",
+        "asset": null,
+        "options": [
+            "LVEF reserve > 0",
+            "Global myocardial flow reserve 1.6",
+            "Summed difference score 16",
+            "Global stress myocardial blood flow 1.4 ml/kg/min"
+        ]
+    },
+    {
+        "question": "Which of the following best describes the diagnostic ability of imaging modalities for cardiac amyloidosis?",
+        "asset": null,
+        "options": [
+            "An abnormal cardiac MRI is diagnostic for transthyretin cardiac amyloidosis",
+            "A positive PYP scintigraphy alone is diagnostic of transthyretin cardiac amyloidosis",
+            "PYP scintigraphy confers no diagnostic value in patients with cardiac MRI evidence of amyloidosis",
+            "Co-registration with CT is likely to improve diagnostic accuracy of PYP scintigraphy"
+        ]
+    },
+    {
+        "question": "A 43-year-old man with end-stage liver disease was referred for a dobutamine stress rubidium-82 (Rb-82) cardiac PET/CT. Laboratory assessment is notable for a eGFR of 53 mL/min/1.73m2, INR of 1.6, and Hgb of 6.9 g/dL. The results in sum below are most consistent with which of the following?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/54170a6f-1709-49c3-ad7f-f79338bd78be.png",
+        "options": [
+            "Normal perfusion and normal myocardial blood flows",
+            "Evidence of focal, flow-limiting, single-vessel epicardial CAD",
+            "Reduced myocardial flow reserves from high resting myocardial blood flows",
+            "Findings concerning for multivessel epicardial CAD"
+        ]
+    },
+    {
+        "question": "Which of the following statements is true about PET/CT myocardial perfusion imaging?",
+        "asset": null,
+        "options": [
+            "Under-capturing the LV input function will under estimate stress myocardial blood flow",
+            "Myocardial flow reserve is often elevated in patients post-cardiac transplant",
+            "Vasodilator-induced hypotension can mimic vasodilator non-response",
+            "Residual activity between rest and stress injections must be accounted for with Rb-82"
+        ]
+    },
+    {
+        "question": "A 72-year-old, obese female presents with shortness of breath and chest tightness occasionally with exertion. She has a history of hypertension, dyslipidemia, and diet-controlled diabetes. She undergoes a regadenoson SPECT MPI with Tc-99m sestamibi due to inadequate exercise on the treadmill. The patient is waiting in the waiting room for her results. Relevant images are below from a conventional Na-I SPECT camera. What is the next best step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/bdaad77b-bf33-4bd2-b508-34f70b3c636b.png",
+        "options": [
+            "Repeat the stress acquisition with the left breast repositioned due to concern for soft-tissue attenuation",
+            "Report the study as showing a large area of apical, anterior, anteroseptal and anterolateral ischemia, most likely due to proximal left anterior descending coronary artery disease",
+            "Report the study as showing a large area of apical, anterior, anteroseptal and anterolateral ischemia, most likely due to proximal left circumflex coronary artery disease",
+            "Repeat the stress acquisition with instructions not to move due to concern for excessive patient motion"
+        ]
+    },
+    {
+        "question": "A 82-year-old man with heart failure underwent a cardiac MRI suggestive of amyloidosis. A Tc-99m-whole body methylene diphosphonate (MDP) bone scan performed 2-weeks prior for prostate cancer evaluation did not show any myocardial uptake of radiotracer. What is the most appropriate next recommendation to the patient?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/d1f7bd87-529d-4dfe-9fc0-f4078e381dc7.png",
+        "options": [
+            "Inform him that ATTR cardiac amyloidosis is excluded",
+            "Refer the patient for an endomyocardial biopsy",
+            "Refer the patient for a Tc-99m-PYP scan",
+            "Repeat Tc-99m MDP scan using a cardiac acquisition"
+        ]
+    },
+    {
+        "question": "Which of the following statements is true about FDG PET/CT viability imaging?",
+        "asset": null,
+        "options": [
+            "After hexokinase phosphorylates F-18-FDG, it is trapped in the myocyte",
+            "Matched perfusion/metabolism defect indicates viable myocardium",
+            "Patients should be prepared with a zero carbohydrate, high-fat/protein diet for at least two meals the day prior",
+            "If rest myocardial perfusion is normal, patients should still undergo FDG metabolic imaging"
+        ]
+    },
+    {
+        "question": "What is the summed difference score (expressed in %) of the rest-stress SPECT MPI images depicted in the diagram below?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/4f3c3101-6df4-4b26-847f-aba13f467246.png",
+        "options": [
+            "5%",
+            "10%",
+            "15%",
+            "20%"
+        ]
+    },
+    {
+        "question": "A 55-year-old female presents to the ED with atypical chest pain. She has a history of hypertension and hyperlipidemia, both of which are managed with appropriate medications. Her ECG shows normal sinus rhythm and left bundle branch block. The patient undergoes a cardiac CTA that reports 50% to 69% stenosis in the mid segment of the right coronary artery. Which of the following would be an appropriate recommendation for this patient?",
+        "asset": null,
+        "options": [
+            "Exercise stress SPECT MPI",
+            "Coronary artery calcium scoring",
+            "Exercise ECG stress test",
+            "Pharmacologic PET MPI"
+        ]
+    },
+    {
+        "question": "A 65-year-old male with hypertension, dyslipidemia, and smoking presents with intermittent chest pain. He is referred for an exercise SPECT MPI using a CZT camera system with supine and upright capability. He exercised 11 minutes on the Bruce protocol with no symptoms and a negative ECG. Peak HR was 165 bpm and peak BP 180/80 mmHg. No arrhythmias were noted. A low-dose rest/high-dose stress Tc-99m sestamibi protocol was utilized. No protocol deviations or quality issues were identified. In addition to the images shown below, LV size and function was within the normal range with no regional wall motion abnormalities. The TID ratio was calculated at 0.94. What is the next best step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/1f587910-ba8b-4d1f-9fe8-8f61eacc8b79.png",
+        "options": [
+            "Repeat the upright stress acquisition with attention to patient positioning",
+            "Report the study as showing a fixed anteroseptal perfusion defect consistent with myocardial infarction",
+            "Report the study as showing a reversible anteroseptal perfusion defect, most likely due to left anterior descending coronary artery disease",
+            "Report the study as normal"
+        ]
+    },
+    {
+        "question": "A 78-year-old man underwent Tc-99m pyrophosphate scintigraphy for a clinical suspicion of ATTR amyloidosis. Imaging was performed 1 hour after injection of 15 mCi of tracer. There was significant blood pool activity confounding interpretation. What is the most appropriate next step?",
+        "asset": null,
+        "options": [
+            "Refer the patient for an endomyocardial biopsy",
+            "Refer the patient for a cardiac MRI",
+            "Repeat imaging in 3 hours to allow for clearance of blood pool",
+            "Repeat imaging on another day with Tc-99m HDP"
+        ]
+    },
+    {
+        "question": "A 64-year-old male with a history of mechanical surgical aortic valve replacement eight years prior due to severe aortic regurgitation from bicuspid aortic valve disease presents with fever and malaise. Examination is notable for normal jugular venous pressure and a I/IV diastolic murmur best heard at the left lower sternal border. There are no peripheral stigmata of endocarditis. The first set of blood cultures returns positive for Streptococcus viridans. Transthoracic echocardiography shows mild aortic regurgitation. The mechanical prosthesis is not well visualized. Transesophageal echocardiography shows no definitive aortic valve vegetation or root abscess. What would be the next best step in management?",
+        "asset": null,
+        "options": [
+            "Tc-99m-white blood cell SPECT",
+            "F-18 FDG PET/CT",
+            "Empiric treatment with six weeks of IV antibiotics",
+            "Ga-68 dotatate"
+        ]
+    },
+    {
+        "question": "A 47-year-old female with end-stage renal disease related to lupus nephritis on hemodialysis is referred for Rb-82 stress PET for progressive chest tightness and shortness of breath of 3-week duration. Images of the PET perfusion and CT for attenuation correction are shown. What is the best next step in her evaluation?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/b96c6d05-31a7-449f-be0b-eab693fcc875.png",
+        "options": [
+            "Right and left heart catheterization",
+            "Coronary CT angiography",
+            "Transthoracic echocardiography",
+            "Cardiac MRI"
+        ]
+    },
+    {
+        "question": "A 64-year-old man is referred for Tc-99m SPECT myocardial perfusion imaging for evaluation of possible cardiac chest discomfort. He undergoes a 1-day low-dose rest/high-dose stress protocol on a conventional SPECT camera without CT attenuation correction. He exercises for 11 minutes on the Bruce protocol without chest pain. Heart rate and blood pressure increase appropriately, and the stress ECG is normal. Stress-and-rest perfusion images are shown. The software reports an elevated TID ratio of 1.44. What is the next best step?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/0e927939-8203-49c8-bc26-99f4d63a3acc.png",
+        "options": [
+            "Check the myocardial contours and LV cavity boundary definition on the stress and rest datasets",
+            "Ignore the TID ratio because TID is only validated with pharmacologic stress",
+            "Refer the patient directly for invasive coronary angiography",
+            "Report the study as high risk because the TID ratio is abnormal"
+        ]
+    },
+    {
+        "question": "A 65-year-old female presents for testing after developing pressure-like chest pain with radiation to the jaw approximately 1-year ago. The “pressure-like” pain is worse with exertion, relieved with rest, and occasionally associated with shortness of breath. She has seen several doctors for her condition and has undergone several cardiac tests, including an electrocardiogram, echocardiogram, and coronary CTA, which she reports were normal. She underwent an Rb-82 regadenoson stress PET myocardial perfusion study (see associated images). What is the most likely diagnosis?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/372d3cec-4c59-4d58-8ac9-074c4b61e3b4.png",
+        "options": [
+            "Cardiomyopathy",
+            "Microvascular dysfunction",
+            "Obesity",
+            "Balanced ischemia with 3V disease"
+        ]
+    },
+    {
+        "question": "A 54-year-old woman with biopsy-proven pulmonary sarcoidosis develops complete heart block. She undergoes resting myocardial perfusion and cardiac F-18-FDG PET imaging after appropriate dietary preparation. See images below. Which of the following is the most appropriate interpretation?",
+        "asset": "https://d1zvku1ebivxmv.cloudfront.net/image/png/6bbc8e14-d486-4ba6-94eb-f5f8bfdc57a6.png",
+        "options": [
+            "Active myocardial inflammation consistent with active cardiac sarcoidosis",
+            "Chronic myocardial scar without active inflammation",
+            "Inadequate suppression of physiologic myocardial glucose uptake",
+            "A normal physiologic pattern of myocardial FDG uptake"
+        ]
+    },
+    {
+        "question": "In a patient without flow-limiting epicardial CAD, which PET imaging pattern is MOST consistent with active myocardial inflammation?",
+        "asset": null,
+        "options": [
+            "Perfusion defect associated with FDG uptake after low carbohydrate/high-fat diet",
+            "Perfusion defect associated with FDG uptake after glucose and insulin administration",
+            "Normal perfusion with focal-on-diffuse FDG uptake after low carbohydrate/high-fat diet",
+            "Normal perfusion with lateral wall FDG uptake after low carbohydrate/high-fat diet"
+        ]
+    },
+    {
+        "question": "The most definitive diagnosis of cardiac ATTR amyloidosis is obtained by which of the following?",
+        "asset": null,
+        "options": [
+            "A heart-to-contralateral ratio of >1.5 at 1 hour on a planar Tc-99m PYP scan in conjunction with negative serum and urine studies for a paraprotein",
+            "Diffuse myocardial uptake of Tc-99m PYP on SPECT with negative serum studies and urine studies for a paraprotein",
+            "Grade 3 Tc-99m PYP uptake on a planar scan in conjunction with negative serum and urine studies for a paraprotein",
+            "A heart to contralateral ratio of >1.5 at 1 hour and Grade 3 Tc-99m PYP uptake on planar scintigraphy in a patient with HFpEF and a history of bilateral carpal tunnel release"
+        ]
+    }
+]

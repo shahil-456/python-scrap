@@ -1,0 +1,502 @@
+[
+    {
+        "question": "Which is a major advantage of the use of rubidium-82 (Rb-82) over nitrogen-13-ammonia (N-13 ammonia)?",
+        "asset": null,
+        "options": [
+            "Better spatial resolution",
+            "Longer half-life",
+            "Radiotracer creation in a generator",
+            "Lower radiation effective dose"
+        ]
+    },
+    {
+        "question": "A minor spill of Rb-82 chloride (half-life of 76 seconds) is identified on the patient table of a PET/CT scanner before a study. What is the most appropriate approach to handle the contamination before the next scan?",
+        "asset": null,
+        "options": [
+            "Assay a wipe sample in a dose calibrator to determine the activity of the spill, then decide how to proceed based on the measured level",
+            "Wait 24 hours for full decay, cancel the remaining exams, and restrict access to the room for the day",
+            "Decontaminate immediately with alcohol wipes and release the room without surveying",
+            "Clear personnel from the room for 10 minutes (~10 half-lives) to allow Rb-82 to decay, then survey with a Geiger-Müller survey meter to confirm the exposure has returned to background level"
+        ]
+    },
+    {
+        "question": "22 11 Na (sodium 22, 11 neutrons, and 11 protons decay). Using conservation of charge and nucleon number (neglect neutrino emissions), which decay scheme would be allowed?",
+        "asset": null,
+        "options": [
+            "22 11 Na → 23 11 Na + β⁺",
+            "22 11 Na → 22 10 Ne + β⁻",
+            "22 11 Na → 22 9 Ne + α",
+            "22 11 Na → 22 10 Ne + β⁺"
+        ]
+    },
+    {
+        "question": "A small outpatient PET/CT laboratory is transitioning from using 10 patients a day using rubidium-82 (Rb-82) generators for cardiac imaging to 10 patients a day using F-18-labeled radiopharmaceuticals. The imaging suite has a nearby patient waiting room adjacent to the injection and hot lab areas. Which of the following best describes the primary shielding consideration that should be addressed during this transition?",
+        "asset": null,
+        "options": [
+            "Add additional shielding around the control room to reduce operator exposure from persistent F-18 activity",
+            "Add additional fixed shielding for annihilation photons due to the longer half-life and persistent exposure from F-18",
+            "Decrease shielding requirements because F-18 has a lower positron energy than Rb-82",
+            "No shielding changes are needed because both isotopes are positron emitters with similar gamma energies"
+        ]
+    },
+    {
+        "question": "In October 2024, the delayed restart of a nuclear reactor in the Netherlands caused supply shortages of several imaging radiopharmaceuticals. Which of the following imaging agents was affected by the reactor shutdown?",
+        "asset": null,
+        "options": [
+            "Nitrogen-13 ammonia",
+            "Technetium-99m pyrophosphate",
+            "Rubidium-82 chloride",
+            "Thallium-201 chloride"
+        ]
+    },
+    {
+        "question": "Which instrument is the most suitable for performing ambient exposure rate surveys of radioactive material work areas? (Readouts in parenthesis)",
+        "asset": null,
+        "options": [
+            "Well-counter (dpm)",
+            "Portable ion chamber (mR/hr)",
+            "Personnel pocket dosimeter (rem or Sv)",
+            "Dose calibrator (MBq or mCi)"
+        ]
+    },
+    {
+        "question": "The average person in the United States receives approximately how much dose annually from natural background sources of radiation (includes radon, cosmic rays, and internal radionuclides; excludes medical exposures)?",
+        "asset": null,
+        "options": [
+            "1.5 mSv (150 mrem)",
+            "2.5 mSv (250 mrem)",
+            "3.0 mSv (300 mrem)",
+            "5.0 mSv (500 mrem)"
+        ]
+    },
+    {
+        "question": "Geiger-Müller survey meters operate at which region of the voltage-response curve shown here?",
+        "asset": "assets/1_8.png",
+        "options": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "question": "A positron emitted from a PET radiotracer annihilates with an electron, producing two 511 keV photons traveling in nearly opposite directions. Before reaching the detector, one of these photons undergoes Compton scattering at a 90° angle, reducing its energy to approximately 255 keV. The other photon is detected at 511 keV. The PET scanner operates with an energy window of 400–600 keV. How will the PET system handle this event?",
+        "asset": null,
+        "options": [
+            "The event is accepted and recorded as a true coincidence",
+            "The event is rejected because the scattered photon is attenuated and falls below the energy window",
+            "The event is accepted but mispositioned as a scatter event",
+            "The event is rejected as a random coincidence"
+        ]
+    },
+    {
+        "question": "A technologist localizes a contaminated area in the nuclear cardiology department using a Geiger-Müller survey meter. A wipe test of the area should then be performed to identify the radionuclide. Which instrument is most appropriate for assessing the wipe sample?",
+        "asset": null,
+        "options": [
+            "Ion chamber survey meter",
+            "Well-type scintillation counter",
+            "Dose calibrator",
+            "Pocket dosimeter"
+        ]
+    },
+    {
+        "question": "A nursing mother presents for a Tc-99m sestamibi myocardial perfusion study. What is the recommended duration of breastfeeding interruption?",
+        "asset": null,
+        "options": [
+            "No interruption required",
+            "4 hours",
+            "24 hours",
+            "4 days"
+        ]
+    },
+    {
+        "question": "For a technetium-99m (Tc-99m) source, the Half-Value Layer (HVL) of lead is 0.4 mm at 140 keV. How many HVLs are required to reduce the exposure to 1/8 of its initial value, and what is the corresponding total thickness of lead?",
+        "asset": null,
+        "options": [
+            "2 HVLs; 0.8 mm of lead",
+            "3 HVLs; 1.2 mm of lead",
+            "4 HVLs; 1.6 mm of lead",
+            "8 HVLs; 3.2 mm of lead"
+        ]
+    },
+    {
+        "question": "Which practice is the most effective for keeping staff occupational exposure As Low As Reasonably Achievable (ALARA)?",
+        "asset": null,
+        "options": [
+            "Wear a lead apron during all radioactive material handling and administration",
+            "Minimize exposure time, maximize distance from the source, and use adequate shielding",
+            "Eat and drink in areas where radioactive material is stored or handled",
+            "Rely on syringe shields alone for all unit dose handling, without adequate attention to minimizing exposure time and maximizing distance"
+        ]
+    },
+    {
+        "question": "Which number refers to the number of nucleons in this atom?",
+        "asset": "assets/1_14.png",
+        "options": [
+            "8",
+            "9",
+            "10",
+            "18"
+        ]
+    },
+    {
+        "question": "Rubidium-82 (Rb-82) has a higher emitted positron energy than N-13 ammonia; therefore, which of the following is correct?",
+        "asset": null,
+        "options": [
+            "Rb-82 annihilation photons have more energy than annihilation photons from N-13 photons when annihilated",
+            "Rb-82 annihilation photons have less energy than annihilation photons from N-13 photons when annihilated",
+            "N-13-ammonia images have sharper images due their shorter positron thermalization length",
+            "Rb-82 images have sharper images due to their shorter positron thermalization length"
+        ]
+    },
+    {
+        "question": "Deterministic radiation effects include which of the following?",
+        "asset": null,
+        "options": [
+            "Cataracts, skin erythema, and dermatitis",
+            "Cancer",
+            "Birth defects",
+            "Hearing loss, fainting, and loss of taste"
+        ]
+    },
+    {
+        "question": "What is the primary advantage of iterative reconstruction over filtered backprojection?",
+        "asset": null,
+        "options": [
+            "Rapid reconstruction times",
+            "Integration of imaging physics into the reconstruction model",
+            "Minimization of motion artifacts",
+            "Minimization of scatter artifacts"
+        ]
+    },
+    {
+        "question": "Consider the uptake characteristics of two flow tracers below. An ischemic defect is imaged with Tracer A . The patient returns and is imaged with Tracer B . If there is no change in the patient's underlying blood flow, how do the different uptake characteristics alter the intensity of the ischemic defect?",
+        "asset": "assets/1_18.png",
+        "options": [
+            "Defect will be more intense with Tracer B",
+            "Defect will be less intense with Tracer B",
+            "Defect will be similar between Tracer A and B",
+            "Defect intensity cannot be determined without a resting study"
+        ]
+    },
+    {
+        "question": "Dose calibrator constancy testing is performed daily. How often must dose calibrator geometry testing be performed?",
+        "asset": null,
+        "options": [
+            "Daily",
+            "Monthly",
+            "At installation, and after repair or relocation",
+            "Annually"
+        ]
+    },
+    {
+        "question": "Nuclei that lie above the Valley of Stability have an excess of protons relative to neutrons. What is/are mechanism(s) for achieving greater stability?",
+        "asset": null,
+        "options": [
+            "Electron emission (β⁻) decay",
+            "Electron emission (β⁺) decay",
+            "Electron capture",
+            "Electron capture and positron emission (β⁺) decay"
+        ]
+    },
+    {
+        "question": "Physical collimation is used in SPECT but not needed in PET because of which of the following?",
+        "asset": null,
+        "options": [
+            "Coincidence detection of annihilation photons defines the line-of-response",
+            "Scintillation crystals used in PET have greater stopping power",
+            "PET isotopes have much shorter half-lives",
+            "Time-of-flight provides the distance of the source from the scanner axis"
+        ]
+    },
+    {
+        "question": "Which of the following constitutes a reportable medical event under NRC regulations?",
+        "asset": null,
+        "options": [
+            "A patient receives 20 mCi of Tc-99m medronate instead of Tc-99m sestamibi for a myocardial perfusion study",
+            "A therapeutic I-131 dose of 50 mCi is administered for a thyroid uptake study",
+            "Tc-99m-sulfur colloid is injected intravenously instead of being administered orally for a gastric emptying study",
+            "A 50-mCi dose of Rb-82 chloride is administered for a rest/stress myocardial perfusion PET study, instead of the prescribed 30-mCi dose"
+        ]
+    },
+    {
+        "question": "Which of the following radiopharmaceuticals has linear myocardial uptake and blood flow relationship?",
+        "asset": null,
+        "options": [
+            "Nitrogen-13 ammonia",
+            "Oxygen-15 water",
+            "Thallium-201",
+            "Technetium-99m sestamibi"
+        ]
+    },
+    {
+        "question": "A patient undergoes a same-day exercise flurpiridaz F-18 PET myocardial perfusion study. The patient receives a 2.5 mCi-rest dose followed by a 9.0 mCi-exercise stress dose. Immediately after the stress acquisition begins, the PET scanner experiences a hardware failure and the study is aborted. The patient has already completed the exercise portion of the examination. Once the scanner is operational again, when may the patient be reimaged?",
+        "asset": null,
+        "options": [
+            "Within 25 minutes of injecting the stress radiotracer",
+            "Only after 110 minutes, when one half-life has elapsed",
+            "Only after 18 hours (10 half-lives), with a repeat stress test and repeat radiotracer administration",
+            "The study cannot be repeated due to exceeding recommended radiation exposure"
+        ]
+    },
+    {
+        "question": "A non-circular orbit is preferred for SPECT cardiac imaging with parallel hole collimators because of which of the following?",
+        "asset": null,
+        "options": [
+            "It reduces camera set-up time for the technologist",
+            "It reduces patient discomfort from claustrophobia",
+            "It allows image reconstruction with less angular rotation of the camera",
+            "It improves spatial resolution without loss of sensitivity"
+        ]
+    },
+    {
+        "question": "Which of the following is a characteristic of time-of-flight PET imaging compared to traditional PET?",
+        "asset": null,
+        "options": [
+            "Improved signal-to-noise",
+            "Degraded signal-to-noise",
+            "Improved spatial resolution",
+            "Degraded spatial resolution"
+        ]
+    },
+    {
+        "question": "Digital PET (use of silicon photomultipliers) does which of the following?",
+        "asset": null,
+        "options": [
+            "Reduces depth-of-interaction effects",
+            "Improves coincidence timing resolution",
+            "Improves the quantitative accuracy of images",
+            "Increases axial field of view of the system"
+        ]
+    },
+    {
+        "question": "A controlled area has an ambient exposure rate of 7.5 mrem/h. What sign should be posted on all the entrance door(s)?",
+        "asset": null,
+        "options": [
+            "No posting required",
+            "Caution: Radioactive Materials",
+            "Caution: Radiation Area",
+            "Caution: High Radiation Area"
+        ]
+    },
+    {
+        "question": "Which of the following are the acceptable NRC limits of strontium-82 (Sr-82) and Sr-85 in a rubidium-82 (Rb-82) patient injection?",
+        "asset": null,
+        "options": [
+            "Sr-82 ≤ 0.02 μCi and Sr-85 ≤ 0.2 μCi per mCi of Rb-82 at the time of elution",
+            "Sr-82 ≤ 0.2 μCi and Sr-85 ≤ 0.02 μCi per mCi of Rb-82 at the time of elution",
+            "Sr-82 ≤ 0.02 μCi and Sr-85 ≤ 0.2 μCi per mCi of Rb-82 at the time of administration",
+            "Sr-82 ≤ 0.02 μCi and Sr-85 ≤ 0.02 μCi per mCi of Rb-82 at the time of administration"
+        ]
+    },
+    {
+        "question": "If the exposure rate at 3 m from a radioactive source is 100 mR/h, what will be the exposure rate at 6 m?",
+        "asset": null,
+        "options": [
+            "It will be reduced to one-quarter of the original exposure rate (25 mR/h)",
+            "It will be reduced to one-half of the original exposure rate (50 mR/h)",
+            "It will be reduced to one-fifth of the original exposure rate (20 mR/h)",
+            "It will be increased by 25% of the original exposure rate (125 mR/h)"
+        ]
+    },
+    {
+        "question": "A technologist increases the mAs (milliampere-seconds) of a cardiac CT study. What is the impact on the resulting CT images?",
+        "asset": null,
+        "options": [
+            "Increase in signal to noise",
+            "Increase in image contrast",
+            "Increase in image resolution",
+            "Increase in scanner pitch"
+        ]
+    },
+    {
+        "question": "Radioactive syringes ( unit dose ) received from a radiopharmacy should be measured with which of the following instruments prior to patient administration?",
+        "asset": null,
+        "options": [
+            "Survey meter",
+            "Dose calibrator",
+            "Well counter",
+            "Personal dosimeter"
+        ]
+    },
+    {
+        "question": "Which SPECT imaging isotope will show the best photopeak energy resolution (smallest %FWHM)?",
+        "asset": null,
+        "options": [
+            "71 keV photopeak of Tl-201",
+            "81 keV photopeak of Xe-133",
+            "140 keV photopeak of Tc-99m",
+            "159 keV photopeak of l-123"
+        ]
+    },
+    {
+        "question": "Which of the following units is a measure of absorbed dose?",
+        "asset": null,
+        "options": [
+            "Millicurie (mCi)",
+            "Millisievert (mSv)",
+            "Roentgen (R)",
+            "Gray (Gy)"
+        ]
+    },
+    {
+        "question": "Which of the following describes flurpiridaz F-18 uptake mechanism for myocardial perfusion imaging?",
+        "asset": null,
+        "options": [
+            "Active transport via the sodium/potassium pump",
+            "Transport via the glucose transporter",
+            "Binding to the mitochondrial complex 1",
+            "Passive diffusion across plasma and mitochondrial membranes"
+        ]
+    },
+    {
+        "question": "A package containing radioactive material has a measured exposure rate of 100 mrem/h at the surface and 1.6 mrem/h at 1 meter. What is the appropriate label and Transport Index (TI) for this package?",
+        "asset": null,
+        "options": [
+            "White-I label, TI = 0",
+            "Yellow-II label, TI = 1",
+            "Yellow-III label, TI = 3",
+            "Yellow-III label, TI = 1.6"
+        ]
+    },
+    {
+        "question": "A laboratory transitions from Rb-82 PET myocardial perfusion imaging to flurpiridaz F-18 PET. Flurpiridaz has a higher myocardial extraction fraction than Rb-82. A patient with stable coronary artery disease undergoes repeat imaging with flurpiridaz after previously being imaged with Rb-82. Assuming no change in the patient's coronary disease, how should the perfusion defects appear on the flurpiridaz images?",
+        "asset": null,
+        "options": [
+            "Smaller and less conspicuous due to higher myocardial uptake",
+            "Larger or more severe because flurpiridaz better preserves differences in regional blood flow",
+            "Unchanged because extraction fraction does not affect relative perfusion imaging",
+            "Completely absent because flurpiridaz has higher extraction efficiency"
+        ]
+    },
+    {
+        "question": "For a gamma camera with parallel-hole collimation, as object distance increases, which of the following is correct?",
+        "asset": null,
+        "options": [
+            "Spatial resolution improves and sensitivity decreases",
+            "Spatial resolution worsens and sensitivity increases",
+            "Spatial resolution increases and sensitivity is constant",
+            "Spatial resolution worsens and sensitivity is constant"
+        ]
+    },
+    {
+        "question": "The annual whole-body occupational dose to radiation workers is limited to ________ per year.",
+        "asset": null,
+        "options": [
+            "0.05 Sv",
+            "25 rem",
+            "1.0 mSv",
+            "500 mrem"
+        ]
+    },
+    {
+        "question": "Molybdenum breakthrough testing is routinely performed in a nuclear pharmacy using which of the following?",
+        "asset": null,
+        "options": [
+            "A dose calibrator",
+            "A multi-channel analyzer",
+            "Colorimetric analysis",
+            "High-performance liquid chromatography (HPLC)"
+        ]
+    },
+    {
+        "question": "Which of the following statements is true regarding the transient equilibrium of a molybdenum-99 (Mo-99)/technetium-99 (Tc-99m) generator?",
+        "asset": null,
+        "options": [
+            "The half-life of the daughter Tc-99m is greater than the half-life of the parent Mo-99",
+            "The maximum activity of Tc-99m occurs shortly after the first hour of elution",
+            "Once transient equilibrium is reached, the apparent decay rate of the daughter matches the physical half-life of the parent",
+            "The parent Mo-99 half-life is roughly 100 times longer than the daughter's"
+        ]
+    },
+    {
+        "question": "An F-18-labelled perfusion agent (t 1/2 = 110 minutes) is injected with 3 mCi at t = 0. A protocol calls for the dose to decay by a factor of 8 before a second PET dose can be administered. How long must the lab wait before injecting the second dose?",
+        "asset": null,
+        "options": [
+            "880 minutes",
+            "440 minutes",
+            "330 minutes",
+            "110 minutes"
+        ]
+    },
+    {
+        "question": "A key advantage of iterative reconstruction versus filtered backprojection (FBP) is which of the following?",
+        "asset": null,
+        "options": [
+            "Faster reconstruction times",
+            "Lower image noise",
+            "More accurate scatter and attenuation correction",
+            "Improved temporal resolution"
+        ]
+    },
+    {
+        "question": "A laboratory performs a flurpiridaz F-18 PET study using a standard Tc-99m syringe shield because a PET-rated syringe shield is unavailable. Which statement is most accurate?",
+        "asset": null,
+        "options": [
+            "The study is prohibited by federal regulation",
+            "The administered activity becomes invalid",
+            "Personnel radiation exposure may increase, potentially compromising ALARA practices",
+            "The patient receives a significantly higher radiation dose"
+        ]
+    },
+    {
+        "question": "Area surveys are to be performed with a survey meter sufficiently sensitive to detect 0.1 mR/hr in areas where radioactive materials are prepared and administered. How often must this survey be performed in the Nuclear Cardiology rooms?",
+        "asset": null,
+        "options": [
+            "At the beginning of each working day",
+            "After each administration",
+            "At the end of each work week",
+            "At the end of each working day"
+        ]
+    },
+    {
+        "question": "A patient is imaged on a SPECT/CT hybrid system for cardiac perfusion assessment. During the procedure, the patient shifts approximately 1 cm to the left between the transmission (CT attenuation map) acquisition and the emission (SPECT) scan. What is the most appropriate course of action to manage this situation?",
+        "asset": null,
+        "options": [
+            "Proceed with reconstruction using the misaligned CT attenuation map, as a 1 cm shift is clinically negligible",
+            "Use uniform attenuation correction instead of the CT attenuation map to avoid artifact",
+            "Register the transmission (CT) data with the emission data prior to reconstruction and reprocess the data",
+            "Omit attenuation correction entirely and reconstruct the SPECT data without it"
+        ]
+    },
+    {
+        "question": "The radiochemical purity of a technetium-99 radiopharmaceutical is established by which of the following?",
+        "asset": null,
+        "options": [
+            "Chromatography",
+            "Colorimetric analysis",
+            "Breakthrough testing",
+            "pH determination"
+        ]
+    },
+    {
+        "question": "A nuclear cardiology technologist declares her pregnancy in writing to the Radiation Safety Officer. Upon investigation, it is determined that the dose to the embryo/fetus was 100 mrem at the time of declaration. How much longer can the technologist work in the radioactive materials environment?",
+        "asset": null,
+        "options": [
+            "The embryo/fetal dose limit is achieved, and the pregnant technologist cannot work in the radioactive materials environment",
+            "The technologist may continue working until the dose to the embryo/fetus is 5,000 mrem (50 mSv)",
+            "The technologist may continue working until the dose to the embryo/fetus is 500 mrem (5 mSv)",
+            "The technologist may continue working as long as the radiation dose to the fetus does not exceed 50 mrem/month for the remainder of the pregnancy"
+        ]
+    },
+    {
+        "question": "Which of the following is considered a best practice for minimizing radiation dose in cardiac SPECT imaging?",
+        "asset": null,
+        "options": [
+            "Prefer Tl-201 over Tc-99m-labeled radiotracers",
+            "Prefer high-sensitivity cardiac CZT scanners over conventional NaI SPECT systems",
+            "Use fixed radiotracer administered activity instead of weight-based dosing",
+            "Prefer rest-first same-day studies"
+        ]
+    },
+    {
+        "question": "The presence of molybdenum-99 (Mo-99) in a Mo-99/Tc-99m eluate is an example of which of the following?",
+        "asset": null,
+        "options": [
+            "Radiochemical impurity",
+            "Chemical impurity",
+            "Radionuclidic impurity",
+            "Isotopic contamination"
+        ]
+    }
+]
