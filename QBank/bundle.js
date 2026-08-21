@@ -31,7 +31,7 @@ window.__OFFLINE_BUNDLE__ = {
             {
                 "id": "9ded5ee0-2633-4b1f-a266-b0062c14c65c",
                 "subjectId": "asnc-qbank",
-                "title": "Subject-1",
+                "title": "2026 Board Prep Session I: Practice Exam",
                 "source": {
                     "provider": "hippo",
                     "id": "9ded5ee0-2633-4b1f-a266-b0062c14c65c"
@@ -40,7 +40,7 @@ window.__OFFLINE_BUNDLE__ = {
             {
                 "id": "15df87ff-084b-48cb-962e-858418cf7ced",
                 "subjectId": "asnc-qbank",
-                "title": "Subject-2",
+                "title": "2026 Board Prep Session II: Practice Exam",
                 "source": {
                     "provider": "hippo",
                     "id": "15df87ff-084b-48cb-962e-858418cf7ced"
@@ -49,7 +49,7 @@ window.__OFFLINE_BUNDLE__ = {
             {
                 "id": "958d8a1c-9ea7-4a29-90f6-b23ee82856ac",
                 "subjectId": "asnc-qbank",
-                "title": "Subject-3",
+                "title": "2026 Board Prep Session III: Practice Exam",
                 "source": {
                     "provider": "hippo",
                     "id": "958d8a1c-9ea7-4a29-90f6-b23ee82856ac"
@@ -58,7 +58,7 @@ window.__OFFLINE_BUNDLE__ = {
             {
                 "id": "297ad521-c00a-447a-8c74-2020edbfe4ba",
                 "subjectId": "asnc-qbank",
-                "title": "Subject-4",
+                "title": "2026 Board Prep Session IV: Practice Exam",
                 "source": {
                     "provider": "hippo",
                     "id": "297ad521-c00a-447a-8c74-2020edbfe4ba"
