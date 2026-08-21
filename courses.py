@@ -52,19 +52,16 @@ for item in data["items"]:
             continue
 
         try:
-            download_file(
-                video["video"],
+
+            video_folder = os.path.join(
                 page_folder,
-                video["name"],
-                ".mp4"
+                clean_name(video["name"])
             )
 
-            download_file(
-                video["pdf"],
-                page_folder,
-                video["name"],
-                ".pdf"
-            )
+            download_file(video["video"], video_folder, video["name"], ".mp4")
+
+
+            download_file(video["pdf"], video_folder, video["name"], ".pdf")
 
             video["saved"] = True
             downloaded += 1
