@@ -1,131 +1,170 @@
 {
-
-    "main_url": "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D",
-    "items": [
-        {
-            "name": "Welcome and Introduction",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=IHo63u89cf6jQySpw7hNDg%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
-
-            "page": {
-                "name": "new Page",
-                "datas": [
-                    {
-                        "name": "Video 1",
-                        "video": "",
-                        "pdf": "",
-                        "saved": false
-                    }
-                ]
-            }
-
-        },
-
-
-        {
-            "name": "2026 Nuclear Cardiology Board Prep Session I: Physics, Instrumentation, Radionuclides, Radiation Safety",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=U8AL7Ts2815kVMW3jmKZbA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
-            "page": {
-                "name": "2026 Board Prep Session I: Pre-recorded Lectures",
-                "datas": [
-                    {
-                        "name": "Physics for the Boards James Case, PhD, MASNC",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1412ff6e-3a9c-4c02-a15e-ee226527ebee.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/67fb3939-5b68-46b5-aab0-bc18e82aa381.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Production and Management of Radionuclides and Radiopharmaceuticals Marianna Dakanali, PhD",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1b1e9bc9-ac1d-4100-8506-2cb8f08f5ae4.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/efa08d42-0e24-4a53-bea6-935dc52db07d.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "The Basics of Radiation Safety Benjamin Auer, PhD",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/05353cd8-bdea-42d1-aae1-69bb16d8180d.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/f116a084-99ff-47e4-a865-e4d6178c30b8.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Instrumentation (SPECT and PET) R. Glenn Wells, PhD",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/49007420-d6fc-4df7-b3f7-b98959f41882.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/1ea8ed5c-51de-44a1-abc2-2540cdd474bb.pdf",
-                        "saved": false
-                    }
-                ]
-            }
-        },
-        {
-            "name": "2026 Nuclear Cardiology Board Exam Prep Session II: Acquisition and Quality Control, Gated SPECT, Artifact Recognition, and Appropriate Use",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=ctMOPK3Nu2m4UjCm2DEGxQ%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
-            
-            "page": {
-                "name": "2026 Board Prep Session II: Pre-recorded Lectures",
-                  "datas": [
-                    {
-                        "name": "Technical Aspects of Acquisition and Processing",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/da178311-77ae-4254-8f0f-bf54de508272.mov",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/7d6b118e-ecdc-47ae-8093-941381f7fefb.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Gated SPECT",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/6d9bb5fb-3a72-4958-b250-8b8e2df7aa76.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/1cdc754c-6c6c-450a-ab2a-c694fa3c0f8f.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Artifact Recognition",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/750e9501-4bb1-41f8-b97d-52d2dd77ad00.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/4ca193fd-449e-4ee5-a01b-575316a30212.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Instrumentation Quality Control",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/c93ceb53-046a-4a37-aa77-e51b8cb928d1.mov",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/2c5eea04-62e9-426e-92a3-2e85d0a94600.pdf",
-                        "saved": false
-                    },
-                    {
-                        "name": "Patient-Centered Imaging and Appropriate Use",
-                        "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/c6978f6c-6277-401e-8ac1-cf10734268af.mp4",
-                        "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/81fdf338-aada-4cdb-b47d-856ff37fd86b.pdf",
-                        "saved": false
-                    }
-                ]
-            }
-
-
-        },
-        {
-            "name": "2026 Nuclear Cardiology Board Exam Prep Session III: Test Selection, Stress and Nuclear Protocols Interpretation, MUGA, Risk Stratification, and Non-Cardiac Findings on SPECT and PET/CT",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=sJbMgnt6c5jMOgT9h8fWQw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
-            "page": {
-                "name": "2026 Board Prep Session III: Pre-recorded Lectures",
-                "datas": [
-                    {"name": "Stress Testing", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/32bf52ca-f75e-4ba1-8da0-b35961fe2028.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/55925350-5110-41d7-96d4-e46302c47a2d.pdf", "saved": false}
-                    , {"name": "Nuclear Imaging Protocols and Interpretation", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/d4c5083a-a6a0-42bf-8752-44082001b042.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/724d28f3-0f13-4129-b1f2-4203f34e9e3a.pdf", "saved": false}, 
-                    {"name": "Radionuclide Angiocardiography", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/347f38a0-afb6-42f7-aa3a-72349d9b18fc.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/67b2e506-e3bc-4cf4-bbb1-693f372fec2e.pdf", "saved": false},
-                    {"name": "Focused Topic: SPECT Viability: Protocols and Case Review", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/167ea2d5-2bc9-447d-8b75-ce68d1cd5391.mov", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/9a62d813-a8be-4526-b896-68eac25a5a5b.pdf", "saved": false},
-                    {"name": "Risk Stratification SPECT", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/910951ed-755e-4c9f-94fa-bf2db07834b5.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/7abfab8e-6dcd-43e0-b0ef-80de5dde1992.pdf", "saved": false},
-                    {"name": "Interpretation of Incidental Cardiac and Non-Cardiac Findings on SPECT and PET/CT", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/05b862e0-71a5-4a56-8c1b-a0b4a5e246e4.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/24db6db7-22d3-4031-aa07-2b0b74ea82e4.pdf", "saved": false}]
-            }
-        },
-        {
-            "name": "2026 Nuclear Cardiology Board Exam Prep Session IV: Cardiac PET, Multimodality Imaging, Cardiac Amyloidosis, Cases with the Experts: SPECT and PET",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=gPtBUn6hRB0%2fn7I%2bmf36fA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
-            
-            "page": {
-                "name": "2026 Board Prep Session IV: Pre-recorded Lectures",
-                "datas": [{"name": "Cardiac PET: Basics of Perfusion, Viability, and Sarcoidosis", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/d09f4548-b51a-4aa7-b9d1-d0f677a250a5.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/aa34e26e-085d-4a20-96b3-b78e9128a3c1.pdf", "saved": false}, {"name": "Focused Topic: Nuclear Integration in Multimodality Imaging", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/51694d4e-9f27-473b-8c37-96fd5d178618.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/271dc6cf-967a-441b-bede-3ac021a96b86.pdf", "saved": false}, {"name": "Focused Topic: Bone-avid Radiotracer Cardiac SPECT for Transthyretin Cardiac Amyloidosis", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/21845a76-f9f4-4eba-a7de-f3456f591202.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/b25526c6-1df7-4786-bba0-b00d30f3f7d7.pdf", "saved": false}, {"name": "Cases with the Expert, SPECT", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/0c8aa3f5-210c-4ad3-9986-3bf79d6a82c2.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/d68f25f2-58f7-4ebf-98f7-82eacf9fbc5b.pdf", "saved": false}, {"name": "Cases with the Expert, PET", "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/27a2daec-0ed5-4c5a-aed3-752211eb7a4a.mp4", "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/92c2fb0f-56ea-4f53-8cf2-b2e26883ec32.pdf", "saved": false}]}
-            
-        },
-        {
-            "name": "2026 Nuclear Cardiology Board Exam Prep Course - Live, Virtual (Town Hall) Meeting Recordings (to be released Oct. 1, 2026)",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=NsBJPurjvq75PfqB%2btpGHw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
-        },
-        {
-            "name": "2026 Nuclear Cardiology Board Exam Prep Resources",
-            "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=hpBPXTZv%2bcWaVm5fKb2iMw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
-        }
-    ]
+  "main_url": "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D",
+  "items": [
+    
+    {
+      "name": "2026 Nuclear Cardiology Board Prep Session I: Physics, Instrumentation, Radionuclides, Radiation Safety",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=U8AL7Ts2815kVMW3jmKZbA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+      "page": {
+        "name": "2026 Board Prep Session I: Pre-recorded Lectures",
+        "datas": [
+          {
+            "name": "Physics for the Boards James Case, PhD, MASNC",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1412ff6e-3a9c-4c02-a15e-ee226527ebee.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/67fb3939-5b68-46b5-aab0-bc18e82aa381.pdf",
+            "saved": false
+          },
+          {
+            "name": "Production and Management of Radionuclides and Radiopharmaceuticals Marianna Dakanali, PhD",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/1b1e9bc9-ac1d-4100-8506-2cb8f08f5ae4.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/efa08d42-0e24-4a53-bea6-935dc52db07d.pdf",
+            "saved": false
+          },
+          {
+            "name": "The Basics of Radiation Safety Benjamin Auer, PhD",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/05353cd8-bdea-42d1-aae1-69bb16d8180d.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/f116a084-99ff-47e4-a865-e4d6178c30b8.pdf",
+            "saved": false
+          },
+          {
+            "name": "Instrumentation (SPECT and PET) R. Glenn Wells, PhD",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/49007420-d6fc-4df7-b3f7-b98959f41882.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/1ea8ed5c-51de-44a1-abc2-2540cdd474bb.pdf",
+            "saved": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "2026 Nuclear Cardiology Board Exam Prep Session II: Acquisition and Quality Control, Gated SPECT, Artifact Recognition, and Appropriate Use",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=ctMOPK3Nu2m4UjCm2DEGxQ%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+      "page": {
+        "name": "2026 Board Prep Session II: Pre-recorded Lectures",
+        "datas": [
+          {
+            "name": "Technical Aspects of Acquisition and Processing",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/da178311-77ae-4254-8f0f-bf54de508272.mov",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/7d6b118e-ecdc-47ae-8093-941381f7fefb.pdf",
+            "saved": false
+          },
+          {
+            "name": "Gated SPECT",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/6d9bb5fb-3a72-4958-b250-8b8e2df7aa76.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/1cdc754c-6c6c-450a-ab2a-c694fa3c0f8f.pdf",
+            "saved": false
+          },
+          {
+            "name": "Artifact Recognition",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/750e9501-4bb1-41f8-b97d-52d2dd77ad00.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/4ca193fd-449e-4ee5-a01b-575316a30212.pdf",
+            "saved": false
+          },
+          {
+            "name": "Instrumentation Quality Control",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/c93ceb53-046a-4a37-aa77-e51b8cb928d1.mov",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/2c5eea04-62e9-426e-92a3-2e85d0a94600.pdf",
+            "saved": false
+          },
+          {
+            "name": "Patient-Centered Imaging and Appropriate Use",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/c6978f6c-6277-401e-8ac1-cf10734268af.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/81fdf338-aada-4cdb-b47d-856ff37fd86b.pdf",
+            "saved": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "2026 Nuclear Cardiology Board Exam Prep Session III: Test Selection, Stress and Nuclear Protocols Interpretation, MUGA, Risk Stratification, and Non-Cardiac Findings on SPECT and PET/CT",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=sJbMgnt6c5jMOgT9h8fWQw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+      "page": {
+        "name": "2026 Board Prep Session III: Pre-recorded Lectures",
+        "datas": [
+          {
+            "name": "Stress Testing",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/32bf52ca-f75e-4ba1-8da0-b35961fe2028.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/55925350-5110-41d7-96d4-e46302c47a2d.pdf",
+            "saved": false
+          },
+          {
+            "name": "Nuclear Imaging Protocols and Interpretation",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/d4c5083a-a6a0-42bf-8752-44082001b042.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/724d28f3-0f13-4129-b1f2-4203f34e9e3a.pdf",
+            "saved": false
+          },
+          {
+            "name": "Radionuclide Angiocardiography",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/347f38a0-afb6-42f7-aa3a-72349d9b18fc.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/67b2e506-e3bc-4cf4-bbb1-693f372fec2e.pdf",
+            "saved": false
+          },
+          {
+            "name": "Focused Topic: SPECT Viability: Protocols and Case Review",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/167ea2d5-2bc9-447d-8b75-ce68d1cd5391.mov",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/9a62d813-a8be-4526-b896-68eac25a5a5b.pdf",
+            "saved": false
+          },
+          {
+            "name": "Risk Stratification SPECT",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/910951ed-755e-4c9f-94fa-bf2db07834b5.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/7abfab8e-6dcd-43e0-b0ef-80de5dde1992.pdf",
+            "saved": false
+          },
+          {
+            "name": "Interpretation of Incidental Cardiac and Non-Cardiac Findings on SPECT and PET/CT",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/05b862e0-71a5-4a56-8c1b-a0b4a5e246e4.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/24db6db7-22d3-4031-aa07-2b0b74ea82e4.pdf",
+            "saved": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "2026 Nuclear Cardiology Board Exam Prep Session IV: Cardiac PET, Multimodality Imaging, Cardiac Amyloidosis, Cases with the Experts: SPECT and PET",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=gPtBUn6hRB0%2fn7I%2bmf36fA%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d",
+      "page": {
+        "name": "2026 Board Prep Session IV: Pre-recorded Lectures",
+        "datas": [
+          {
+            "name": "Cardiac PET: Basics of Perfusion, Viability, and Sarcoidosis",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/d09f4548-b51a-4aa7-b9d1-d0f677a250a5.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/aa34e26e-085d-4a20-96b3-b78e9128a3c1.pdf",
+            "saved": false
+          },
+          {
+            "name": "Focused Topic: Nuclear Integration in Multimodality Imaging",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/51694d4e-9f27-473b-8c37-96fd5d178618.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/271dc6cf-967a-441b-bede-3ac021a96b86.pdf",
+            "saved": false
+          },
+          {
+            "name": "Focused Topic: Bone-avid Radiotracer Cardiac SPECT for Transthyretin Cardiac Amyloidosis",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/21845a76-f9f4-4eba-a7de-f3456f591202.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/b25526c6-1df7-4786-bba0-b00d30f3f7d7.pdf",
+            "saved": false
+          },
+          {
+            "name": "Cases with the Expert, SPECT",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/0c8aa3f5-210c-4ad3-9986-3bf79d6a82c2.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/d68f25f2-58f7-4ebf-98f7-82eacf9fbc5b.pdf",
+            "saved": false
+          },
+          {
+            "name": "Cases with the Expert, PET",
+            "video": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/video/mp4/27a2daec-0ed5-4c5a-aed3-752211eb7a4a.mp4",
+            "pdf": "https://d1zvku1ebivxmv.cloudfront.net/ASNC/pdf/92c2fb0f-56ea-4f53-8cf2-b2e26883ec32.pdf",
+            "saved": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "2026 Nuclear Cardiology Board Exam Prep Course - Live, Virtual (Town Hall) Meeting Recordings (to be released Oct. 1, 2026)",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=NsBJPurjvq75PfqB%2btpGHw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
+    },
+    {
+      "name": "2026 Nuclear Cardiology Board Exam Prep Resources",
+      "access_url": "https://education.asnc.org/Users/UserOnlineCourse.aspx?LearningActivityID=hpBPXTZv%2bcWaVm5fKb2iMw%3d%3d&OriginatedFromUserLearningActivityID=TBIFa2buMyT3DxaqvtcQ%2fQ%3d%3d"
+    }
+  ]
 }
