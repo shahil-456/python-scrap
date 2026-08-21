@@ -29,85 +29,55 @@ def download_file(url, folder, filename, extension):
     print("Saved:", filepath)
 
 
-with open("full.json", "r", encoding="utf-8") as f:
+with open("courses.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 errors = 0
+downloaded = 0
 
-with open("errors.txt", "a", encoding="utf-8") as err_file:
+for item in data["items"]:
 
-    for site in data["sites"]:
+    course_name = clean_name(item["name"])
+    page = item["page"]
 
-        location = clean_name(site["location"])
+    page_folder = os.path.join(
+        "my courses",
+        course_name,
+        clean_name(page["name"])
+    )
 
-        for video in site.get("videos", []):
+    for video in page["datas"]:
 
-            if video.get("saved", False):
-                continue
+        if video.get("saved", False):
+            continue
 
-            try:
-                folder = os.path.join(
-                    "my courses",
-                    location,
-                    clean_name(video["name"])
-                )
+        try:
+            download_file(
+                video["video"],
+                page_folder,
+                video["name"],
+                ".mp4"
+            )
 
-                download_file(
-                    video["link"],
-                    folder,
-                    video["name"],
-                    ".mp4"
-                )
+            download_file(
+                video["pdf"],
+                page_folder,
+                video["name"],
+                ".pdf"
+            )
 
-                video["saved"] = True
+            video["saved"] = True
+            downloaded += 1
 
-                with open("full.json", "w", encoding="utf-8") as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
+            with open("courses.json", "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
 
-                time.sleep(2)
+            time.sleep(2)
 
-            except Exception as e:
-                errors += 1
-                print("Error:", e)
+        except Exception as e:
+            errors += 1
+            print("Error:", e)
 
-                # err_file.write(
-                #     f"{video['link']}\n{e}\n\n"
-                # )
-
-        for pdf in site.get("pdfs", []):
-
-            if pdf.get("saved", False):
-                continue
-
-            try:
-                folder = os.path.join(
-                    "my courses",
-                    location,
-                    clean_name(pdf["name"])
-                )
-
-                download_file(
-                    pdf["link"],
-                    folder,
-                    pdf["name"],
-                    ".pdf"
-                )
-
-                pdf["saved"] = True
-
-                with open("full.json", "w", encoding="utf-8") as f:
-                    json.dump(data, f, indent=2, ensure_ascii=False)
-
-                time.sleep(2.3)
-
-            except Exception as e:
-                errors += 1
-                print("Error:", e)
-
-                # err_file.write(
-                #     f"{pdf['link']}\n{e}\n\n"
-                # )
-
-print(f"\nCompleted")
-print(f"Downloaded: {downloaded}")
-print(f"Errors: {errors}")
+print("\nCompleted")
+print("Downloaded:", downloaded)
+print("Errors:", errors)

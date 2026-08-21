@@ -144,7 +144,7 @@ tk.Button(
 
 tk.Button(
     root,
-    text="Save JSON",
+    text="Save Answer",
     command=save_json,
     bg="#2563eb",
     fg="white",
