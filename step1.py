@@ -1,308 +1,216 @@
-import os
 from playwright.sync_api import sync_playwright
 import time
 import json
+import os
+import requests
+import re
 
-STATE_FILE = "state.json"
-LOGIN_URL = "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D"
 
 
 
-def open_browser():
-    p = sync_playwright().start()
-    browser = p.chromium.launch(headless=False)
-    context = browser.new_context(storage_state="state.json")
-    page = context.new_page()
-    return p, browser, page
 
+def get_videos(page):
+    videos = []
 
-def get_page(page, url):
-    page.goto(url)
-    page.wait_for_load_state("networkidle")
+    rows = page.locator("tbody tr")
 
+    for i in range(rows.count()):
+        row = rows.nth(i)
 
-def get_courses(page):
-    items = []
+        name = row.locator("td:nth-child(2) a").inner_text()
+        link = row.locator("td.video-preview-cell a").get_attribute("href")
+        time.sleep(0.3)
+        videos.append({
+            "name": name.strip(),
+            "link": link
+        })
 
-    names = page.locator("a.learningActivityTitleForMultiLevelDisplay")
+        
 
-    for i in range(names.count()):
-        name = names.nth(i).inner_text().strip()
+    return videos
 
-        parent = names.nth(i).locator(
-            "xpath=ancestor::div[contains(@class,'factor360MultiLevelChildLearningActivityLayout_Title')]"
-        )
 
-        access_links = parent.locator(
-            "xpath=following-sibling::div[contains(@class,'factor360MultiLevelChildLearningActivityLayout_childList')]//a[contains(@class,'button')]"
-        )
+def save_json(videos, filename="videos.json"):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(videos, f, indent=4, ensure_ascii=False)
 
-        for j in range(access_links.count()):
-            items.append({
-                "name": name,
-                "access_url": access_links.nth(j).get_attribute("href")
-            })
-
-    return items
-
-
-def save_json(main_url, items):
-    data = {
-        "main_url": main_url,
-        "items": items
-    }
-
-    with open("courses.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
-
-
-def main():
-    main_url = "https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D"
-
-    p, browser, page = open_browser()
-
-    try:
-        get_page(page, main_url)
-
-        items = get_courses(page)
-        save_json(main_url, items)
-
-        print(f"Saved {len(items)} items")
-
-    finally:
-        browser.close()
-        p.stop()
-
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-
-
-
-
-def process_urls(page, items):
-    for item in items:
-        tab = page.context.new_page()
-
-        tab.goto(item["access_url"])
-        tab.wait_for_load_state("networkidle")
-
-        first_div = tab.locator(
-            "div[class='flex: 0 1 auto;'] a.factor360Hyperlink"
-        ).first
-
-        name = first_div.inner_text().strip()
-
-        item["page_name"] = name
-
-        # Click first div
-        first_div.click()
-        tab.wait_for_load_state("networkidle")
-
-        # Close tab
-        tab.close()
-
-
-
-
-
-def save_json(main_url, items):
-    data = {
-        "main_url": main_url,
-        "items": items
-    }
-
-    with open("courses.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
-
-
-
-
-
-# def open_browser(p):
-#     state_file = "state.json"
-#     login_url = "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=hWBfF0h8FfilW%2fkGSfJqIw%3d%3d"
-
-#     browser = p.firefox.launch(
-#         headless=False
-#     )
-
-#     if os.path.exists(state_file):
-#         context = browser.new_context(
-#             storage_state=state_file,
-#             accept_downloads=True,
-#             viewport=None,
-#             locale="en-US",
-#             timezone_id="Asia/Kolkata",
-#             user_agent=(
-#                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-#                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-#                 "Chrome/142.0.0.0 Safari/537.36"
-#             ),
-#             extra_http_headers={
-#                 "Accept-Language": "en-US,en;q=0.9"
-#             }
-#         )
-
-#     else:
-#         context = browser.new_context(
-#             accept_downloads=True,
-#             viewport=None,
-#             locale="en-US",
-#             timezone_id="Asia/Kolkata",
-#             user_agent=(
-#                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-#                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-#                 "Chrome/142.0.0.0 Safari/537.36"
-#             ),
-#             extra_http_headers={
-#                 "Accept-Language": "en-US,en;q=0.9"
-#             }
-#         )
-
-#         page = context.new_page()
-
-#         page.goto(
-#             login_url,
-#             wait_until="domcontentloaded"
-#         )
-
-#         input("Login manually, then press ENTER...")
-
-#         context.storage_state(path=state_file)
-#         print("Session saved.")
-
-#     return browser, context
-
-
-# def handle_response(response):
-# # print(response.url)
-#     if "PdfPages/SecurePdfHandler" in response.url:
-#         print("PDF response:", response.url)
-
-#         try:
-#             body = response.body()
-
-#             with open("save.pdf", "wb") as f:
-#                 f.write(body)
-
-#             print("PDF saved")
-
-#         except Exception as e:
-#             print("PDF error:", e)
-
-# def handle_request(request):
-#     # print(request.url)
-#     if "PdfPages/SecurePdfHandler" in request.url:
-#         print("PDF request:", request.url)
-
-#         try:
-#             body = request.body()
-
-#             with open("save.pdf", "wb") as f:
-#                 f.write(body)
-
-#             print("PDF saved")
-
-#         except Exception as e:
-#             print("PDF error:", e)
-            
-#     page.on("request", handle_request)
 
 # with sync_playwright() as p:
+#     browser = p.firefox.launch(headless=False)
 
-#     browser, context = open_browser(p)
-
-#     page = context.new_page()
-
-
-#     page.on("response", handle_response)
-#     page.on("response", handle_response)
-
-
-#     page.goto(
-#         "https://learningcenter.hfsa.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=4f%2FOexzNsorKAF1lCFotvA%3D%3D",
-#         wait_until="domcontentloaded"
+#     context = browser.new_context(
+#         storage_state="state.json"
 #     )
 
-#     # input("Press ENTER to exit...")
-#     time.sleep(1000)
-#     # browser.close()
-
-# import json
-# from playwright.sync_api import sync_playwright
-
-
-# def open_browser():
-#     p = sync_playwright().start()
-#     browser = p.chromium.launch(headless=False)
-#     context = browser.new_context(storage_state="state.json")
 #     page = context.new_page()
-#     return p, browser, page
+
+#     page.goto("https://www.docmeded.com/video/list?category=0&VideoModel_page=2")
+
+#     time.sleep(400)
+
+#     # trs = page.locator("tr")
+
+#     # for i in range(trs.count()):
+#     #     trs.nth(i).click()
+#     # videos = get_videos(page)
+#     # save_json(videos)
+#     browser.close()
 
 
-# def get_page(page, url):
-#     page.goto(url)
-#     page.wait_for_load_state("networkidle")
+# def download_videos(filename="videos.json"):
+#     with open(filename, "r", encoding="utf-8") as f:
+#         videos = json.load(f)
 
+#     with sync_playwright() as p:
+#         browser = p.firefox.launch(headless=False)
+#         context = browser.new_context(storage_state="state.json")
+#         page = context.new_page()
 
-# def get_courses(page):
-#     items = []
+#         for video in videos:
+#             m3u8_url = None
 
-#     names = page.locator("a.learningActivityTitleForMultiLevelDisplay")
+#             def handle_request(request):
+#                 nonlocal m3u8_url
+#                 if ".m3u8" in request.url:
+#                     m3u8_url = request.url
 
-#     for i in range(names.count()):
-#         name = names.nth(i).inner_text().strip()
+#             page.on("request", handle_request)
 
-#         parent = names.nth(i).locator(
-#             "xpath=ancestor::div[contains(@class,'factor360MultiLevelChildLearningActivityLayout_Title')]"
-#         )
+#             page.goto(video["link"])
+#             page.wait_for_timeout(5000)
 
-#         access_links = parent.locator(
-#             "xpath=following-sibling::div[contains(@class,'factor360MultiLevelChildLearningActivityLayout_childList')]//a[contains(@class,'button')]"
-#         )
+#             print(video["name"])
+#             print(m3u8_url)
 
-#         for j in range(access_links.count()):
-#             items.append({
-#                 "name": name,
-#                 "access_url": access_links.nth(j).get_attribute("href")
-#             })
-
-#     return items
-
-
-# def save_json(main_url, items):
-#     data = {
-#         "main_url": main_url,
-#         "items": items
-#     }
-
-#     with open("courses.json", "w", encoding="utf-8") as f:
-#         json.dump(data, f, indent=4, ensure_ascii=False)
-
-
-# def main():
-#     main_url = "https://education.asnc.org/your-main-url"
-
-#     p, browser, page = open_browser()
-
-#     try:
-#         get_page(page, main_url)
-
-#         items = get_courses(page)
-#         save_json(main_url, items)
-
-#         print(f"Saved {len(items)} items")
-
-#     finally:
 #         browser.close()
-#         p.stop()
 
 
-# if __name__ == "__main__":
-#     main()
+
+
+def download_videos(filename="videos.json"):
+    with open(filename, "r", encoding="utf-8") as f:
+        videos = json.load(f)
+
+    # videos = videos[0]
+
+    with sync_playwright() as p:
+        browser = p.firefox.launch(headless=False)
+        context = browser.new_context(storage_state="state.json")
+        page = context.new_page()
+
+        for video in videos:
+            ts_urls = []
+            time.sleep(2)
+            ts_saved = False
+
+            def handle_request(request):
+
+                if ".m3u8" in request.url:
+                    print("M3U8:", request.url)
+
+                if ".key" in request.url:
+                    print("KEy:", request.url)
+
+                if ".ts" in request.url:
+                    ts_urls.append(request.url)
+                    print("TS:", request.url)
+
+
+            def save_1080_m3u8(request):
+                if ".m3u8" not in request.url:
+                    return
+
+                url = request.url.replace("/720.m3u8", "/1080.m3u8")
+                url = url.replace("/480.m3u8", "/1080.m3u8")
+
+                safe_name = re.sub(r'[<>:"/\\|?*]', '', video["name"])
+                folder = os.path.join("videos", safe_name)
+                os.makedirs(folder, exist_ok=True)
+
+                response = requests.get(url)
+
+                if response.ok:
+                    with open(os.path.join(folder, "1080.m3u8"), "w", encoding="utf-8") as f:
+                        f.write(response.text)
+
+                    print("Saved:", url)
+
+
+
+            def save_1080_key(request):
+                if ".key" not in request.url:
+                    return
+
+                url = request.url.replace("/720.key", "/1080.key")
+                url = url.replace("/480.key", "/1080.key")
+
+                safe_name = re.sub(r'[<>:"/\\|?*]', '', video["name"])
+                folder = os.path.join("videos", safe_name)
+                os.makedirs(folder, exist_ok=True)
+
+                response = requests.get(url)
+
+                if response.ok:
+                    with open(os.path.join(folder, "1080.key"), "wb") as f:
+                        f.write(response.content)
+
+                    print("Saved key:", url)
+
+            def save_1080_ts(request):
+                nonlocal ts_saved
+                if ".ts" not in request.url or ts_saved:
+                    return
+
+                url = request.url.replace("/720_", "/1080_")
+                url = url.replace("/480_", "/1080_")
+
+                safe_name = re.sub(r'[<>:"/\\|?*]', '', video["name"])
+                folder = os.path.join("videos", safe_name)
+                os.makedirs(folder, exist_ok=True)
+
+                ts_name = url.split("/")[-1].split("?")[0]
+
+                response = requests.get(url)
+
+                if response.ok:
+                    with open(os.path.join(folder, ts_name), "wb") as f:
+                        f.write(response.content)
+
+                    with open(os.path.join(folder, "ts.json"), "w", encoding="utf-8") as f:
+                        json.dump({
+                            "name": ts_name,
+                            "link": url
+                        }, f, indent=4)
+
+                    print("Saved TS:", ts_name)
+
+                ts_saved = True
+
+                # raise StopIteration
+
+            page.goto("https://www.docmeded.com/video/list?category=0")
+
+            if ts_urls:
+                continue
+
+            video_page = context.new_page()
+
+            video_page.on("request", handle_request)
+            video_page.on("request", save_1080_m3u8)
+            video_page.on("request", save_1080_key)
+            video_page.on("request", save_1080_ts)
+
+            video_page.goto(
+                video["link"],
+                referer="https://www.docmeded.com/video/list?category=0"
+            )
+
+            video_page.wait_for_timeout(10000)
+
+            video_page.remove_listener("request", handle_request)
+            video_page.close()
+
+        browser.close()
+
+
+download_videos()

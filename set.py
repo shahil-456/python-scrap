@@ -14,10 +14,8 @@ options = data["content"]["options"]
 
 current = 0
 
-
 def get_option(option_id):
     return next(x for x in options if x["id"] == option_id)
-
 
 def show_question():
     q = questions[current]

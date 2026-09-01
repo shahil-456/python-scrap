@@ -5,7 +5,7 @@ with sync_playwright() as p:
     context = browser.new_context(storage_state="state.json")
     page = context.new_page()
 
-    page.goto("https://education.asnc.org/Users/LearningActivity/LearningActivityDetail.aspx?LearningActivityID=9ei2i1utfAQiVfCcsAIhrg%3D%3D")
+    page.goto("https://www.docmeded.com/video/item/11222")
 
     input("Login manually, then press Enter here...")
 
